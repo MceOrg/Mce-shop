@@ -1,0 +1,5 @@
+.Ds_Store
+*.log
+/target
+*.properties
+.idea
