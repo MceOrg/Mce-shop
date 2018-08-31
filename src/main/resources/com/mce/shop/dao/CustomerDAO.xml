@@ -139,4 +139,16 @@
       cust_profile = #{custProfile,jdbcType=VARCHAR}
     where cust_id = #{custId,jdbcType=INTEGER}
   </update>
+  <select id="isValidTelno" parameterType="java.lang.Long" resultType="java.lang.Long">
+        select cust_phone
+        from customer
+        where cust_phone=#{custPhone}
+   </select>
+
+  <select id="isValidEmail" parameterType="java.lang.String" resultType="java.lang.String">
+        select cust_email
+        from customer
+        where cust_email=#{custEmail}
+   </select>
+
 </mapper>
