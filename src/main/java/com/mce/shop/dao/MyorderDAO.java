@@ -43,4 +43,11 @@ public interface MyorderDAO extends MyBatisBaseDao<Myorder, Integer> {
      @return 返回当前用户的要查询指定的订单详情
      */
     public  List<Myorder> queryById(@Param("orderNumber") Integer orderNumber,@Param("custId") Integer custId);
+
+    /**
+     @param status  修改订单状态
+     @param orderId  指定的要修改的订单ID
+     @return  返回是否修改成功，true表示修改成功，false表示修改失败
+     */
+    public   boolean updateStatus(@Param("status") Integer status,@Param("orderId") Integer orderId);
 }

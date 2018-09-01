@@ -79,4 +79,13 @@ public class testMyorder {
             System.out.println(o);
         }
     }
+
+    @Test
+    public void testUpdateStatus() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        MyorderDAO dao = sqlSession.getMapper(MyorderDAO.class);
+        boolean flag = dao.updateStatus(1,1);
+        sqlSession.commit();
+        System.out.println("删除订单"+flag);
+    }
 }
