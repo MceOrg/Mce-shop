@@ -6,7 +6,7 @@
     <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
     <result column="cust_id" jdbcType="INTEGER" property="custId" />
     <result column="order_time" jdbcType="DATE" property="orderTime" />
-    <result column="order_price" jdbcType="DATE" property="orderPrice" />
+    <result column="order_price" jdbcType="DOUBLE" property="orderPrice" />
     <result column="order_address_id" jdbcType="INTEGER" property="orderAddressId" />
     <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
   </resultMap>
@@ -23,12 +23,22 @@
     delete from myorder
     where order_id = #{orderId,jdbcType=INTEGER}
   </delete>
+
+  <!--保存订单数据-->
+  <insert id="save" parameterType="com.mce.shop.entity.Myorder">
+    insert into myorder (order_id, order_number, cust_id,
+    order_time, order_price, order_address_id,
+    order_status)
+    values (#{orderId,jdbcType=INTEGER}, #{orderNumber,jdbcType=VARCHAR}, #{custId,jdbcType=INTEGER},
+    #{orderTime,jdbcType=DATE}, #{orderPrice,jdbcType=DOUBLE}, #{orderAddressId,jdbcType=INTEGER},
+    #{orderStatus,jdbcType=INTEGER})
+  </insert>
   <insert id="insert" parameterType="com.mce.shop.entity.Myorder">
     insert into myorder (order_id, order_number, cust_id, 
       order_time, order_price, order_address_id, 
       order_status)
     values (#{orderId,jdbcType=INTEGER}, #{orderNumber,jdbcType=VARCHAR}, #{custId,jdbcType=INTEGER}, 
-      #{orderTime,jdbcType=DATE}, #{orderPrice,jdbcType=DATE}, #{orderAddressId,jdbcType=INTEGER}, 
+      #{orderTime,jdbcType=DATE}, #{orderPrice,jdbcType=DOUBLE}, #{orderAddressId,jdbcType=INTEGER},
       #{orderStatus,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.mce.shop.entity.Myorder">
@@ -70,7 +80,7 @@
         #{orderTime,jdbcType=DATE},
       </if>
       <if test="orderPrice != null">
-        #{orderPrice,jdbcType=DATE},
+        #{orderPrice,jdbcType=DOUBLE},
       </if>
       <if test="orderAddressId != null">
         #{orderAddressId,jdbcType=INTEGER},
@@ -93,7 +103,7 @@
         order_time = #{orderTime,jdbcType=DATE},
       </if>
       <if test="orderPrice != null">
-        order_price = #{orderPrice,jdbcType=DATE},
+        order_price = #{orderPrice,jdbcType=DOUBLE},
       </if>
       <if test="orderAddressId != null">
         order_address_id = #{orderAddressId,jdbcType=INTEGER},
@@ -109,7 +119,7 @@
     set order_number = #{orderNumber,jdbcType=VARCHAR},
       cust_id = #{custId,jdbcType=INTEGER},
       order_time = #{orderTime,jdbcType=DATE},
-      order_price = #{orderPrice,jdbcType=DATE},
+      order_price = #{orderPrice,jdbcType=DOUBLE},
       order_address_id = #{orderAddressId,jdbcType=INTEGER},
       order_status = #{orderStatus,jdbcType=INTEGER}
     where order_id = #{orderId,jdbcType=INTEGER}
