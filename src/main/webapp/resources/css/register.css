@@ -1,0 +1,212 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#register_wrap {
+	width: 360px;
+	height: 555px;
+	font-family: "微软雅黑";
+	margin: 200px auto 0;
+}
+
+#register_wrap #title {
+	box-sizing: border-box;
+	width: 360px;
+	padding: 0 30px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+#register_wrap #title span:first-child {
+	font-size: 18px;
+	color: #666;
+	line-height: 50px;
+}
+
+#register_wrap #title div {
+	float: right;
+	font-size: 14px;
+	color: #333;
+	line-height: 50px;
+}
+
+#register_wrap #title div a {
+	color: #f10180;
+}
+
+#register_wrap #body {
+	box-sizing: border-box;
+	padding: 30px;
+}
+
+#register_wrap #body #tel_tip #tel {
+	width: 248px;
+	height: 32px;
+	line-height: 32px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #b2b2b2;
+	border-radius: 3px;
+	padding: 6px 10px;
+	padding-left: 40px;
+}
+
+#tel_wrap,
+#validate_wrap,
+#pwd_wrap,
+#repwd_wrap {
+	position: relative;
+}
+
+#register_wrap #body #tel_tip #tel_wrap span {
+	display: inline-block;
+	position: absolute;
+	top: 13px;
+	left: 11px;
+	z-index: 1;
+	background-image:url("../img/icon.png");
+	background-position: -412px -161px;
+	width: 20px;
+	height: 20px;
+}
+
+#register_wrap #body .tip {
+	font-size: 12px;
+	color: #666;
+	position: relative;
+	min-height: 19px;
+	max-height: 36px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	line-height: 1.5;
+}
+
+#register_wrap #body .tip .text,
+#register_wrap #body .tips .text {
+	color: #f64a4a;
+	visibility: hidden;
+}
+
+#register_wrap #body #validate_tip #validate_wrap #validate {
+	width: 106px;
+	margin-right: 10px;
+	padding: 6px 10px;
+	padding-left: 40px;
+	height: 32px;
+	line-height: 32px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #b2b2b2;
+	border-radius: 3px;
+	outline: 0;
+}
+
+#register_wrap #body #validate_tip #validate_wrap #val_logo {
+	display: inline-block;
+	position: absolute;
+	top: 13px;
+	left: 11px;
+	z-index: 1;
+	background:url("../img/icon.png");
+	background-position: -436px -161px;
+	width: 20px;
+	height: 20px;
+}
+
+#register_wrap #body #validate_tip #validate_wrap #getvalidate {
+	padding: 0 12px;
+	width: 100px;
+	font-size: 14px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #d0d0d0;
+	color: #999;
+	background: #d0d0d0;
+	display: inline-block;
+	border-radius: 3px;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: top;
+	cursor: not-allowed;
+}
+
+#register_wrap #body #password_tip #pwd_wrap #password,
+#register_wrap #body #repassword_tip #repwd_wrap #repassword {
+	width: 248px;
+	height: 32px;
+	line-height: 32px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #b2b2b2;
+	border-radius: 3px;
+	padding: 6px 10px;
+	padding-left: 40px;
+}
+
+#register_wrap #body #password_tip #pwd_wrap #pwd_logo,
+#register_wrap #body #repassword_tip #repwd_wrap #repwd_logo {
+	display: inline-block;
+	position: absolute;
+	top: 13px;
+	left: 11px;
+	z-index: 1;
+	background:url("../img/icon.png");
+	background-position: -388px -161px;
+	width: 20px;
+	height: 20px;
+}
+
+#register_wrap #body #clause_tip #accept_clause {
+	margin-right: 5px;
+}
+
+#register_wrap #body #clause_tip #clause_wrap>span {
+	display: inline-block;
+}
+
+#register_wrap #body #clause_tip .tips {
+	vertical-align: middle;
+	font-size: 12px;
+	display: inline-block;
+	width: 276px;
+	line-height: 1.5;
+	color: #666;
+}
+
+#register_wrap #body #clause_tip label a {
+	color: #1d94d1;
+	word-break: normal
+}
+
+#register_sub {
+	display: inline-block;
+	font-family: "\5FAE\8F6F\96C5\9ED1", Arial, tahoma, sans-serif;
+	font-size: 16px;
+	width: 298px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 4px;
+	background-color: #f10180;
+	border: 1px solid #f10180;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+}
+
+

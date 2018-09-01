@@ -11,7 +11,7 @@ public interface CustomerDAO extends MyBatisBaseDao<Customer, Integer> {
      @param telno 验证手机号码是否已经注册
      @return 若该手机号已经注册，则返回已注册的手机号，若没有注册过，则返回null
      */
-    public Long isValidTelno(Long telno);
+    public String isValidTelno(String telno);
 
     /**
      判断邮箱是否已经注册过
