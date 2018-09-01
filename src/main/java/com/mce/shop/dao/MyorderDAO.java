@@ -42,5 +42,5 @@ public interface MyorderDAO extends MyBatisBaseDao<Myorder, Integer> {
      @param custId 当前用户的ID
      @return 返回当前用户的要查询指定的订单详情
      */
-    public  List<Myorder> queryById(Integer orderNumber,Integer custId);
+    public  List<Myorder> queryById(@Param("orderNumber") Integer orderNumber,@Param("custId") Integer custId);
 }

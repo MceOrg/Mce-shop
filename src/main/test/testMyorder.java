@@ -61,6 +61,19 @@ public class testMyorder {
         SqlSession sqlSession = MybatisUtil.getSession();
         MyorderDAO dao = sqlSession.getMapper(MyorderDAO.class);
         List<Myorder> myorders = dao.queryByShoesName("A",1);
+        sqlSession.close();
+        for (Myorder o:myorders
+                ) {
+            System.out.println(o);
+        }
+    }
+
+    @Test
+    public void testQueryById() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        MyorderDAO dao = sqlSession.getMapper(MyorderDAO.class);
+        List<Myorder> myorders = dao.queryById(599,1);
+        sqlSession.close();
         for (Myorder o:myorders
                 ) {
             System.out.println(o);

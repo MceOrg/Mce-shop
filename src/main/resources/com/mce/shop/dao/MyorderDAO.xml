@@ -20,7 +20,17 @@
 
   <!--根据商品名称查询订单-->
   <select id="queryByShoesName" resultMap="BaseResultMap">
-    select * from myorder WHERE cust_id = #{custId} and order_id in (select order_id from order_detail where shoes_detail_id in (select shoes_detail_id from shoes_detail where shoes_id in (select shoes_id from shoes WHERE shoes_name like '%' #{shoesName} '%')))
+    select *
+    from myorder
+    WHERE cust_id = #{custId} and order_id
+    in (select order_id from order_detail where shoes_detail_id
+    in (select shoes_detail_id from shoes_detail where shoes_id
+    in (select shoes_id from shoes WHERE shoes_name like '%' #{shoesName} '%')))
+  </select>
+
+  <!-- 根据订单编号查询订单(精确查询) -->
+  <select id="queryById" resultMap="BaseResultMap">
+    select * from myorder where order_number = #{orderNumber} and cust_id = #{custId}
   </select>
 
   <sql id="Base_Column_List">
