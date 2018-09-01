@@ -2,7 +2,9 @@ package com.mce.shop.dao;
 
 import com.mce.shop.entity.Myorder;
 import com.mce.shop.entity.OrderDetail;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -28,9 +30,17 @@ public interface MyorderDAO extends MyBatisBaseDao<Myorder, Integer> {
     public List<Myorder> queryAll(Integer custId);
 
     /**
-     @param shooesName 要查询的鞋的名称（模糊查询）
-     @param custId 当前用户的ID
+     *
+      @param shoesName 要查询的鞋的名称（模糊查询）
+      @param custId 当前用户的ID
      @return 返回当前用户的要查询的订单列表
      */
-    public  List<Myorder> queryByShooesName(String shooesName,Integer custId);
+    public  List<Myorder> queryByShoesName(@Param("shoesName") String shoesName,@Param("custId") Integer custId);
+
+    /**
+     @param orderNumber 要查询的鞋编号（模糊查询）
+     @param custId 当前用户的ID
+     @return 返回当前用户的要查询指定的订单详情
+     */
+    public  List<Myorder> queryById(Integer orderNumber,Integer custId);
 }

@@ -2,9 +2,11 @@ import com.mce.shop.dao.MyorderDAO;
 import com.mce.shop.entity.Myorder;
 import com.mce.shop.entity.OrderDetail;
 import com.mce.shop.util.MybatisUtil;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class testMyorder {
@@ -50,6 +52,17 @@ public class testMyorder {
        // myorders.forEach(System.out::println);
         for (Myorder o:myorders
              ) {
+            System.out.println(o);
+        }
+    }
+
+    @Test
+    public void testQueryByShoesName() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        MyorderDAO dao = sqlSession.getMapper(MyorderDAO.class);
+        List<Myorder> myorders = dao.queryByShoesName("A",1);
+        for (Myorder o:myorders
+                ) {
             System.out.println(o);
         }
     }
