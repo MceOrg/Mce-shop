@@ -103,4 +103,10 @@
       update_time = #{updateTime,jdbcType=DATE}
     where cart_id = #{cartId,jdbcType=INTEGER}
   </update>
+
+  <insert id="save" >
+    insert into cart (cust_id, shoes_detail_id)
+    values (#{custId,jdbcType=INTEGER}, #{shoesDetail.shoesDetailId}
+    )
+  </insert>
 </mapper>
