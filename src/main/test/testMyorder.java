@@ -5,6 +5,8 @@ import com.mce.shop.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.List;
+
 public class testMyorder {
     @Test
     public void testSave() {
@@ -25,10 +27,30 @@ public class testMyorder {
         SqlSession sqlSession = MybatisUtil.getSession();
         OrderDetail orderDetail = new OrderDetail();
         orderDetail.setOrderId(1);
-        orderDetail.setShoesDetailId(null);
+        orderDetail.setShoesDetailId(1);
         orderDetail.setQuality(2);
         orderDetail.setOrderShoesColor("白");
         orderDetail.setOrderShoesSize("40");
 
+        MyorderDAO myorderDAO = (MyorderDAO) sqlSession.getMapper(MyorderDAO.class);
+
+        boolean flag = myorderDAO.saveDetails(orderDetail);
+
+        sqlSession.commit();
+        sqlSession.close();
+        System.out.println("保存"+flag);
+
+    }
+
+    @Test
+    public void testQueryAll() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        MyorderDAO dao = sqlSession.getMapper(MyorderDAO.class);
+        List<Myorder> myorders = dao.queryAll(1);
+       // myorders.forEach(System.out::println);
+        for (Myorder o:myorders
+             ) {
+            System.out.println(o);
+        }
     }
 }

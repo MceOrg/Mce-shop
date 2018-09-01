@@ -10,6 +10,13 @@
     <result column="order_address_id" jdbcType="INTEGER" property="orderAddressId" />
     <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
   </resultMap>
+  
+  <!-- 查询用户所有订单 -->
+  <select id="queryAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select *
+    from myorder
+    where cust_id = #{custId,jdbcType=INTEGER}
+  </select>
   <sql id="Base_Column_List">
     order_id, order_number, cust_id, order_time, order_price, order_address_id, order_status
   </sql>
@@ -32,6 +39,45 @@
     values (#{orderId,jdbcType=INTEGER}, #{orderNumber,jdbcType=VARCHAR}, #{custId,jdbcType=INTEGER},
     #{orderTime,jdbcType=DATE}, #{orderPrice,jdbcType=DOUBLE}, #{orderAddressId,jdbcType=INTEGER},
     #{orderStatus,jdbcType=INTEGER})
+  </insert>
+
+  <!--保存新的订单详情数据-->
+  <insert id="saveDetails" parameterType="com.mce.shop.entity.OrderDetail">
+    insert into order_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="shoesDetailId != null">
+        shoes_detail_id,
+      </if>
+      <if test="quality != null">
+        quality,
+      </if>
+      <if test="orderShoesColor != null">
+        order_shoes_color,
+      </if>
+      <if test="orderShoesSize != null">
+        order_shoes_size,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="shoesDetailId != null">
+        #{shoesDetailId,jdbcType=INTEGER},
+      </if>
+      <if test="quality != null">
+        #{quality,jdbcType=INTEGER},
+      </if>
+      <if test="orderShoesColor != null">
+        #{orderShoesColor,jdbcType=VARCHAR},
+      </if>
+      <if test="orderShoesSize != null">
+        #{orderShoesSize,jdbcType=VARCHAR},
+      </if>
+    </trim>
   </insert>
   <insert id="insert" parameterType="com.mce.shop.entity.Myorder">
     insert into myorder (order_id, order_number, cust_id, 
