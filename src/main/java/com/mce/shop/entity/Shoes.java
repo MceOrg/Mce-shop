@@ -67,6 +67,7 @@ public class Shoes implements Serializable {
      * 鞋类别ID
      */
     private Integer categoryId;
+     private ShoesDetail shoesDetail;
 
     private static final long serialVersionUID = 1L;
 
@@ -216,8 +217,7 @@ public class Shoes implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", shoesId=").append(shoesId);
+        sb.append(" shoesId=").append(shoesId);
         sb.append(", shoesNumber=").append(shoesNumber);
         sb.append(", shoesName=").append(shoesName);
         sb.append(", shoesPriceSale=").append(shoesPriceSale);
@@ -229,7 +229,6 @@ public class Shoes implements Serializable {
         sb.append(", shoesGender=").append(shoesGender);
         sb.append(", shoesStatus=").append(shoesStatus);
         sb.append(", categoryId=").append(categoryId);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
     }

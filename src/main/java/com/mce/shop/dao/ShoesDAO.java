@@ -2,6 +2,7 @@ package com.mce.shop.dao;
 
 import com.mce.shop.entity.Category;
 import com.mce.shop.entity.Shoes;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public interface ShoesDAO extends MyBatisBaseDao<Shoes, Integer> {
      @param gender 指定查询的鞋子适用的性别，0 表示男性，1 表示女性
      @return 返回指定性别的鞋子对象列表
      */
-    public  List<Shoes> queryByGender(Integer gender);
+    public  List<Shoes> queryByGender(Byte gender);
 
     /**
      @param size 指定查询的鞋子码数
@@ -39,7 +40,7 @@ public interface ShoesDAO extends MyBatisBaseDao<Shoes, Integer> {
      @return 返回指定价格范围内的鞋子对象列表
      */
 
-    public  List<Shoes> queryByPrice(Float minPrice,Float maxPrice);
+    public  List<Shoes> queryByPrice(@Param("minPrice") Float minPrice, @Param("maxPrice") Float maxPrice);
 
     /**
      @param categoryId 指定的鞋子类别ID
