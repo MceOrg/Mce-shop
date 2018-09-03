@@ -25,12 +25,7 @@
     from receive_address
     where address_id = #{addressId,jdbcType=INTEGER}
   </select>
-  <select id="queryAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from receive_address
-    where cust_id = #{custId}
-  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from receive_address
     where address_id = #{addressId,jdbcType=INTEGER}
@@ -171,6 +166,12 @@
     where address_id = #{addressId,jdbcType=INTEGER}
   </update>
 
+  <select id="queryAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from receive_address
+    where cust_id = #{custId}
+  </select>
   <delete id="delete">
     delete from receive_address
     where address_id = #{addressId} or cust_id = #{custId}

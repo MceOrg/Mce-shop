@@ -16,18 +16,18 @@ public interface CartDAO extends MyBatisBaseDao<Cart, Integer> {
      */
     public  int save(@Param("shoesDetail") ShoesDetail shoesDetail,@Param("custId") Integer custId);
     /**
-     * @param shoesDetail 要从购物车中删除的鞋对象
+     * @param shoesDetailId 要从购物车中删除的鞋对象
      * @return 返回受影响行数
      */
-    public  int delete(ShoesDetail shoesDetail,Integer custId);
+    public  int delete(@Param("shoesDetailId")Integer shoesDetailId,@Param("custId") Integer custId);
 
     /**
-     *@param shoes_detail_id 要修改的购物车中鞋ID
+     *@param shoesDetailId 要修改的购物车中鞋ID
      *@param custId 当前用户ID
      *@param count 购物车中该鞋子的数量
      *@return 返回受影响行数
      */
-    public  int updateCount(Integer shoes_detail_id,Integer custId,Integer count);
+    public  int updateCount(@Param("shoesDetailId")Integer shoesDetailId,@Param("custId") Integer custId,@Param("count") Integer count);
 
     /**
      *@param custId 当前用户ID
