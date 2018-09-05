@@ -62,13 +62,13 @@
     <servlet-name>DispatcherServlet</servlet-name>
   </filter-mapping>
 
-  <!--
-    - Use the Cocoon debug filter together with the Cocoon demo webapp
+
+    <!-- - Use the Cocoon debug filter together with the Cocoon demo webapp-->
   <filter-mapping>
     <filter-name>CocoonDebugFilter</filter-name>
     <servlet-name>Cocoon</servlet-name>
   </filter-mapping>
-    -->
+
 
   <!-- Servlet Context Listener ======================================= -->
 
@@ -102,6 +102,11 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
 
+  <servlet>
+    <servlet-name>CustomerServlet</servlet-name>
+    <servlet-class>com.mce.shop.servlet.CustomerServlet</servlet-class>
+  </servlet>
+
   <!-- URL space mappings ============================================= -->
 
   <!--
@@ -115,5 +120,9 @@
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>CustomerServlet</servlet-name>
+    <url-pattern>/CustomerServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
         

@@ -12,7 +12,7 @@ public class CustomerDaoTest {
         SqlSession session = MybatisUtil.getSession();
         try {
             CustomerDAO customerDAO = session.getMapper(CustomerDAO.class);
-            String telno = customerDAO.isValidTelno("18806717623");
+            String telno = customerDAO.isValidTelno("18806710623");
             if (telno == null) {
                 System.out.println("该手机未被注册,可以使用");
             } else {
@@ -42,7 +42,7 @@ public class CustomerDaoTest {
         SqlSession session=MybatisUtil.getSession();
         try {
             CustomerDAO customerDAO=session.getMapper(CustomerDAO.class);
-            Customer customer=new Customer(1,"Ivalo","abc",22,"19907654322","2133@qq.com",new Date(),null,null);
+            Customer customer=new Customer(1,"Ivalo","abc",22,"18806710623","823583560@qq.com",new Date(),null,null);
             Integer row=customerDAO.updatePwd(customer);
             session.commit();
             if (row==1)
