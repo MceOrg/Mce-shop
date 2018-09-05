@@ -104,7 +104,7 @@
 
   <servlet>
     <servlet-name>CustomerServlet</servlet-name>
-    <servlet-class>com.mce.shop.servlet.CustomerServlet</servlet-class>
+    <servlet-class>com.mce.shop.controller.CustomerServlet</servlet-class>
   </servlet>
 
   <!-- URL space mappings ============================================= -->

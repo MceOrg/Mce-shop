@@ -13,6 +13,21 @@ a{
     text-decoration: none;
     color: #333;
 }
+select {
+    border: solid 1px #000;
+
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    padding-right: 14px;
+
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+
+}
+
+
+select::-ms-expand { display: none; }
 #container{
     width: 1000px;
     margin: 200px auto 0;
@@ -186,7 +201,8 @@ a{
 #container .secend-container-address .body .address-phone>input,
 #container .secend-container-address .body .address-detail #province,
 #container .secend-container-address .body .address-detail #city,
-#container .secend-container-address .body .address-detail #area
+#container .secend-container-address .body .address-detail #area,
+#container .secend-container-address .body .address-detail #town
 {
     width: 203px;
     height: 24px;
@@ -199,6 +215,8 @@ a{
 }
 #container .secend-container-address .body .address-detail #province,
 #container .secend-container-address .body .address-detail #city,
-#container .secend-container-address .body .address-detail #area{
+#container .secend-container-address .body .address-detail #area,
+#container .secend-container-address .body .address-detail #town
+{
     width: 150px;
 }
