@@ -103,8 +103,8 @@
   </servlet>
 
   <servlet>
-    <servlet-name>CustomerServlet</servlet-name>
-    <servlet-class>com.mce.shop.controller.CustomerServlet</servlet-class>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.mce.shop.controller.LoginServlet</servlet-class>
   </servlet>
 
   <!-- URL space mappings ============================================= -->
@@ -120,9 +120,12 @@
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>CustomerServlet</servlet-name>
-    <url-pattern>/CustomerServlet</url-pattern>
-  </servlet-mapping>
+ <servlet-mapping>
+   <servlet-name>LoginServlet</servlet-name>
+   <url-pattern>/login</url-pattern>
+ </servlet-mapping>
+  
+  
+  
 </web-app>
         
