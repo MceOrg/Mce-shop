@@ -16,6 +16,7 @@
     用户名:<input type="text" name="userName">
     密码: <input type="password" name="userPsw">
     <input type="submit" value="登录">
+    <a href="/ReceiveAddress">查询所有收件地址</a>
 
 </form>
 </body>

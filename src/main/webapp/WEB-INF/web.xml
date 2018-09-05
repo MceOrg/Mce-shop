@@ -16,7 +16,26 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.mce.shop.controller.LoginServlet</servlet-class>
     </servlet>
+    <!--查询所有收件地址-->
+    <servlet>
+        <servlet-name>ReceiveAddressServlet</servlet-name>
+        <servlet-class>com.mce.shop.controller.ReceiveAddressServlet</servlet-class>
+    </servlet>
+    <!-- 跳转到查询所有收件地址页面 -->
+    <servlet>
+        <servlet-name>ReceiveAddressUiServlet</servlet-name>
+        <servlet-class>com.mce.shop.ui.ReceiveAddressUiServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>ReceiveAddressUiServlet</servlet-name>
+        <url-pattern>/ReceiveAddressUi</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ReceiveAddressServlet</servlet-name>
+        <url-pattern>/ReceiveAddress</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/userLogin</url-pattern>
