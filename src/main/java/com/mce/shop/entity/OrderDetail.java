@@ -45,6 +45,16 @@ public class OrderDetail extends OrderDetailKey implements Serializable {
         this.orderShoesSize = orderShoesSize;
     }
 
+    public OrderDetail() {
+    }
+
+    public OrderDetail(Integer orderId, Integer shoesDetailId, Integer quality, String orderShoesColor, String orderShoesSize) {
+        super(orderId, shoesDetailId);
+        this.quality = quality;
+        this.orderShoesColor = orderShoesColor;
+        this.orderShoesSize = orderShoesSize;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
