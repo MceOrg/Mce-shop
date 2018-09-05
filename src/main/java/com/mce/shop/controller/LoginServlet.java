@@ -1,9 +1,7 @@
 package com.mce.shop.controller;
-
 import com.mce.shop.entity.Customer;
 import com.mce.shop.service.CustLoginService;
 import com.mce.shop.service.serviceImpl.CustLoginServiceImpl;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,16 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String userName =  request.getParameter("userName");
+        String userPsw =  request.getParameter("userPsw");
+        System.out.println(userName);
+        System.out.println(userPsw);
+        request.getRequestDispatcher("/WEB-INF/jsp/mainPage.jsp").forward(request,response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username=req.getParameter("username");
-        String password=req.getParameter("password");
-        CustLoginService service=new CustLoginServiceImpl();
-        Customer customer=
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }

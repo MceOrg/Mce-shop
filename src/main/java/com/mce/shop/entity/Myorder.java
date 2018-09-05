@@ -16,7 +16,7 @@ public class Myorder implements Serializable {
 
     private Date orderTime;
 
-    private Date orderPrice;
+    private Double orderPrice;
 
     private Integer orderAddressId;
 
@@ -56,11 +56,11 @@ public class Myorder implements Serializable {
         this.orderTime = orderTime;
     }
 
-    public Date getOrderPrice() {
+    public Double getOrderPrice() {
         return orderPrice;
     }
 
-    public void setOrderPrice(Date orderPrice) {
+    public void setOrderPrice(Double orderPrice) {
         this.orderPrice = orderPrice;
     }
 

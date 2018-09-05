@@ -15,6 +15,16 @@
     from shoes_color
     where shoes_color_id = #{shoesColorId,jdbcType=INTEGER}
   </select>
+
+  <!--查询指定款式上的所有颜色-->
+
+  <select id="queryAllColorByShoesId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select shoes_color_name
+      from shoes_color
+      where shoes_color_id in
+    (select shoes_color_id from shoes_detail where shoes_id = #{shoesId,jdbcType=INTEGER})
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from shoes_color
     where shoes_color_id = #{shoesColorId,jdbcType=INTEGER}

@@ -200,8 +200,8 @@ public class ReceiveAddress implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", addressId=").append(addressId);
+        /*sb.append("Hash = ").append(hashCode());*/
+        sb.append(" addressId=").append(addressId);
         sb.append(", addressProvince=").append(addressProvince);
         sb.append(", addressCity=").append(addressCity);
         sb.append(", addressArea=").append(addressArea);

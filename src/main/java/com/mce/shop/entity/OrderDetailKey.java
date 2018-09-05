@@ -29,6 +29,14 @@ public class OrderDetailKey implements Serializable {
         this.shoesDetailId = shoesDetailId;
     }
 
+    public OrderDetailKey() {
+    }
+
+    public OrderDetailKey(Integer orderId, Integer shoesDetailId) {
+        this.orderId = orderId;
+        this.shoesDetailId = shoesDetailId;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {

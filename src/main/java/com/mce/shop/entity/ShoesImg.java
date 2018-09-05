@@ -83,12 +83,10 @@ public class ShoesImg implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", imgId=").append(imgId);
+        sb.append(" imgId=").append(imgId);
         sb.append(", shoesId=").append(shoesId);
         sb.append(", imgPath=").append(imgPath);
         sb.append(", sortNo=").append(sortNo);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
     }
