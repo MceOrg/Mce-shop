@@ -20,6 +20,6 @@ public class ReceiveAddressServlet extends HttpServlet {
         ReceiveAddressService service = new ReceiveAddressServiceImpl();
         List<ReceiveAddress> addresses = service.queryAllUserAddress(1);
         addresses.forEach(System.out::println);
-        request.getRequestDispatcher("/ReceiveAddressUi").forward(request,response);
+        request.getRequestDispatcher("/receiveAddressUi").forward(request,response);
     }
 }

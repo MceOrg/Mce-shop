@@ -26,15 +26,35 @@
         <servlet-name>ReceiveAddressUiServlet</servlet-name>
         <servlet-class>com.mce.shop.ui.ReceiveAddressUiServlet</servlet-class>
     </servlet>
+    <!-- 鞋子的服务 -->
+    <servlet>
+        <servlet-name>ShoesServlet</servlet-name>
+        <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
+    </servlet>
+    <!-- 跳转单个鞋子详情页面 -->
+    <servlet>
+        <servlet-name>QueryShoesByIdUiServlet</servlet-name>
+        <servlet-class>com.mce.shop.ui.QueryShoesByIdUiServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>QueryShoesByIdUiServlet</servlet-name>
+        <url-pattern>/queryShoesByIdUiServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ShoesServlet</servlet-name>
+        <url-pattern>/shoes</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ReceiveAddressUiServlet</servlet-name>
-        <url-pattern>/ReceiveAddressUi</url-pattern>
+        <url-pattern>/receiveAddressUi</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ReceiveAddressServlet</servlet-name>
-        <url-pattern>/ReceiveAddress</url-pattern>
+        <url-pattern>/receiveAddress</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
