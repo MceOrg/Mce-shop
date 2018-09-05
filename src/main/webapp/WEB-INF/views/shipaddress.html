@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../resources/css/normalize.css">
+    <link rel="stylesheet" href="../../resources/css/address.css">
+    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="sidebar"></div>
+        <div class="container-address">
+            <div class="header">
+                <strong>已经保存的收货地址</strong>
+                <span>您已经创建 <em id="own-address-num">4</em>个收货地址，最多可创建 <em id="max-address-num">10</em> 个 </span>
+                <a href="javascript:;">新增收货地址</a>
+            </div>
+            <div class="body">
+                <div class="address">
+                    <p>设为默认地址</p>
+                    <ul class="address-wrap">
+                        <li>
+                            <span>周科</span>
+                        </li>
+                        <li>
+                            <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                        </li>
+                        <li>
+                            <span>188****0623</span>
+
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="update_address">修改</a>
+                    <a href="javascript:;" class="delete_address">删除</a>
+                </div>
+                <div class="address">
+                    <p>设为默认地址</p>
+                    <ul class="address-wrap">
+                        <li>
+                            <span>周科</span>
+                        </li>
+                        <li>
+                            <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                        </li>
+                        <li>
+                            <span>188****0623</span>
+
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="update_address">修改</a>
+                    <a href="javascript:;" class="delete_address">删除</a>
+                </div>
+                <div class="address">
+                    <p>设为默认地址</p>
+                    <ul class="address-wrap">
+                        <li>
+                            <span>周科</span>
+                        </li>
+                        <li>
+                            <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                        </li>
+                        <li>
+                            <span>188****0623</span>
+
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="update_address">修改</a>
+                    <a href="javascript:;" class="delete_address">删除</a>
+                </div>
+                <div class="address">
+                    <p>设为默认地址</p>
+                    <ul class="address-wrap">
+                        <li>
+                            <span>周科</span>
+                        </li>
+                        <li>
+                            <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                        </li>
+                        <li>
+                            <span>188****0623</span>
+
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="update_address">修改</a>
+                    <a href="javascript:;" class="delete_address">删除</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-address secend-container-address">
+            <div class="header">
+                <strong>新增收货地址</strong>
+            </div>
+            <div class="body">
+                <div class="address-user">
+                    <strong>*</strong>
+                    <span>收货人:</span>
+                    <input type="text" placeholder="收货人姓名">
+                </div>
+
+                <div class="address-detail">
+                    <strong>*</strong>
+                    <span>地&nbsp;&nbsp;&nbsp;址:</span>
+                    <select id="province" onchange="chooseProvince(this)" >
+                        <option value="0">请选择省</option>
+                    </select>
+                    <select id="city" onchange="chooseCity(this)" onfocus="chooseCity(this)">
+                        <option value="0">请选择市</option>
+                    </select>
+                    <select id="area">
+                        <option value="0" >请选择区</option>
+                    </select>
+                </div>
+                <div class="address-phone">
+                    <strong>*</strong>
+                    <span>手&nbsp;&nbsp;&nbsp;机:</span>
+                    <input type="text" placeholder="手机号">
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../../resources/js/shipaddress.js"></script>
+</html>

@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: WhiteSmoke;
+    font-family:微软雅黑;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+select {
+    border: solid 1px #000;
+
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    padding-right: 14px;
+
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+
+}
+
+
+select::-ms-expand { display: none; }
+#container{
+    width: 1000px;
+    margin: 200px auto 0;
+}
+.address{
+    position: relative;
+    display: inline-block;
+    background: url("../img/address-bg.png") no-repeat;
+    width: 227px;
+    height: 122px;
+    margin: 0 0 10px 10px;
+    padding: 14px;
+    overflow: hidden;
+}
+.address .address-wrap{
+    width: 227px;
+    margin: 5px auto;
+    font-size: 12px;
+    color: #333;
+}
+.address .address-wrap>li:first-child{
+    height: 26px;
+    background:url("../img/i-addr-user.png") no-repeat 3px 6px;
+    border-bottom: 1px dotted #dcdcdc;
+    padding-left:20px;
+    line-height: 26px;
+    font-size: 14px;
+}
+.address .address-wrap>li:nth-child(2){
+    height: 64px;
+    padding-top: 5px;
+    background:url("../img/i-addr-home.png") no-repeat 2px 8px;
+    border-bottom: 1px dotted #dcdcdc;
+    padding-left:20px;
+    box-sizing: border-box;
+ }
+.address .address-wrap>li:nth-child(3){
+    height: 27px;
+    background:url("../img/i-addr-phone.png") no-repeat 3px 6px;
+    border-bottom: 1px dotted #dcdcdc;
+    padding-left:20px;
+    line-height: 27px;
+}
+.address .update_address{
+    display: inline-block;
+    border: 1px solid #c2c2c2;
+    padding: 1px 2px;
+    border-radius: 3px;
+    position: relative;
+    float: right;
+    bottom: 28px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.address .delete_address{
+    display: inline-block;
+    border: 1px solid #c2c2c2;
+    padding: 1px 2px;
+    border-radius: 3px;
+    position: relative;
+    bottom: 28px;
+    float: right;
+    font-size: 12px;
+}
+.address>p{
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    right: 18px;
+    background: #f974ba none repeat;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#container .sidebar{
+    width: 130px;
+    float: left;
+    margin-right: 50px;
+    height: 300px;
+    background: rebeccapurple;
+}
+#container .container-address{
+    background: white;
+
+}
+#container .container-address .header{
+    width: 820px;
+    height: 56px;
+    border-bottom: 1px dotted silver;
+    border-top: 1px solid  #FF1177;
+
+}
+#container .container-address{
+    width: 820px;
+    float: right;
+}
+#container .container-address .header>strong{
+    font-size: 14px;
+    color: #333;
+    line-height: 56px;
+    padding-left: 25px;
+}
+#container .container-address .header>span{
+    font-size: 12px;
+    color: grey;
+    margin-left: 10px;
+}
+#container .container-address .header>span #own-address-num,
+#container .container-address .header>span #max-address-num{
+    color: #f10180;
+    font-size: 12px;
+    margin: 0 5px;
+    font-style: normal;
+}
+#container .container-address .header>a{
+    position: relative;
+    float: right;
+    top: 18px;
+    right: 20px;
+    font-size: 12px;
+    display: inline-block;
+    background-color: #f10180;
+    border: 1px solid #f10180;
+    color: white;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+}
+#container .container-address .body{
+    margin-top: 10px;
+}
+#container .container-address{
+    margin-bottom: 25px;
+}
+#container .secend-container-address{
+    margin-bottom: 0;
+}
+#container .secend-container-address .body{
+    padding: 20px 35px 5px;
+    background: #fbfbfb url("../img/bg-addr-frm.png") repeat-x scroll bottom;
+}
+#container .secend-container-address .body .address-user{
+    margin: 0 auto;
+}
+#container .secend-container-address .body .address-user,
+#container .secend-container-address .body .address-phone,
+#container .secend-container-address .body .address-detail
+{
+    margin-bottom: 20px;
+}
+#container .secend-container-address .body .address-user>span,
+#container .secend-container-address .body .address-phone>span,
+#container .secend-container-address .body .address-detail>span
+{
+    font-size: 12px;
+    color:#333;
+}
+#container .secend-container-address .body .address-user>strong,
+#container .secend-container-address .body .address-phone>strong,
+#container .secend-container-address .body .address-detail>strong
+{
+    color:#FF1177;
+    font-size: 12px;
+}
+#container .secend-container-address .body .address-user>input,
+#container .secend-container-address .body .address-phone>input,
+#container .secend-container-address .body .address-detail #province,
+#container .secend-container-address .body .address-detail #city,
+#container .secend-container-address .body .address-detail #area,
+#container .secend-container-address .body .address-detail #town
+{
+    width: 203px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #b2b2b2;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding-left: 5px;
+}
+#container .secend-container-address .body .address-detail #province,
+#container .secend-container-address .body .address-detail #city,
+#container .secend-container-address .body .address-detail #area,
+#container .secend-container-address .body .address-detail #town
+{
+    width: 150px;
+}

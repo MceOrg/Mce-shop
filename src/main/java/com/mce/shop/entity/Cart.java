@@ -20,14 +20,12 @@ public class Cart implements Serializable {
 
     private Date updateTime;
 
+    private ShoesDetail shoesDetail;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getCartId() {
         return cartId;
-    }
-
-    public void setCartId(Integer cartId) {
-        this.cartId = cartId;
     }
 
     public Integer getCustId() {
@@ -70,6 +68,18 @@ public class Cart implements Serializable {
         this.updateTime = updateTime;
     }
 
+    public ShoesDetail getShoesDetail() {
+        return shoesDetail;
+    }
+
+    public void setShoesDetail(ShoesDetail shoesDetail) {
+        this.shoesDetail = shoesDetail;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -105,18 +115,14 @@ public class Cart implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", cartId=").append(cartId);
-        sb.append(", custId=").append(custId);
-        sb.append(", shoesDetailId=").append(shoesDetailId);
-        sb.append(", quality=").append(quality);
-        sb.append(", addTime=").append(addTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+        return "Cart{" +
+                "cartId=" + cartId +
+                ", custId=" + custId +
+                ", shoesDetailId=" + shoesDetailId +
+                ", quality='" + quality + '\'' +
+                ", addTime=" + addTime +
+                ", updateTime=" + updateTime +
+                ", shoesDetail=" + shoesDetail +
+                '}';
     }
 }

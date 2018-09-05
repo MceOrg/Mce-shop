@@ -20,11 +20,12 @@
     cust_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from receive_address
     where address_id = #{addressId,jdbcType=INTEGER}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from receive_address
     where address_id = #{addressId,jdbcType=INTEGER}
@@ -163,5 +164,37 @@
       is_default_address = #{isDefaultAddress,jdbcType=INTEGER},
       cust_id = #{custId,jdbcType=INTEGER}
     where address_id = #{addressId,jdbcType=INTEGER}
+  </update>
+
+  <select id="queryAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from receive_address
+    where cust_id = #{custId}
+  </select>
+  <delete id="delete">
+    delete from receive_address
+    where address_id = #{addressId} or cust_id = #{custId}
+  </delete>
+  <update id="update">
+    update receive_address
+    set address_province = #{addressProvince,jdbcType=VARCHAR},
+      address_city = #{addressCity,jdbcType=VARCHAR},
+      address_area = #{addressArea,jdbcType=VARCHAR},
+      address_street = #{addressStreet,jdbcType=VARCHAR},
+      address_detail = #{addressDetail,jdbcType=VARCHAR},
+      address_post_code = #{addressPostCode,jdbcType=INTEGER},
+      address_recipient_name = #{addressRecipientName,jdbcType=VARCHAR},
+      address_recipient_telno = #{addressRecipientTelno,jdbcType=BIGINT},
+      is_default_address = #{isDefaultAddress,jdbcType=INTEGER},
+      cust_id = #{custId,jdbcType=INTEGER}
+    where address_id = #{addressId} and cust_id = #{custId}
+  </update>
+
+  <update id="updateDefaultAddress">
+    update receive_address
+    set
+    is_default_address = 0
+    where address_id = #{addressId} and cust_id = #{custId}
   </update>
 </mapper>

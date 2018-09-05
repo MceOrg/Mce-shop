@@ -21,6 +21,8 @@ public class ShoesDetail implements Serializable {
 
     private Integer status;
 
+    private ShoesSize shoesSize;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getShoesDetailId() {

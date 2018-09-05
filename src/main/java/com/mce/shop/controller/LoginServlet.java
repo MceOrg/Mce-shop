@@ -1,5 +1,6 @@
 package com.mce.shop.controller;
-
+import com.mce.shop.entity.Customer;
+import com.mce.shop.service.CustLoginService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,5 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }
