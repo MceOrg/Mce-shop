@@ -1,0 +1,259 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+@font-face {
+	font-family: Liana; /*这里是说明调用来的字体名字*/
+	src: url("../font/liana.ttf");/*这里是字体文件路径*/
+}
+@-webkit-keyframes Glow {
+	from {
+		text-shadow: 0 0 10px #fff,
+		0 0 20px #fff,
+		0 0 30px #fff,
+		0 0 40px #8470FF,
+		0 0 70px #FF1177,
+		0 0 80px #8470FF,
+		0 0 100px #FF1177,
+		0 0 150px #8470FF;
+	}
+	to {
+		text-shadow: 0 0 5px #fff,
+		0 0 10px #fff,
+		0 0 15px #fff,
+		0 0 20px #8470FF,
+		0 0 35px #8470FF,
+		0 0 40px #FF1177,
+		0 0 50px #8470FF,
+		0 0 75px #FF1177;
+	}
+}
+@keyframes Glow {
+	from {
+		text-shadow: 0 0 10px #fff,
+		0 0 20px #fff,
+		0 0 30px #fff,
+		0 0 40px #FF1177,
+		0 0 70px #8470FF,
+		0 0 80px #FF1177,
+		0 0 100px #8470FF,
+		0 0 150px #8470FF;
+	}
+	to {
+		text-shadow: 0 0 5px #fff,
+		0 0 10px #fff,
+		0 0 15px #fff,
+		0 0 20px #8470FF,
+		0 0 35px #FF1177,
+		0 0 40px #8470FF,
+		0 0 50px #8470FF,
+		0 0 75px #FF1177;
+	}
+}
+#header-title{
+	position:absolute;
+	width:100%;
+	text-align: center;
+	background: black;
+}
+
+#header-title a{
+	display: block;
+	font-size: 1.5em;
+	width: 100%;
+	color: rgba(106, 90, 205,0.8);
+	font-weight: bold;
+	line-height: 80px;
+	font-family:Iceland;
+	font-size:60px;
+	margin: 0 auto;
+	color: #fff;
+	-webkit-animation: Glow 1.5s ease infinite alternate;
+	animation: Glow 1.5s ease infinite alternate;
+}
+#foot-title{
+	position:absolute;
+	width:100%;
+	top: 659px;
+	bottom: 0;
+	text-align: center;
+	background: black;
+	color: white;
+}
+#foot-title>span{
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 8px;
+	line-height: 16px;
+	text-align: center;
+	font-size: 12px;
+	color: silver;
+}
+
+#foot-title .container {
+	width: 100%;
+	height: 80px;
+}
+#foot-title .container p {
+	font-family: Liana;
+	text-align: center;
+	line-height: 150px;
+	color: white;
+	font-weight: bold;
+	font-size:46px;
+	-webkit-transition: all 1.5s ease;
+	transition: all 1.5s ease;
+}
+#foot-title .container p:hover {
+	color: #fff;
+	-webkit-animation: Glow 1.5s ease infinite alternate;
+	animation: Glow 1.5s ease infinite alternate;
+
+}
+#bg-wrap{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:-1;
+	left:0;
+	top:0;
+	background:url("../img/bg.jpg") no-repeat center 80px;
+
+
+}
+
+#login_wrap{
+	width: 360px;
+	height: 400px;
+	position: fixed;
+	top: 200px;
+	right:200px;
+	font-family: "微软雅黑";
+	color:#3c3c3c ;
+	background: rgba(220,220,220,0.8);
+}
+#login_wrap #title{
+	height: 50px;
+	border-bottom: 1px solid #e0e0e0;
+	text-align: center;
+	line-height: 50px;
+	font-size: 18px;
+	font-weight: 700;
+}
+#login_wrap #body{
+	margin: 0 auto;
+	width: 300px;	
+}
+#login_wrap #body .tip {
+	font-size: 12px;
+	color: #666;
+	position: relative;
+	min-height: 19px;
+	max-height: 36px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	line-height: 1.5;
+}
+#login_wrap #body{
+	margin-top: 40px;
+}
+#login_wrap #body .tip .text {
+	color: #f64a4a;
+	display: none;
+}
+#login_wrap #body #username_tip #username ,
+#login_wrap #body #password_tip #password {
+	width: 248px;
+	height: 32px;
+	line-height: 32px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #b2b2b2;
+	border-radius: 3px;
+	padding: 6px 10px;
+	padding-left: 40px;
+}
+#username_wrap,
+#password_wrap{
+	position: relative;
+}
+#login_wrap #body #username_logo,
+#login_wrap #body #password_logo {
+	display: inline-block;
+	position: absolute;
+	top: 13px;
+	left: 11px;
+	z-index: 1;
+	background:url("../img/sprites-hash-701a8168.png");
+	width: 20px;
+	height: 20px;
+}
+
+#login_wrap #body #username_logo{
+	background-position:-460px -161px;
+}
+#login_wrap #body #password_logo{
+	background-position:-388px -161px;
+}
+#login_wrap #body #remb {
+	font-size: 12px;
+}
+#login_wrap #body #remb #rememberpwd{
+	margin-right: 5px;
+}
+#login_wrap #body #remb>a{
+	float: right;
+	color: black;
+}
+#login_wrap #body #login{
+	display: inline-block;
+	font-family: "\5FAE\8F6F\96C5\9ED1", Arial, tahoma, sans-serif;
+	font-size: 16px;
+	width: 298px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 4px;
+	background-color: black;
+	border: 1px solid black;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+	margin-top: 20px;
+}
+#login_wrap #body #register{
+	display: inline-block;
+	font-family: "\5FAE\8F6F\96C5\9ED1", Arial, tahoma, sans-serif;
+	font-size: 16px;
+	width: 298px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 4px;
+	background-color: silver;
+	border: 1px solid silver;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+	margin-top: 20px;
+}
+#login_wrap #body #register:hover{
+	background-color: black;
+	border: 1px solid black;
+}

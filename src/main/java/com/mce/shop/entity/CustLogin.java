@@ -98,6 +98,19 @@ public class CustLogin implements Serializable {
         this.custId = custId;
     }
 
+    public CustLogin(Integer loginId, String loginName, String loginPwd, Date loginTime, String loginIp, Integer loginStatus, Integer custId) {
+        this.loginId = loginId;
+        this.loginName = loginName;
+        this.loginPwd = loginPwd;
+        this.loginTime = loginTime;
+        this.loginIp = loginIp;
+        this.loginStatus = loginStatus;
+        this.custId = custId;
+    }
+
+    public CustLogin() {
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {

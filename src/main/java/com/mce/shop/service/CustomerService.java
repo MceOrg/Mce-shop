@@ -1,11 +1,8 @@
-package com.mce.shop.dao;
+package com.mce.shop.service;
 
 import com.mce.shop.entity.Customer;
 
-/**
- * CustomerDAO继承基类
- */
-public interface CustomerDAO extends MyBatisBaseDao<Customer, Integer> {
+public interface CustomerService {
     /**
      判断手机号是否已经注册过
      @param telno 验证手机号码是否已经注册
@@ -47,5 +44,5 @@ public interface CustomerDAO extends MyBatisBaseDao<Customer, Integer> {
      @param customer 要修改的用户信息
      @return 返回受影响的行数
      */
-    public  int update(Customer customer);
+    public  int updateCustInfo(Customer customer);
 }
