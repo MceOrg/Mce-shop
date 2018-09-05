@@ -1,7 +1,6 @@
 package com.mce.shop.controller;
 import com.mce.shop.entity.Customer;
 import com.mce.shop.service.CustLoginService;
-import com.mce.shop.service.serviceImpl.CustLoginServiceImpl;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
