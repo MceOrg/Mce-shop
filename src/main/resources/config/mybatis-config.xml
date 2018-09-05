@@ -43,7 +43,6 @@
     <!-- 导入mapper -->
     <!-- mapper 可以有很多,一个实体类对应一个mapper 因为要对这个实体类进行操作 -->
     <mappers>
-       <!-- <mapper resource="main/resources/com/mce/shop/dao/ShoesColorDAO.xml"/>-->
         <package name="com.mce.shop.dao"/>
     </mappers>
 
