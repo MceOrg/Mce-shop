@@ -11,7 +11,8 @@ public class ShoesSize implements Serializable {
 
     private Float shoesSize;
 
-    private Boolean shoesState;
+    private Integer shoesState;
+
 
     private static final long serialVersionUID = 1L;
 
@@ -31,11 +32,11 @@ public class ShoesSize implements Serializable {
         this.shoesSize = shoesSize;
     }
 
-    public Boolean getShoesState() {
+    public Integer getShoesState() {
         return shoesState;
     }
 
-    public void setShoesState(Boolean shoesState) {
+    public void setShoesState(Integer shoesState) {
         this.shoesState = shoesState;
     }
 
@@ -71,11 +72,9 @@ public class ShoesSize implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", shoesSizeId=").append(shoesSizeId);
+        sb.append(" shoesSizeId=").append(shoesSizeId);
         sb.append(", shoesSize=").append(shoesSize);
         sb.append(", shoesState=").append(shoesState);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
     }
