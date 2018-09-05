@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
     <servlet>
         <servlet-name>ServletTest</servlet-name>
         <servlet-class>com.mce.shop.service.ServletTest</servlet-class>
@@ -16,6 +17,23 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.mce.shop.controller.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReceiveAddressServlet</servlet-name>
+        <servlet-class>com.mce.shop.controller.ReceiveAddressServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReceiveAddressUiServlet</servlet-name>
+        <servlet-class>com.mce.shop.ui.ReceiveAddressUiServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReceiveAddressUiServlet</servlet-name>
+        <url-pattern>/receiveAddressUi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReceiveAddressServlet</servlet-name>
+        <url-pattern>/userAddress</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

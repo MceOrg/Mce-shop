@@ -18,7 +18,7 @@
     <div id="login_wrap">
         <div id="title">账户登录</div>
         <div id="body">
-            <form action="login" method="post">
+            <form action="/login" method="post">
                 <div id="username_tip" class="clearfix">
                     <div id="username_wrap">
                         <input type="text" name="username" id="username" value="" placeholder="手机号/用户名/邮箱" />

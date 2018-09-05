@@ -16,6 +16,7 @@
     用户名:<input type="text" name="userName">
     密码: <input type="password" name="userPsw">
     <input type="submit" value="登录">
+    <a href="/userAddress">查询用户所有地址</a>
 
 </form>
 </body>
