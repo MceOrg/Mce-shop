@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
@@ -17,13 +18,14 @@
             <form action="" id="registerform">
                 <div id="tel_tip" class="clearfix">
                     <div id="tel_wrap">
-                        <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onblur="showTelTips()"  /><span id="icon_tel_succ_err"></span>
+                        <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onchange="showTelTips()"/><span id="icon_tel_succ_err"></span>
                         <span id="tel_logo"></span>
                     </div>
                     <div class="tip">
                         <span class="text" id="tip2tel1">手机号不能为空</span>
                         <span class="text" id="tip2tel2">请填写正确的手机号</span>
                         <span class="text" id="tip2tel3">该手机号已被注册</span>
+                        <span class="text" id="tip2tel4">该手机号可用</span>
                     </div>
                 </div>
                 <div id="validate_tip">
@@ -81,11 +83,12 @@
 </div>
 <div id="foot-title">
     <div class="container">
-        <p>Mce,Play difference</p>
+        <p id="flash-font">Mce,Play difference</p>
     </div>
     <span>Copyright © 2018-2025 江南名鞋商城 Mce.com 保留一切权利。</br>客服热线：400-123-8888</span>
 </div>
 </body>
+<script type="text/javascript" src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="../../resources/js/register.js"></script>
 </html>
 
