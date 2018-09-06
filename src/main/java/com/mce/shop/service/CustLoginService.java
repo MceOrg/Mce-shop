@@ -2,7 +2,6 @@ package com.mce.shop.service;
 
 import com.mce.shop.entity.CustLogin;
 import com.mce.shop.entity.Customer;
-import org.apache.ibatis.annotations.Param;
 
 public interface CustLoginService {
     /**

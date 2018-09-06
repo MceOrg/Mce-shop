@@ -7,8 +7,6 @@ import com.mce.shop.service.CustLoginService;
 import com.mce.shop.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 
-import java.util.Date;
-
 public class CustLoginServiceImpl implements CustLoginService {
     @Override
     public Customer checkTelnoAndPwd(String telno, String password) {

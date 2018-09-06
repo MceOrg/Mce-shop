@@ -6,8 +6,6 @@ import com.mce.shop.service.CustomerService;
 import com.mce.shop.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 
-import java.util.Date;
-
 public class CustomerServiceImpl implements CustomerService {
     @Override
     public String isValidTelno(String telno) {
