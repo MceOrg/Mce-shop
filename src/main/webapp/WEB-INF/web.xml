@@ -36,6 +36,15 @@
         <servlet-name>QueryShoesByIdUiServlet</servlet-name>
         <servlet-class>com.mce.shop.ui.QueryShoesByIdUiServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CookieTestServlet</servlet-name>
+        <servlet-class>com.mce.shop.controller.CookieTestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CookieTestServlet</servlet-name>
+        <url-pattern>/cookieTest</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>QueryShoesByIdUiServlet</servlet-name>

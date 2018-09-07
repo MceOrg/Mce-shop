@@ -18,7 +18,10 @@
     <input type="submit" value="登录">
     <a href="/ReceiveAddress">查询所有收件地址</a>
     <a href="/shoes">按Id查询鞋子</a>
-
+</form>
+<form action="/cookieTest" method="post">
+    <input type="text" name="englishName">
+    <input type="submit" value="提交Cookie">
 </form>
 </body>
 </html>
