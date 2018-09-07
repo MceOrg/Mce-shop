@@ -8,7 +8,7 @@ var tip2tel1=document.getElementById("tip2tel1");
 var tip2tel2=document.getElementById("tip2tel2");
 var tip2tel3=document.getElementById("tip2tel3");
 var tip2tel4=document.getElementById("tip2tel4");
-
+var form=document.getElementById("registerform");
 var timer=null;
 var flag=true;
 
@@ -24,7 +24,6 @@ var flag=true;
                 $("#flash-font").css({
                     "font-family": "Liana",
                     "text-align": "center",
-                    "line-height": "150px",
                     "color": "white",
                     "font-weight": "bold",
                     "font-size":"46px",
@@ -34,7 +33,7 @@ var flag=true;
                 })
             }
             flag=!flag;
-        },1000);
+        },1200);
     }
 
 var tip2pwd1=document.getElementById("tip2pwd1");
@@ -127,6 +126,9 @@ var reg2pwd=/^[a-zA-Z]\w{5,19}$/;
 	function finalVal() {
 		if(showTelTips()&&showPwdTips()&&valPwd()&&acceptClause()){
 			formSubmit.disabled=false;
+			form.action="/customer?type=4";
+			form.submit();
+
 		}else {
             formSubmit.disabled=true;
 		}

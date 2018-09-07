@@ -1,30 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <base href="<%=basePath%>">
     <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" href="../../resources/css/register.css" />
+    <link rel="stylesheet" href="{pageContext.request.contextPath}/../../resources/css/register.css" />
+    <link rel="stylesheet" href="{pageContext.request.contextPath}/../../resources/css/buttons.css" />
 </head>
 <body>
 <div id="header-title"><a href="">MCE</a></div>
 <div id="bg-wrap">
+    <img src="{pageContext.request.contextPath}/../../resources/img/bg.jpg">
     <div id="register_wrap">
         <div id="title">
             <span>会员注册</span>
             <div>已注册可<a href="customer?type=3">直接登录</a></div>
         </div>
         <div id="body">
-            <form action="/customer?type=4" id="registerform" method="post">
+            <form action="" id="registerform" method="post">
                 <div id="tel_tip" class="clearfix">
                     <div id="tel_wrap">
-                        <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onchange="showTelTips()"/><span id="icon_tel_succ_err"></span>
+                        <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onblur="showTelTips()"/><span id="icon_tel_succ_err"></span>
                         <span id="tel_logo"></span>
                     </div>
                     <div class="tip">
@@ -80,7 +76,7 @@
                     </div>
                 </div>
 
-                <button id="register_sub" type="submit" onclick="finalVal()">
+                <button id="register_sub" class="button button-large button-plain button-borderless" type="submit" onclick="finalVal()">
                     立即注册
                 </button>
             </form>
@@ -94,7 +90,7 @@
     <span>Copyright © 2018-2025 江南名鞋商城 Mce.com 保留一切权利。</br>客服热线：400-123-8888</span>
 </div>
 </body>
-<script type="text/javascript" src="../../resources/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="../../resources/js/register.js"></script>
+<script type="text/javascript" src="{pageContext.request.contextPath}/../../resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="{pageContext.request.contextPath}/../../resources/js/register.js"></script>
 </html>
 
