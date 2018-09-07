@@ -34,7 +34,7 @@ var flag=true;
                 })
             }
             flag=!flag;
-        },500);
+        },1000);
     }
 
 var tip2pwd1=document.getElementById("tip2pwd1");
@@ -135,7 +135,7 @@ var reg2pwd=/^[a-zA-Z]\w{5,19}$/;
     function isValTel() {
         $.ajax({
             async:false,
-            url:"isvaltel",
+            url:"customer?type=0",
             type:"post",
             dataType:"text",
             data:{

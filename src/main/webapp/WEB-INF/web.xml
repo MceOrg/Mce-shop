@@ -6,15 +6,6 @@
 
 
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.mce.shop.controller.LoginServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/login</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>LoginUiServlet</servlet-name>
         <servlet-class>com.mce.shop.ui.LoginUiServlet</servlet-class>
     </servlet>
@@ -23,17 +14,41 @@
         <servlet-name>LoginUiServlet</servlet-name>
         <url-pattern>/goLogin</url-pattern>
     </servlet-mapping>
+
+    
+
+    
     <servlet>
-        <servlet-name>IsValTel</servlet-name>
-        <servlet-class>com.mce.shop.controller.IsValTelServlet</servlet-class>
+        <servlet-name>Customer</servlet-name>
+        <servlet-class>com.mce.shop.controller.CustomerServlet</servlet-class>
     </servlet>
+    
     <servlet-mapping>
-        <servlet-name>IsValTel</servlet-name>
-        <url-pattern>/isvaltel</url-pattern>
+        <servlet-name>Customer</servlet-name>
+        <url-pattern>/customer</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
-      <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
+      <welcome-file>/WEB-INF/views/login.jsp</welcome-file>
     </welcome-file-list>
+    
+    
+    
+    
+    <servlet>
+        <servlet-name>shoes</servlet-name>
+        <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>shoes</servlet-name>
+        <url-pattern>/shoes</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    
+    
+    
 
 </web-app>

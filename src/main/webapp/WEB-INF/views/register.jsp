@@ -1,7 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
+    <base href="<%=basePath%>">
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="../../resources/css/register.css" />
@@ -12,10 +18,10 @@
     <div id="register_wrap">
         <div id="title">
             <span>会员注册</span>
-            <div>已注册可<a href="login.html">直接登录</a></div>
+            <div>已注册可<a href="customer?type=3">直接登录</a></div>
         </div>
         <div id="body">
-            <form action="" id="registerform">
+            <form action="/customer?type=4" id="registerform" method="post">
                 <div id="tel_tip" class="clearfix">
                     <div id="tel_wrap">
                         <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onchange="showTelTips()"/><span id="icon_tel_succ_err"></span>
@@ -40,7 +46,7 @@
                 </div>
                 <div id="password_tip">
                     <div id="pwd_wrap">
-                        <input type="password" name="password" id="password" value="" placeholder="密码由6-20位字母，数字和符号组合" onblur="showPwdTips()" />
+                        <input type="password" name="password" id="password" value="" placeholder="密码由6-20位字母，数字组合" onblur="showPwdTips()" />
                         <span id="pwd_logo"></span>
                     </div>
                     <div class="tip">

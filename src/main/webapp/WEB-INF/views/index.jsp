@@ -1,16 +1,28 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: myaccount
-  Date: 2018/9/5
-  Time: 下午6:16
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.mce.shop.entity.Customer" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
+    <base href="<%=basePath%>">
     <title>Title</title>
 </head>
 <body>
-<a href="goLogin">login</a>
+
+
+<%
+  Customer customer= (Customer) request.getAttribute("customer");
+%>
+
+客户id:<%=customer.getCustId()%><br>
+顾客姓名:<%=customer.getCustName()%><br>
+顾客年龄:<%=customer.getCustAge()%><br>
+顾客电话:<%=customer.getCustPhone()%>
+
+
 </body>
 </html>

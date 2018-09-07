@@ -28,6 +28,12 @@ public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Customer(Integer custId, String custPwd, String custPhone) {
+        this.custId = custId;
+        this.custPwd = custPwd;
+        this.custPhone = custPhone;
+    }
+
     public Customer(Integer custId, String custName, String custPwd, Integer custAge, String custPhone, String custEmail, Date custCreateTime, Date custUpdateTime, String custProfile) {
         this.custId = custId;
         this.custName = custName;
