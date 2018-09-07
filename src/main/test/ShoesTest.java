@@ -11,12 +11,12 @@ public class ShoesTest {
     public void testSelect(){
         SqlSession sqlSession = MybatisUtil.getSession();
         ShoesDAO mapper = sqlSession.getMapper(ShoesDAO.class);
-       // List<Shoes> shoes = mapper.queryAll();
+        List<Shoes> shoes = mapper.queryAll();
        // List<Shoes> shoes = mapper.queryByGender((byte) 2);
         // List<Shoes> shoes = mapper.queryByPrice(500f,1500f);
         //List<Shoes> shoes = mapper.queryByCategory(1);
         //List<Shoes> shoes = mapper.queryByName("A")
-        List<Shoes> shoes = mapper.queryBySize(35f);
+        //List<Shoes> shoes = mapper.queryBySize(35f);
 
         System.out.println(shoes);
         MybatisUtil.closeSession();

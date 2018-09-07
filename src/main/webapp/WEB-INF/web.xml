@@ -30,4 +30,16 @@
         <servlet-name>ServletTest</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
+
+    <!--商品的请求处理 -->
+    <servlet>
+    <servlet-name>shoesServlet</servlet-name>
+    <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+    <servlet-name>shoesServlet</servlet-name>
+    <url-pattern>/shoes</url-pattern>
+    </servlet-mapping>
+
 </web-app>
