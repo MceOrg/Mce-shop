@@ -18,8 +18,8 @@ public class ReceiveAddressServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ReceiveAddressService service = new ReceiveAddressServiceImpl();
-        List<ReceiveAddress> receiveAddressList = service.queryAll(1);
-        receiveAddressList.forEach(System.out::println);
+        List<ReceiveAddress> addresses = service.queryAllUserAddress(1);
+        addresses.forEach(System.out::println);
         request.getRequestDispatcher("/receiveAddressUi").forward(request,response);
     }
 }

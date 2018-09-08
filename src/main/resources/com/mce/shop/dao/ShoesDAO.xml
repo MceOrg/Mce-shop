@@ -29,6 +29,13 @@
     shoes_onsale_time, shoes_offsale_time, shoes_sale_count, shoes_gender, shoes_status, 
     category_id
   </sql>
+  <!-- 根据鞋子的ID查询鞋子 -->
+  <select id="queryById" resultMap="BaseResultMap">
+    select shoes_id, shoes_number, shoes_name, shoes_price_sale, shoes_discount, shoes_desc,
+    shoes_onsale_time, shoes_offsale_time, shoes_sale_count, shoes_gender, shoes_status,
+    category_id
+    from shoes where shoes_id = #{shoesId}
+  </select>
   <!--返回所有鞋子,默认按照鞋的销量降序排序-->
   <select id="queryAll"  resultMap="BaseResultMap">
     select shoes_id, shoes_number, shoes_name, shoes_price_sale, shoes_discount, shoes_desc,

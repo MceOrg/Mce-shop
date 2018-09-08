@@ -1,27 +1,34 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: myaccount
-  Date: 2018/9/4
-  Time: 下午6:35
-  To change this template use File | Settings | File Templates.
---%>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../../resources/css/login.css"/>
+    <link rel="stylesheet" href="{pageContext.request.contextPath}/../../resources/css/login.css">
 </head>
 <body>
 <div id="header-title"><a href="">MCE</a></div>
-<div id="bg-wrap">
-    <div id="login_wrap">
+<div id="bg-wrap" class="clearfix">
+    <img src="../../resources/img/bg.jpg">
+        <div id="login_wrap">
         <div id="title">账户登录</div>
         <div id="body">
-            <form action="/login" method="post">
+            <form action="customer?type=2" method="post">
                 <div id="username_tip" class="clearfix">
                     <div id="username_wrap">
-                        <input type="text" name="username" id="username" value="" placeholder="手机号/用户名/邮箱" />
+                        <input type="text" name="username" id="username" <%
+                        if(request.getCookies()!=null){
+                            for(Cookie cookie:request.getCookies()){
+                                if(cookie.getName().equals("accountname")){
+                                    %>
+                        value="<%=cookie.getValue()%>"
+                               <%
+                                }
+                            }
+                        }
+
+                        %>" placeholder="手机号/用户名/邮箱" />
                         <span id="username_logo"></span>
                     </div>
                     <div class="tip" >
@@ -38,23 +45,41 @@
                     </div>
                 </div>
                 <div id="remb">
-                    <input type="checkbox" name="rememberpwd" id="rememberpwd" value="" />
+
+                    <input name="rem" type="checkbox"
+                <%
+
+                if(request.getCookies()!=null){
+                            for(Cookie cookie:request.getCookies()){
+                                if(cookie.getName().equals("checkbox")){
+                                    %>
+                        value="<%=cookie.getValue()%>"
+                    <%
+                                }
+                            }
+                        }
+                %> id="rememberpwd">
+
+                    <input name="rem" type="hidden" value="false">
+
                     <label for="rememberpwd">记住用户名</label>
                     <a href="javascript:;">忘记密码</a>
                 </div>
+                <input type="hidden" name="token" value="<%=session.getAttribute("token") %>">
                 <button type="submit" id="login">登录</button>
             </form>
-            <a  id="register" href="register.html">免费注册</a>
+            <a  id="register" href="customer?type=1">免费注册</a>
         </div>
 
     </div>
 </div>
 <div id="foot-title">
     <div class="container">
-        <p>Mce,Play difference</p>
+        <p id="flash-font">Mce,Play difference</p>
     </div>
     <span>Copyright © 2018-2025 江南名鞋商城 Mce.com 保留一切权利。</br>客服热线：400-123-8888</span>
 </div>
 </body>
-<script src="../../resources/js/login.js"></script>
+<script src="{pageContext.request.contextPath}/../../resources/js/jquery-3.3.1.min.js"></script>
+<script src="{pageContext.request.contextPath}/../../resources/js/login.js"></script>
 </html>
