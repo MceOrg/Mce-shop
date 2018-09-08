@@ -55,8 +55,6 @@
         <servlet-name>Customer</servlet-name>
         <url-pattern>/customer</url-pattern>
     </servlet-mapping>
-
-    <welcome-file-list>
       <welcome-file>/WEB-INF/views/mainPage.jsp</welcome-file>
     </welcome-file-list>
     

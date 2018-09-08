@@ -8,4 +8,10 @@ public interface ShoesService {
     public List<Shoes> getAllShoes();
 
     public Shoes getShoesById(Integer id);
+
+    public List<Shoes> getByName(String name);
+
+    public List<Shoes> getByPrice(Float minPrice,Float maxPrice);
+
+    public List<Shoes> getByGender(Byte gender);
 }

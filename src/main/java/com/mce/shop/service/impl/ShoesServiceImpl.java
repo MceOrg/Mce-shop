@@ -1,20 +1,23 @@
 package com.mce.shop.service.impl;
 
+import com.mce.shop.dao.ShoesDAO;
 import com.mce.shop.entity.Shoes;
 import com.mce.shop.service.ShoesService;
+import com.mce.shop.util.MybatisUtil;
+import org.apache.ibatis.session.SqlSession;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ShoesServiceImpl implements ShoesService {
     List<Shoes> shoesList=new ArrayList<>();
     @Override
     public List<Shoes> getAllShoes() {
-        shoesList.add(new Shoes(1,"Nike AirMax",699F));
-        shoesList.add(new Shoes(2,"Nike AirJordan",1699F));
-        shoesList.add(new Shoes(3,"Nike FreeFoot",899F));
-        shoesList.add(new Shoes(4,"Nike AirForce1",599F));
-        shoesList.add(new Shoes(5,"Nike Boot",999F));
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        shoesList = dao.queryAll();
+        MybatisUtil.closeSession();
         return shoesList;
     }
 
@@ -26,5 +29,32 @@ public class ShoesServiceImpl implements ShoesService {
             }
         }
         return null;
+    }
+
+    @Override
+    public List<Shoes> getByName(String name) {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        shoesList = dao.queryByName(name);
+        MybatisUtil.closeSession();
+        return shoesList;
+    }
+
+    @Override
+    public List<Shoes> getByPrice(Float minPrice, Float maxPrice) {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        shoesList = dao.queryByPrice(minPrice,maxPrice);
+        MybatisUtil.closeSession();
+        return shoesList;
+    }
+
+    @Override
+    public List<Shoes> getByGender(Byte gender) {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        shoesList = dao.queryByGender(gender);
+        MybatisUtil.closeSession();
+        return shoesList;
     }
 }
