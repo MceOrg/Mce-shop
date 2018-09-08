@@ -88,7 +88,7 @@ a{
 
 .footer-top-container .icon{
     display: inline-block;
-    background-image: url("../imgs/adidas.png");
+    background-image: url("../../resources/img/adidas.png");
 }
 
 .footer-top-container .contact-us-service{ /*联系我们的icon*/
@@ -168,7 +168,7 @@ a{
 }
 .icon{
     display: inline-block;
-    background-image: url("../imgs/adidas.png");
+    background-image: url("../../resources/img/adidas.png");
 }
 .icon-WeiBo{
     width: 30px;
@@ -270,7 +270,7 @@ a{
 }
 .icon{
     display: inline-block;
-    background-image: url("../imgs/adidas.png");
+    background-image: url("../../resources/img/adidas.png");
 }
 .icon-china{
     width: 14px;
@@ -290,7 +290,7 @@ a{
 
 .icon{
     display: inline-block;
-    background-image: url("../imgs/adidas.png");
+    background-image: url("../img/adidas.png");
 }
 .icon-payZFB{
     width: 63px;
