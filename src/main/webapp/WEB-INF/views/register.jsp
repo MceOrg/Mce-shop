@@ -20,7 +20,7 @@
             <form action="" id="registerform" method="post">
                 <div id="tel_tip" class="clearfix">
                     <div id="tel_wrap">
-                        <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onblur="showTelTips()"/><span id="icon_tel_succ_err"></span>
+                        <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onblur="showTelTips()"/>
                         <span id="tel_logo"></span>
                     </div>
                     <div class="tip">
@@ -32,8 +32,9 @@
                 </div>
                 <div id="validate_tip">
                     <div id="validate_wrap">
-                        <input type="text" name="validate" id="validate" value="" placeholder="请输入验证码" />
-                        <a href="javascript:;" id="getvalidate">获取验证码</a>
+                        <input type="text" name="validate" id="validate"
+                               class="reg_input" onblur="lostInput()" />
+                        <a href="javascript:getRegCode();" class="reg_phone" id="getvalidate">获取验证码</a>
                         <span id="val_logo"></span>
                     </div>
                     <div class="tip">

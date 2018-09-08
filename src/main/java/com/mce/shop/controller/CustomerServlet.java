@@ -64,11 +64,8 @@ public class CustomerServlet extends HttpServlet {
 //        }
         req.getSession().removeAttribute("token");
         String username=req.getParameter("username");
-        System.out.println(username);
         String password=req.getParameter("password");
-        System.out.println(password);
         String[] rems=req.getParameterValues("rem");
-        System.out.println(rems.length);
         Customer customer=null;
         CustLoginService service=new CustLoginServiceImpl();
         String REGEX_MOBILE = "^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$";
