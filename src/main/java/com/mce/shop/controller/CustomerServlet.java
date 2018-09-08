@@ -103,7 +103,7 @@ public class CustomerServlet extends HttpServlet {
             }
             HttpSession session=req.getSession();
             session.setAttribute("loginCustomer",customer);
-            req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
+            req.getRequestDispatcher("/WEB-INF/views/mainPage.jsp").forward(req,resp);
         }else {
             req.setAttribute("errorMsg","用户名或密码错误");
             req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
