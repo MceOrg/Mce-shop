@@ -11,12 +11,32 @@
         <filter-name>testFilter</filter-name>
         <url-pattern>/testFilter</url-pattern>
     </filter-mapping>
-
-
     <servlet>
         <servlet-name>LoginUiServlet</servlet-name>
         <servlet-class>com.mce.shop.ui.LoginUiServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.mce.shop.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReceiveAddressServlet</servlet-name>
+        <servlet-class>com.mce.shop.controller.ReceiveAddressServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReceiveAddressUiServlet</servlet-name>
+        <servlet-class>com.mce.shop.ui.ReceiveAddressUiServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReceiveAddressUiServlet</servlet-name>
+        <url-pattern>/receiveAddressUi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReceiveAddressServlet</servlet-name>
+        <url-pattern>/userAddress</url-pattern>
+    </servlet-mapping>
+
 
     <servlet-mapping>
         <servlet-name>LoginUiServlet</servlet-name>

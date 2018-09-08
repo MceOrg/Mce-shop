@@ -16,12 +16,8 @@
     用户名:<input type="text" name="userName">
     密码: <input type="password" name="userPsw">
     <input type="submit" value="登录">
-    <a href="/ReceiveAddress">查询所有收件地址</a>
-    <a href="/shoes">按Id查询鞋子</a>
-</form>
-<form action="/cookieTest" method="post">
-    <input type="text" name="englishName">
-    <input type="submit" value="提交Cookie">
+    <a href="/userAddress">查询用户所有地址</a>
+
 </form>
 </body>
 </html>
