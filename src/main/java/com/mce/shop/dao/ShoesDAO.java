@@ -47,4 +47,11 @@ public interface ShoesDAO extends MyBatisBaseDao<Shoes, Integer> {
      @return 返回指定类别中的所有鞋子对象列表
      */
     public  List<Shoes> queryByCategory(Integer categoryId);
+
+    /**
+     * 根据ID查询鞋子
+     * @param id 鞋子的ID
+     * @return 鞋子对象
+     */
+    public Shoes queryById(Integer id);
 }
