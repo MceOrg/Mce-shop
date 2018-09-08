@@ -12,6 +12,8 @@ public class LoginUiServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request,response);
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        request.getRequestDispatcher("/WEB-INF/views/register.jsp").forward(request,response);
     }
 }

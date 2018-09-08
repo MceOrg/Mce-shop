@@ -15,39 +15,69 @@ import java.util.List;
 public class ShoesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Integer type = Integer.parseInt(req.getParameter("type"));
-        switch (type){
-            case 0:
-                getAll(req,resp);
-                break;
-            case 1:getById(req,resp);
-            break;
+        String type=req.getParameter("type");
+        if (type.equals("0")) {
+            getAllShoes(req,resp);
+        }if (type.equals("1")) {
+            getShoesById(req,resp);
         }
-
+        if(type.equals("2")){
+            getShoesByName(req,resp);
+        }
+        if(type.equals("3")){
+            getShoesByPrice(req,resp);
+        }
+        else if(type.equals("4")){
+            getShoesByGender(req,resp);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req, resp);
+        this.doGet(req,resp);
     }
 
-    private void getAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ShoesService service =new ShoesServiceImpl();
-        List<Shoes> shoesList =service.getAll();
+
+
+    private void getAllShoes(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ShoesService shoesService=new ShoesServiceImpl();
+        List<Shoes> shoesList=shoesService.getAllShoes();
         req.setAttribute("shoesList",shoesList);
-        req.getRequestDispatcher("/WEB-INF/views/shoes_list.jsp").forward(req,resp);
-
+        req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
     }
-
-    private void getById(HttpServletRequest req, HttpServletResponse resp){
-        Integer id =Integer.parseInt(req.getParameter("id"));
-        ShoesService service =new ShoesServiceImpl();
-        Shoes shoes = service.getById(id);
-        Cookie cookie = new Cookie("shoes"+id.toString(),id.toString());
-        cookie.setMaxAge(60*5);
+    private void getShoesById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ShoesService shoesService=new ShoesServiceImpl();
+        Integer id=Integer.parseInt(req.getParameter("id"));
+        Shoes shoes=shoesService.getShoesById(id);
+        Cookie cookie=new Cookie("shoes"+id,id.toString());
+        cookie.setMaxAge(60*60*24*7);
         resp.addCookie(cookie);
-        System.out.println("已经浏览该商品");
-
-
     }
+
+    private void getShoesByName(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ShoesService shoesService=new ShoesServiceImpl();
+        String name = req.getParameter("shoesname");
+        List<Shoes> shoesList=shoesService.getByName(name);
+        req.setAttribute("shoesList",shoesList);
+        req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
+    }
+
+    private void getShoesByPrice(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ShoesService shoesService=new ShoesServiceImpl();
+        Float minPrice = Float.parseFloat(req.getParameter("minprice"));
+        Float maxPrice = Float.parseFloat(req.getParameter("maxprice"));
+        List<Shoes> shoesList=shoesService.getByPrice(minPrice,maxPrice);
+        req.setAttribute("shoesList",shoesList);
+        req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
+    }
+    private void getShoesByGender(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ShoesService shoesService=new ShoesServiceImpl();
+        Byte gender =Byte.parseByte(req.getParameter("gender"));
+        List<Shoes> shoesList=shoesService.getByGender(gender);
+        req.setAttribute("shoesList",shoesList);
+        req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
+    }
+
+
+
 }

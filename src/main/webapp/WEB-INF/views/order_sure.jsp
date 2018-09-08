@@ -15,7 +15,7 @@
 <body>
 <div id="head">
     <div id="head-logo">
-        <a href=""><img src="images/logo.png"> </a>
+        <a href=""><img src="../../resources/img/logo.png"> </a>
     </div>
 </div>
 <div id="blank"></div>
@@ -76,19 +76,19 @@
                     <ul>
                         <li>
                             <input name="select-1" type="radio" style="width: 22px;height: 22px">
-                            <img src="images/icon_alipay@2x.png">
+                            <img src="../../resources/img/icon_alipay@2x.png">
                         </li>
                         <li>
                             <input name="select-1"  type="radio" style="width: 22px;height: 22px">
-                            <img src="images/icon_wechat@2x.png">
+                            <img src="../../resources/img/icon_wechat@2x.png">
                         </li>
                         <li>
                             <input name="select-1" type="radio" style="width: 22px;height: 22px">
-                            <img src="images/icon_onlinepayment@2x.png">
+                            <img src="../../resources/img/icon_onlinepayment@2x.png">
                         </li>
                         <li>
                             <input name="select-1" type="radio" style="width: 22px;height: 22px;background-color: white">
-                            <img src="images/icon_cod@2x.png">
+                            <img src="../../resources/img/icon_cod@2x.png">
                         </li>
                     </ul>
                 </div>
@@ -111,7 +111,7 @@
         <div id="goods-box">
             <div class="goods-allDetail">
                 <div class="goods-info">
-                    <img src="images/shoes1-01.jpg">
+                    <img src="../../resources/img/shoes1-01.jpg">
                     <div class="goods-info-1">
                         <p><a href="">SUPERSTAR 经典鞋</a></p>
                         <p>颜色：<span>亮白</span></p>
@@ -130,7 +130,7 @@
             </div>
             <div class="goods-allDetail">
                 <div class="goods-info">
-                    <img src="images/shoes1-01.jpg">
+                    <img src="../../resources/img/shoes1-01.jpg">
                     <div class="goods-info-1">
                         <p><a href="">SUPERSTAR 经典鞋</a></p>
                         <p>颜色：<span>亮白</span></p>
@@ -166,6 +166,125 @@
 
     </div>
 </div>
+
+<!--/**********************bottom*****************************/-->
+<div id="footer-top">
+    <div id="footer-top-container">
+        <ul class="none-sm">
+            <li class="contacted">联系我们</li>
+            <li>
+                <p>
+                    <a href=""><i class="icon icon-contact-us-service"></i> <span> 在线客服</span> 在线客服</a>
+                </p>
+                <p class="remark">(仅支持中文)</p>
+            </li>
+            <li>
+                <p>
+                    <a href=""><i class="icon icon-contact-us-tel"></i><span> 400-999-5999</span></a>
+                </p>
+                <p class="remark">(仅支持中文)</p>
+            </li>
+            <li>
+                <p>
+                    <a href=""><i class="icon icon-contact-us-email"></i><span> service@adidas.com</span></a>
+                </p>
+                <p class="remark">(中英文均支持)</p>
+            </li>
+            <span>9:00 - 21:00</span>
+            </li>
+            <li ><p><a href="">订单追踪</a></p></li>
+        </ul>
+    </div>
+</div>
+<div id="footer-cont">
+    <div class="footer-cont-top">
+        <div class="footer-cont-top1 ">
+            <ul class="">
+                <li class="title">产品</li>
+                <li class=""><a href=""> 鞋类</a></li>
+                <li class=""><a href="" >服装</a></li>
+                <li class=""><a href="" >配件</a></li>
+                <li class=""><a href="" >新品上市</a></li>
+                <li class=""><a href="" >全部折扣</a></li>
+            </ul>
+        </div>
+        <div class="footer-cont-top2">
+            <ul>
+                <li class="title">运动</li>
+                <li class=""><a href="" >跑步</a></li>
+                <li class=""><a href="" >训练</a></li>
+                <li class=""><a href="" >足球</a></li>
+                <li class=""><a href="" >篮球</a></li>
+                <li class=""><a href="" >户外</a></li>
+            </ul>
+        </div>
+        <div class="footer-cont-top3 ">
+            <ul>
+                <li class="title"><a href="" >帮助中心</a></li>
+                <li class=""><a href="" >关于员工</a></li>
+                <li class=""><a href="" >尺码表</a></li>
+                <li class=""><a href="" >adiCLUB会员</a></li>
+                <li class=""><a href="" >门店查询</a></li>
+                <li class=""><a href="" >关于我们</a></li>
+                <li class=""><a href="" >企业社会责任</a></li>
+                <li class=""><a href="" >Confirmed app</a></li>
+            </ul>
+        </div>
+        <div class="footer-cont-top4 ">
+            <ul>
+                <li class="title">网站政策</li>
+                <li class=""><a href="" >使用条款</a></li>
+                <li class=""><a href="" >隐私声明</a></li>
+                <li class=""><a href="" >物流配送规则</a></li>
+                <li class=""><a href="" >退货规则</a></li>
+                <li class=""><a href="" >定制和印制服务条款</a></li>
+                <li class=""><a href="" >adiCLUB会员规则</a></li>
+            </ul>
+        </div>
+        <div class="footer-cont-top5 ">
+            <ul class="footer-share">
+                <li class="title">关注我们</li>
+                <li class="title1"><a href=""><i class="icon icon-sina"></i> </a></li>
+                <li class="title1"><a href=""><i class="icon icon-wechat"></i> </a></li>
+            </ul>
+        </div>
+        <ul class="footer-Payment-method">
+            <li class="title">我们接受下列付款方式：</li>
+            <li><span><i class="icon icon-Payment-method"></i></span></li>
+            <li><span><i class="icon icon-Payment-method-1"></i></span></li>
+            <li><span><i class="icon icon-Payment-method-2"></i></span></li>
+            <li><span><i class="icon icon-Payment-method-3"></i></span></li>
+        </ul>
+        <ul class="footer-group-purchase ">
+            <li>企业团购热线及邮箱：</li>
+            <li >团购热线：021-2525 6881</li>
+            <li >团购邮箱：adidas.b2b@adidas.com</li>
+            <li >（仅限采购金额10万以上）</li>
+        </ul>
+    </div>
+</div>
+
+<div id="footer-cont-bottom">
+    <div class="footer-cont-bottom1">
+        <ul>
+            <li><i class="icon icon-china">中国</i>  </li>
+            <li><a href="">隐私声明</a> </li>
+            <li><a href="" >使用条款</a></li>
+            <li><a href="" >网站地图</a></li>
+        </ul>
+    </div>
+    <div class="footer-cont-bottom2">
+        <ul>
+            <li>苏ICP备14048805号-1</li>
+            <%--<li><i class="icon icon-ebs1"></i></li>--%>
+            <li>2017 adidas </li>
+            <%--<li><a href="" ><i class="icon icon-ebs2">苏公网安备 32059002001401号</i></a> </li>--%>
+            <li>苏公网安备</li>
+        </ul>
+    </div>
+
+</div>
+
 
 </body>
 </html>

@@ -6,24 +6,55 @@ import com.mce.shop.service.ShoesService;
 import com.mce.shop.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class ShoesServiceImpl implements ShoesService{
+public class ShoesServiceImpl implements ShoesService {
+    List<Shoes> shoesList=new ArrayList<>();
     @Override
-    public List<Shoes> getAll() {
+    public List<Shoes> getAllShoes() {
         SqlSession sqlSession = MybatisUtil.getSession();
         ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
-        List<Shoes> shoes= dao.queryAll();
+        shoesList = dao.queryAll();
         MybatisUtil.closeSession();
-        return shoes;
+        return shoesList;
     }
 
     @Override
-    public Shoes getById(Integer id) {
+    public Shoes getShoesById(Integer id) {
+        for(Shoes shoes:shoesList){
+            if (shoes.getShoesId()==id){
+                return shoes;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public List<Shoes> getByName(String name) {
         SqlSession sqlSession = MybatisUtil.getSession();
         ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
-        Shoes shoes= dao.selectByPrimaryKey(id);
+        shoesList = dao.queryByName(name);
         MybatisUtil.closeSession();
-        return shoes;
+        return shoesList;
+    }
+
+    @Override
+    public List<Shoes> getByPrice(Float minPrice, Float maxPrice) {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        shoesList = dao.queryByPrice(minPrice,maxPrice);
+        MybatisUtil.closeSession();
+        return shoesList;
+    }
+
+    @Override
+    public List<Shoes> getByGender(Byte gender) {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        shoesList = dao.queryByGender(gender);
+        MybatisUtil.closeSession();
+        return shoesList;
     }
 }

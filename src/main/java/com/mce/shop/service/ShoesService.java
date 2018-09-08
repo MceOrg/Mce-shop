@@ -5,8 +5,13 @@ import com.mce.shop.entity.Shoes;
 import java.util.List;
 
 public interface ShoesService {
-    public List<Shoes> getAll();
+    public List<Shoes> getAllShoes();
 
-    public Shoes getById(Integer id);
+    public Shoes getShoesById(Integer id);
 
+    public List<Shoes> getByName(String name);
+
+    public List<Shoes> getByPrice(Float minPrice,Float maxPrice);
+
+    public List<Shoes> getByGender(Byte gender);
 }

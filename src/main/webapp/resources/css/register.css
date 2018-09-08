@@ -170,8 +170,11 @@ a {
 }
 
 #register_wrap #body {
+	position: absolute;
 	box-sizing: border-box;
 	padding: 30px;
+	min-width: 360px;
+	min-height: 555px;
 }
 
 #register_wrap #body #tel_tip #tel {
@@ -225,7 +228,11 @@ a {
 #register_wrap #body .tips .text {
 	color: #f64a4a;
 	display: none;
+} #tip2tel4{
+	color: lawngreen !important;
+	display: none;
 }
+
 
 #register_wrap #body #validate_tip #validate_wrap #validate {
 	width: 106px;
@@ -323,7 +330,7 @@ a {
 	width: 298px;
 	height: 40px;
 	line-height: 40px;
-	margin-top: 4px;
+	margin-top: 10px;
 	background-color: silver;
 	border-radius: 3px;
 	text-align: center;

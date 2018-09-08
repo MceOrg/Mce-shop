@@ -15,44 +15,112 @@
 
 </head>
 <body>
-<div id="top">
-    <ul>
-        <li>
-            <a href=""><img src="images/logo.png"> </a>
-        </li>
-    </ul>
-    <ul>
-        <li id="tip" ><a class="top-href" href="">男子</a> </li>
-        <li><a class="top-href" href="">女子</a> </li>
-        <li><a class="top-href" href="">童装</a> </li>
-    </ul>
-    <div class="slice"></div>
-    <ul>
-        <li><a class="top-href" href="">运动</a> </li>
-        <li><a class="top-href" href="">品牌</a> </li>
-    </ul>
-    <div class="slice"></div>
-    <ul>
-        <li><a class="top-href" href="">新品</a> </li>
-        <li><a class="top-href" href="">SALE</a> </li>
-    </ul>
+<div id="head">
+    <div id="head-top">
+        <ul id="head-right">
+            <li>
+                <a href="">订单追踪</a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="">邮件订阅</a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="">
+                    在线客服<i class="icon icon-service"></i>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span>登录</span><i class="icon icon-login"></i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div id="head-bottom">
+        <div id="head-logo">
+            <a href=""><img src="../../resources/img/logo.png"></a>
+        </div>
+        <div id="head-bottom-right">
+            <div id="head-select">
+                <ul>
+                    <li>
+                        <a class="top-href" href="">男子</a>
+                    </li>
+                    <li>
+                        <a class="top-href" href="">女子</a>
+                    </li><li>
+                    <a class="top-href" href="">童装</a>
+                </li>
+                </ul>
+                <div class="slice"></div>
+                <ul>
+                    <li>
+                        <a class="top-href" href="">运动</a>
+                    </li>
+                    <li>
+                        <a class="top-href" href="">品牌</a>
+                    </li>
+                </ul>
+                <div  class="slice"></div>
+                <ul>
+                    <li>
+                        <a class="top-href" href="" style="width: 120px">miadidas定制</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="head-search">
+                <form id="keysearch" action="/search" method="GET">
+                    <div class="form-search">
+
+                        <input type="text" value="" autocomplete="off" id="keyword" placeholder="输入关键字">
+                        <input type="hidden" id="keywords" name="keyword">
+                        <a>
+                            <i class="icon icon-search"></i>
+                        </a>
+                        <!--<a class="search-clear eventssearch-clear">-->
+                        <!--<i class="icon icon-search-clear"></i>-->
+                        <!--</a>-->
+
+                    </div>
+                    <div id="search-button">
+                        <button type="submit">搜索</button>
+                        <a href="">
+                            <i class="icon icon-cart"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="tip1">
     <ul>
-        <li><a href=""><img class="im" src="images/icon_free@2x.png"><span>全场免运费</span>  <i class="icon icon-round-gray-rights"></i></a> </li>
+        <li><a href=""><img class="im" src="../../resources/img/icon_free@2x.png"><span>全场免运费</span>  <i class="icon icon-round-gray-rights"></i></a> </li>
         <li>
-            <a href=""><img class="im" src="images/icon_timer@2x.png"><span>尊享当日达、次日达、次晨达  </span><i class="icon icon-round-gray-rights"></i></a>
+            <a href=""><img class="im" src="../../resources/img/icon_timer@2x.png"><span>尊享当日达、次日达、次晨达  </span><i class="icon icon-round-gray-rights"></i></a>
         </li>
-        <li><a href=""><img class="im" src="images/icon_returnorder.png"><span>注册会员支持货到付款</span>  <i class="icon icon-round-gray-rights"></i></a> </li>
+        <li><a href=""><img class="im" src="../../resources/img/icon_returnorder.png"><span>注册会员支持货到付款</span>  <i class="icon icon-round-gray-rights"></i></a> </li>
     </ul>
 </div>
-<div id="tip2">
-    <ul>
-        <li><a href=""><i class="icon icon-round-lightgray-lefts"></i>   返回</a> </li>
-        <!--<li><a href="">返回</a> </li>-->
-        <li><div class="slice"></div></li>
-        <li> <a href="">首页 /POD-S3.1 W 经典鞋</a> </li>
-    </ul>
+<div id="article">
+    <div id="list-inline">
+        <ul>
+            <li>
+                <a href="javascript:history.go(-1)">
+                    <i class="icon icon-round-lightgray-lefts"></i> 返回</a>
+            </li>
+            <li class="divider">丨</li>
+            <li>
+                <a href="">首页</a>
+            </li>
+            <li class="divider">/</li>
+            <li><a href=""> POD-S3.1 W 经典鞋</a> </li>
+        </ul>
+    </div>
 </div>
 <div id="product">
     <div id="product-photo" >
@@ -65,39 +133,36 @@
                 <ul>
                     <li>
                         <a href="">
-                            <img src="images/shoes1-02.jpg" onclick="switchPhoto(this) ">
+                            <img src="../../resources/img/shoes1-02.jpg" onclick="switchPhoto(this) ">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="images/shoes1-03.jpg" onclick="switchPhoto(this) ">
+                            <img src="../../resources/img/shoes1-03.jpg" onclick="switchPhoto(this) ">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="images/shoes1-03.jpg" onclick="switchPhoto(this) ">
+                            <img src="../../resources/img/shoes1-03.jpg" onclick="switchPhoto(this) ">
                         </a>
                     </li>
                     </li>
                     <li>
                         <a href="">
-                            <img src="images/shoes1-02.jpg" onclick="switchPhoto(this) ">
+                            <img src="../../resources/img/shoes1-02.jpg" onclick="switchPhoto(this) ">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="images/shoes1-02.jpg" onclick="switchPhoto(this) ">
+                            <img src="../../resources/img/shoes1-02.jpg" onclick="switchPhoto(this) ">
                         </a>
                     </li>
                     <div class="scroll-btn-prev is-disabled">
                         <a><i>∨</i></a>
                     </div>
                 </ul>
-
-
-
             </div>
-            <div id="big-photo"><img  id="photo" src="images/shoes1-01.jpg"></div>
+            <div id="big-photo"><img  id="photo" src="../../resources/img/shoes1-01.jpg"></div>
 
         </div>
         <div id="product-info"  >
@@ -115,7 +180,7 @@
                             <h3>亮白/1号黑色/亮白(C77124)</h3>
                             <ul>
                                 <li>
-                                    <img src="images/shoes1-02.jpg">
+                                    <img src="../../resources/img/shoes1-02.jpg">
                                 </li>
                             </ul>
                         </div>
@@ -275,28 +340,28 @@
     <div id="recent-look-1">
         <div class="swiper-wapper">
             <div class="item">
-                <a href=""><img  src="images/shoes1.jpg"></a>
+                <a href=""><img  src="../../resources/img/shoes1.jpg"></a>
                 <div class="pro-intro">
                     <a href="">POD-S3.1经典鞋></a>
                     <span>¥1,099</span>
                 </div>
             </div>
             <div class="item">
-                <a href=""><img src="images/shoes1.jpg"></a>
+                <a href=""><img src="../../resources/img/shoes1.jpg"></a>
                 <div class="pro-intro">
                     <a href="">POD-S3.1经典鞋></a>
                     <span>¥1,099</span>
                 </div>
             </div>
             <div class="item">
-                <a href=""><img src="images/shoes1.jpg"></a>
+                <a href=""><img src="../../resources/img/shoes1.jpg"></a>
                 <div class="pro-intro">
                     <a href="">POD-S3.1经典鞋></a>
                     <span>¥1,099</span>
                 </div>
             </div>
             <div class="item">
-                <a href=""><img src="images/shoes1.jpg"></a>
+                <a href=""><img src="../../resources/img/shoes1.jpg"></a>
                 <div class="pro-intro">
                     <a href="">POD-S3.1经典鞋></a>
                     <span>¥1,099</span>
@@ -414,13 +479,16 @@
     </div>
     <div class="footer-cont-bottom2">
         <ul>
-            <li><i class="icon icon-ebs1">苏ICP备14048805号-1</i></li>
+            <li>苏ICP备14048805号-1</li>
+            <%--<li><i class="icon icon-ebs1"></i></li>--%>
             <li>2017 adidas </li>
-            <li><a href="" ><i class="icon icon-ebs2">苏公网安备 32059002001401号</i></a> </li>
+            <%--<li><a href="" ><i class="icon icon-ebs2">苏公网安备 32059002001401号</i></a> </li>--%>
+            <li>苏公网安备</li>
         </ul>
     </div>
 
 </div>
+
 
 
 

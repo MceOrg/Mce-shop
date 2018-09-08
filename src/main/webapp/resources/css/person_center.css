@@ -1,0 +1,427 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+
+
+}
+.icon {
+    display: inline-block;
+    background: url(../img/icon1.png);
+}
+li{
+    list-style: none;
+
+}
+
+#myAccount, #article{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/**********************top区******************/
+#head{
+    height: 80px;
+    background-color: black;
+}
+#head-top{
+    height: 30px;
+    float: top;
+}
+
+#head-bottom{
+    height: 50px;
+    /*border: 1px solid white;*/
+    float: bottom;
+}
+#head-top ul{
+    width: 350px;
+    height: 30px;
+    float: right;
+    /*border: 1px solid white;*/
+}
+#head-top li{
+    float: left;
+    color: whitesmoke;
+    margin-left: 5%;
+}
+#head-top ul a{
+    font-size: 12px;
+}
+
+#head-top>ul>li a .icon {
+    vertical-align: middle;
+    margin: -5px 0 0 5px;
+}
+.icon-service {
+    width: 17px;
+    height: 15px;
+    background-position: -26px -86px;
+}
+.icon-login {
+    width: 13px;
+    height: 16px;
+    background-position: 0 -86px;
+}
+#head-logo{
+    width: 100px;
+    height: 50px;
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    /*border: 1px solid white;*/
+}
+#head-logo img{
+    width: 80px;
+    height: 50px;
+}
+#head-bottom-right{
+    width:87%;
+    height: 50px;
+    /*border: 1px solid red;*/
+    float: right;
+}
+#head-select{
+    width: 60%;
+    height: 50px;
+    /*border: 1px solid white;*/
+    float:left;
+
+}
+
+#head-select ul{
+    display: inline-block;
+    float:left;
+    margin-left: 20px;
+}
+#head-select li{
+    font-weight: bold;
+    font-size: 18px;
+    display: inline;
+    list-style: none;
+    border:none;
+}
+#head-select li a{
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+#head-select li a.top-href:hover{
+    background-color: white;
+    color: darkgray;
+}
+.slice {
+    display: inline-block;
+    width: 1px;
+    margin-top: 10px;
+    height: 30px;
+    background-color: darkgray;
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+    float: left;
+}
+
+/***************搜索******************/
+#head-search{
+    width: 300px;
+    height: 50px;
+    /*border: 1px solid white;*/
+    float:right;
+}
+.form-search {
+    position: absolute;
+    width: 240px;
+    top: 0;
+
+}
+
+.form-search {
+    position: relative;
+    width: 190px;
+    height: 40px;
+    padding: 9px 0 0;
+    background: transparent;
+    /*border: 1px solid red;*/
+    float: left;
+
+}
+.form-search input{
+    height: 30px;
+    width: 190px;
+
+
+}
+#search-button button{
+    height: 32px;
+    width: 40px;
+    margin-top: 10px;
+    background-color: #0286cd;
+    border: none;
+    float:left;
+
+}
+
+#search-button{
+    width: 100px;
+    height: 50px;
+    float: right;
+    /*border: 1px solid red;*/
+}
+
+.icon-cart {
+    width: 18px;
+    height: 22px;
+    background-position: -304px -190px;
+}
+.icon-cart {
+    margin: 14px 0 0 19px;
+}
+
+
+/******************************article**********************/
+#article{
+    height: 50px;
+    /*border: 1px solid steelblue;*/
+}
+#list-inline{
+    height: 22px;
+    margin-top: 25px;
+    /*border: 1px solid firebrick;*/
+}
+
+#list-inline .icon-round-lightgray-lefts {
+    margin-right: 8px;
+    margin-bottom: -2px;
+}
+.icon-round-lightgray-lefts {
+    width: 14px;
+    height: 14px;
+    background-position: -52px -20px;
+}
+#list-inline a{
+    color:black;
+    font-size: 14px;
+}
+
+#list-inline li{
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+}
+
+/*******************************我的账户信息******************/
+#myAccount{
+    height: 1000px;
+
+}
+
+/****************左边部分****************/
+#myAccount-left{
+    width: 20%;
+    height: 100%;
+
+    float: left;
+}
+#myAccount-left-top{
+    height: 470px;
+    border: 1px solid black;
+}
+.myAccount-tit{
+    height: 60px;
+    background-color: black;
+
+}
+
+
+
+
+.icon-head-portrait {
+    width: 18px;
+    height: 20px;
+    margin-left: 20px;
+    background-position: -272px -86px;
+}
+#title-middle p{
+    display: inline-block;
+    color: white;
+
+    line-height: 60px;
+    font-size: 20px;
+
+}
+
+.person-info{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid black;
+}
+
+
+.person-info-1{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+    /*border: 1px solid darkgray;*/
+}
+.person-info p,.person-info-1 p{
+    line-height: 40px;
+
+}
+.person-info-1 p{
+    margin-left: 30px;
+    font-size: 14px;
+    color: #000;
+}
+/*.person-info-1 a:hover{*/
+    /*!*background-color: lightblue;*!*/
+    /*color: lightblue;*/
+/*}*/
+#myAccount-left-top .person-info-1:hover{
+    background-color: lightblue;
+}
+#myAccount-left-bottom .person-info-1:hover{
+    background-color: lightblue;
+}
+#myAccount-left-top .person-info-1:active{
+    background-color: #0286cd;
+}
+
+#myAccount-left-bottom .person-info-1:active{
+    background-color: #0286cd;
+}
+#myAccount-left-bottom{
+    margin-top: 20px;
+    height: 330px;
+    border: 1px solid black;
+}
+
+#help{
+    height: 60px;
+    border-bottom: 1px solid black;
+}
+
+#help i{
+    line-height: 60px;
+    margin-right: 10px;
+}
+#help p{
+    line-height: 60px;
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+.icon-help {
+    width: 20px;
+    height: 20px;
+    background-position: -363px -190px;
+}
+/********************右边部分***********/
+#myAccount-right{
+    width:78%;
+    height: 100%;
+    margin-left: 10px;
+
+    float: right;
+}
+
+#myAccount-right-top{
+    height: 220px;
+    border: 1px solid black;
+}
+
+#account-detail{
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    /*border: 1px solid darkgray;*/
+}
+.account-detail-title{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid darkgray;
+}
+.account-detail-title p{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+}
+.account-detail-title span{
+    font-size: 14px;
+    font-weight: normal;
+
+}
+#account-detail li{
+    margin-top: 10px;
+
+    line-height: 35px;
+}
+#account-detail li p{
+    font-size: 14px;
+}
+#account-detail li p a{
+    color: black;
+
+}
+#account-detail li p span{
+    margin-left: 30px;
+}
+#account-detail .modify {
+    font-size: 14px;
+    color: #0286cd;
+    line-height: 16px;
+    margin-top: 5px;
+    display: inline-block;
+}
+#account-detail i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: bottom;
+}
+.modify-icon {
+    background-position: -30px -344px;
+    margin-left: 5px;
+}
+#myAccount-right-bottom{
+    margin-top: 20px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+#person-detail{
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    /*border: 1px solid darkgray;*/
+}
+
+#person-detail li{
+    margin-top: 10px;
+    line-height: 30px;
+}
+#person-detail li p{
+    font-size: 14px;
+}
+
+#modify{
+    width: 250px;
+    height: 40px;
+    background-color:#025f8e;
+}
+#modify span{
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    line-height: 40px;
+    margin-left: 100px;
+}

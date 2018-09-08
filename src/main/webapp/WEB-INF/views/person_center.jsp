@@ -10,30 +10,49 @@
 <head>
     <meta charset="UTF-8">
     <title>个人中心</title>
-    <link rel="stylesheet" href="css/person_center.css">
+    <link rel="stylesheet" href="../../resources/css/person_center.css">
 </head>
 <body>
-<div id="top">
-    <ul>
-        <li>
-            <a href=""><img src="images/logo.png"> </a>
-        </li>
-    </ul>
-    <ul>
-        <li id="tip" ><a class="top-href" href="">男子</a> </li>
-        <li><a class="top-href" href="">女子</a> </li>
-        <li><a class="top-href" href="">童装</a> </li>
-    </ul>
-    <div class="slice"></div>
-    <ul>
-        <li><a class="top-href" href="">运动</a> </li>
-        <li><a class="top-href" href="">品牌</a> </li>
-    </ul>
-    <div class="slice"></div>
-    <ul>
-        <li><a class="top-href" href="">新品</a> </li>
-        <li><a class="top-href" href="">SALE</a> </li>
-    </ul>
+<div id="head">
+    <div id="head-top">
+        <!---->
+    </div>
+    <div id="head-bottom">
+        <div id="head-logo">
+            <a href=""><img src="../../resources/img/logo.png"></a>
+        </div>
+        <div id="head-bottom-right">
+            <div id="head-select">
+                <ul>
+                    <li>
+                        <a class="top-href" href="">男子</a>
+                    </li>
+                    <li>
+                        <a class="top-href" href="">女子</a>
+                    </li><li>
+                    <a class="top-href" href="">童装</a>
+                </li>
+                </ul>
+                <div class="slice"></div>
+                <ul>
+                    <li>
+                        <a class="top-href" href="">运动</a>
+                    </li>
+                    <li>
+                        <a class="top-href" href="">品牌</a>
+                    </li>
+                </ul>
+                <div  class="slice"></div>
+                <ul>
+                    <li>
+                        <a class="top-href" href="" style="width: 120px">miadidas定制</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
 </div>
 <div id="article">
     <div id="list-inline">
@@ -64,7 +83,9 @@
             <div class="person-info" >
                 <p>个人信息</p>
             </div>
-            <a href=""><div class="person-info-1"><p>我的账户首页</p></div></a>
+            <div class="person-info-1" style="">
+                <a href=""> <p>我的账户首页</p></a>
+            </div>
             <div class="person-info-1">
                 <a href=""><p>我的个人信息</p></a>
             </div>
@@ -117,7 +138,7 @@
                     <li> <p>手机号：<span>18860485432</span></p></li>
                     <li>
                         <p>邮箱地址：<span><a href="">添加邮箱地址</a> </span></p></li>
-                    <li><a class=" modify e-modify-password">修改密码<i class="icon modify-icon"></i></a></a></li>
+                    <li><a  href="" class=" modify e-modify-password">修改密码<i class="icon modify-icon"></i></a></a></li>
                 </ul>
 
             </div>
