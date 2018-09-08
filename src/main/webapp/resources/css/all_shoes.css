@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.icon {
+    background: url(../img/adidas.png);
+}
+/*************************************************** 头部 *****************************************************/
+#top {
+    height: 80px;
+    background-color: black;
+}
+/************************* 头部 左侧 ***********************/
+#top .top-left{
+    width: 50%;
+    height: 60px;
+    float: left;
+    margin-top: 20px;
+    /*border: 1px solid white;*/
+
+}
+#top .top-left ul img{
+    height: 45px;
+    width: 70px;
+}
+#top .top-left ul{
+    display: inline-block;
+    float:left;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#top .top-left li{
+    display: inline;
+    list-style: none;
+    border:none;
+}
+#top .top-left li a{
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+#top li a.top-href:hover{
+    background-color: white;
+    color: darkgray;
+}
+.slice{
+    display: inline-block;
+    width:1px;
+    height: 40%;
+    background-color: darkgray;
+    position: relative;
+    top:20px;
+    margin-left: 10px;
+    float: left;
+}
+
+/************************* 头部 右侧 上下 ***********************/
+.top-right{
+    width: 24%;
+    height: 80px;
+    float: right;
+    /* border: 1px solid white;*/
+}
+.top-right .right-top{
+    height: 33px;
+    /*border: 1px solid red;*/
+}
+
+
+/************* 上 小图标 ************/
+.right-top>ul>li a .icon {
+    vertical-align: middle;
+    margin: -5px 0 0 5px;
+}
+.icon-service {
+    width: 17px;
+    height: 15px;
+    background-position: -26px -86px;
+}
+.icon-login {
+    width: 13px;
+    height: 16px;
+    background-position: 0 -86px;
+}
+
+/*********** 上 列 排序 ***********/
+.top-right .right-top ul{
+    height: 33px;
+}
+.right-top ul li{
+    float: left;
+    display: inline;
+    list-style: none;
+    margin-left: 5%;
+    line-height: 30px;
+}
+.top-right .right-top ul li a{
+    font-size: 12px;
+    color: gainsboro;
+    height: 30px;
+    line-height: 30px;
+
+}
+.top-right .right-top ul li a:hover{
+    color: white;
+}
+
+.top-right .right-top #head-right .slice {
+    display: inline-block;
+    width: 1px;
+    margin-top: 3px;
+    height: 20px;
+    background-color: darkgray;
+    position: relative;
+    top: 3px;
+    margin-left: 10px;
+    float: left;
+}
+
+/*********** 下 搜索 ***********/
+.top-right .right-bottom {
+    height: 43px;
+    /* border: 1px solid white;*/
+}
+
+.form-search {
+    position: relative;
+    width: 190px;
+    height: 40px;
+    padding: 9px 0 0;
+    background: transparent;
+    float: left;
+    margin-left: 10px;
+
+}
+.form-search input{
+    height: 30px;
+    width: 190px;
+
+
+}
+#search-button button{
+    height: 32px;
+    width: 40px;
+    margin-top: 10px;
+    background-color: #0286cd;
+    border: none;
+    float:left;
+
+}
+
+#search-button{
+    width: 100px;
+    height: 50px;
+    float: right;
+    margin-right: 50px;
+    /*border: 1px solid red;*/
+}
+
+.icon-cart {
+    width: 18px;
+    height: 22px;
+    background-position: -304px -190px;
+}
+.icon-cart {
+    margin: 14px 0 0 19px;
+}
+
+
+/************************************  导航 nav  ********************************************/
+#next{
+    width: 100%;
+    height: 50px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+}
+.next-inner{
+    width:70%;
+    height: 50px;
+    margin: 0 auto;
+    /*border: 1px solid black;*/
+}
+#next ul{
+    display: inline-block;
+    float: left;
+}
+#next ul li{
+    display: inline;
+    list-style: none;
+    border: none;
+    margin-left: 100px;
+}
+#next li a{
+    display:inline-block;
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+#next li a:hover{
+    color: darkgray;
+}
+.next-inner .icon{
+    display: inline-block;
+    background-image: url("../img/adidas.png");
+}
+.next-inner .icon-round-gray-right{
+    width: 14px;
+    height: 14px;
+    background-position: -74px -20px ;
+}
+/*********** 中间总体部分 *************/
+#middle{
+    width: 100%;
+    height:  4340px;
+   /* border: 1px solid fuchsia;*/
+}
+/************************************  商品展示左侧 分类筛选 ********************************************/
+#left-classify{
+    width:16%;
+    height: 1000px;
+    position: absolute;
+    padding-top: 0px;
+    padding-bottom: 1px;
+    left: 130px;
+    right: 0;
+    border: 1px solid gray;
+}
+
+.d1{
+    height: 200px;
+    border: 1px dotted gray;
+}
+.d1 li{
+    list-style: none;
+    height: 30px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.d2{
+    height: 140px;
+    border: 1px dotted gray;
+}
+.d2 li{
+    list-style: none;
+    height: 30px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.d3{
+    height: 200px;
+    border: 1px dotted gray;
+}
+.d3 li{
+    list-style: none;
+    height: 30px;
+    line-height: 40px;
+    font-size: 16px;
+}
+/************************************  商品展示右侧 商品详细信息 ********************************************/
+#right-show{
+    width: 64%;
+    height: 4340px;
+    overflow: hidden;
+    /*border: 1px solid black;*/
+    margin-right: 130px;
+    float: right;
+}
+#show-top{
+    width: 100%;
+    height: 60px;
+    /*border: 1px solid navy;*/
+    margin-bottom: 10px;
+}
+#show-top .sort .drop-down-list{
+    width: 108px;
+    height: 30px;
+    /*border: 1px solid navy;*/
+    margin:15px 0 20px 15px;
+
+}
+#show-allShoes{
+    width: 100%;
+    height:97%;
+    /*border: 1px solid seagreen;*/
+}
+#show-allShoes .shoes-fourList{ /* 四个商品一排 */
+    width: 100%;
+    height: 340px;
+    /*border: 1px solid black;*/
+    margin-bottom: 10px;
+}
+#show-allShoes .shoes-fourList .shoes{ /* 每个商品 */
+    width: 230px;
+    height: 340px;
+    /*border: 1px solid gray;*/
+    float: left;
+    margin-right: 10px;
+}
+.shoes-fourList .shoes img{
+    width: 230px;
+    height: 230px;
+}
+.shoes-fourList .shoes .shoes-desc a{
+    color:black;
+    width: 80px;
+    height: 40px;
+    line-height: 30px;
+   text-decoration: none;
+}
+.shoes-fourList .shoes .shoes-desc a:hover{
+    color: mediumblue;
+}
+.shoes-fourList .shoes .shoes-classify span{
+    font-size:14px;
+    line-height: 30px;
+}
+
+/*****************************底部************************/
+
+#footer{
+    width: 100%;
+    height: 560px;
+    border: 1px solid rebeccapurple;
+    /*margin-bottom: 10px;*/
+}
+
+/*****************************底部 上方************************/
+/* 底部联系我们*/
+#footer .footer-top{
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    color: white;
+
+}
+.footer-top-container{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    /*  background-color: salmon;*/
+}
+
+#footer .footer-top  li{
+    list-style: none;
+    float: left;
+    /*  margin-left: 30px;*/
+    margin-right: 40px;
+
+
+}
+#footer .footer-top  li.contacted{
+    font-size: 16px;
+    line-height:80px ;
+    /*  margin-right: 60px;*/
+    padding: 0;
+}
+
+#footer .footer-top  li a{
+    color: white;
+    text-decoration: none;
+}
+#footer .footer-top  li a:hover{
+    color: gray;
+}
+#footer .footer-top  li p{
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+    position: relative;
+    top: 30px;
+    text-decoration: none;
+}
+#footer .footer-top  li p:hover{
+    color: gray;
+}
+
+#footer .footer-top  li p.remarks{
+    font-size: 12px;
+    color: #888;
+    padding: 0 0 0 30px;
+
+}
+#footer .footer-top  .contacted-us-time{
+    font-size: 14px;
+    font-weight: bold;
+    line-height:20px ;
+    position: relative;
+    top: 30px;
+}
+#footer .footer-top  .order-tracking{
+    font-size: 16px;
+    line-height:80px ;
+    padding: 0;
+}
+
+.footer-top-container .icon{
+    display: inline-block;
+    background-image: url("../img/adidas.png");
+}
+
+.footer-top-container .contact-us-service{ /*联系我们的icon*/
+    width: 17px;
+    height: 17px;
+    background-position: -400px -83px;
+}
+
+.footer-top-container .contact-us-tel{  /*电话的icon*/
+    width: 16px;
+    height: 16px;
+    background-position: -74px -86px;
+}
+
+.footer-top-container .contact-us-email{ /*邮箱的icon*/
+    width: 16px;
+    height: 16px;
+    background-position: -96px -84px;
+}
+
+
+/************************* 底部中间 *****************************/
+#footer .footer-cont{
+    width: 100%;
+    height: 420px;
+
+}
+.column-container{
+    width:70%;
+    height:300px;
+    margin-left:300px;
+    /*border: 1px solid rebeccapurple;*/
+}
+.list {
+    width: 150px;
+    margin-right: 30px;
+    margin-top: 10px;
+    float: left;
+    /*border: 1px solid darkmagenta;*/
+}
+.footer-cont .list span{
+    font-weight: bold;
+}
+
+.footer-cont .list ul li{
+    list-style: none;
+    float: left;
+}
+.footer-cont .list ul li a{
+    display:inline-block;
+    width: 140px;
+    height: 35px;
+    line-height: 40px;
+    text-decoration: none;
+    list-style: none;
+    color: gray;
+}
+.footer-cont .list .list-icon{
+    display:inline-block;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    list-style: none;
+    color: gray;
+}
+.footer-cont .list ul li a:hover{
+    color: black;
+}
+
+.column-container .footer-share li{
+    list-style: none;
+}
+.column-container .footer-share {
+    list-style: none;
+    float: left;
+}
+.icon{
+    display: inline-block;
+    background-image: url("../img/adidas.png");
+}
+.icon-WeiBo{
+    width: 30px;
+    height: 24px;
+    background-position: -130px -154px;
+}
+.icon-WeiXin{
+    width: 30px;
+    height: 24px;
+    background-position: -170px -154px;
+}
+.icon-payZFB{
+    width: 63px;
+    height: 24px;
+    background-position: -614px -343px;
+}
+.icon-payWX{
+    width: 97px;
+    height: 24px;
+    background-position: -695px -343px;
+}
+.icon-payZXZF{
+    width: 90px;
+    height: 24px;
+    background-position: -810px -343px;
+}
+.icon-payHDFK{
+    width: 82px;
+    height: 24px;
+    background-position: -918px -343px;
+}
+
+.footer-cont .footer-Payment-method{ //支付方式
+width:70%;
+    height:100px;
+    margin-top: 10px;
+    margin-left:300px;
+    /*border: 1px solid rebeccapurple;*/
+}
+.footer-cont .footer-Payment-method ul{
+    height: 50px;
+}
+.footer-cont .footer-Payment-method ul li{
+    width: 120px;
+    height: 50px;
+    float: left;
+    list-style: none;
+}
+.footer-cont .footer-Payment-method ul .title{
+    font-size: 14px;
+    width: 240px;
+}
+.footer-cont .footer-Payment-method ul .title1{
+    font-size: 14px;
+    width: 170px;
+}
+
+/************************* 底部 bottom *****************************/
+#footer .footer-cont-bottom{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: white;
+}
+.footer-cont-bottom-left{
+    width: 50%;
+    height: 40px;
+    float:left;
+    background-color: black;
+}
+.bottom-right{
+    width: 50%;
+    height: 40px;
+    float: right;
+    background-color:black;
+}
+.footer-cont-bottom-left ul li{
+    float:left;
+    list-style: none;
+}
+.footer-cont-bottom .footer-cont-bottom-left .bottom-li a{
+    color: white;
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    margin-left:30px;
+    margin-right: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-cont-bottom .footer-cont-bottom-left #bottom-li-one{
+    margin-left: 240px;
+}
+.footer-cont-bottom .footer-cont-bottom-left .bottom-li span{
+    color: white;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 30px;
+    display: inline-block;
+}
+.footer-cont-bottom-right ul li{
+    float:left;
+    list-style: none;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.footer-cont-bottom-right ul li span{
+    color: white;
+    font-size: 14px;
+    line-height: 40px;
+    margin-right: 20px;
+    display: inline-block;
+}
+.footer-cont-bottom .footer-cont-bottom-left .bottom-li a:hover{
+    color: gray;
+}
+.icon{
+    display: inline-block;
+    background-image: url("../img/adidas.png");
+}
+.icon-china{
+    width: 14px;
+    height: 12px;
+    background-position: -49px -190px;
+}
+.icon-ebs1{
+    width: 16px;
+    height: 16px;
+    background-position: -23px -190px;
+}
+.icon-ebs2 {
+    width: 14px;
+    height: 16px;
+    background-position: 0px -190px;
+}
