@@ -1,0 +1,603 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color:black ;
+}
+li{
+    list-style: none;
+}
+.icon {
+    display: inline-block;
+    background: url(../img/icon1.png);
+}
+/**********************************head部分*******************/
+#head{
+    height:70px;
+    background-color: black;
+}
+#head-logo{
+    width: 100px;
+
+    margin-left: 200px;
+}
+#head-logo img{
+    width: 90px;
+    height: 65px;
+}
+
+#middle{
+    width: 80%;
+    height: 600px;
+    padding-top: 20px;
+    /*border:  1px solid darkgray;*/
+    margin:0 auto;
+}
+/*#blank{*/
+/*height: 30px;*/
+/*}*/
+/*****************************中间部分-左边（详情）**********************/
+
+
+#middle-left{
+    width: 68%;
+    height: 100%;
+    float:left;
+    /*border: 1px solid #FFB500;*/
+}
+
+/*********************收件地址******************/
+#middle-address{
+    width: 100%;
+    margin-top: 20px;
+    height:140px;
+    /*border:1px solid deepskyblue;*/
+}
+
+#address-title{
+    width: 100%;
+    height: 50px;
+    float: top;
+
+}
+
+#address-title>span{
+    display: inline-block;
+    font-size: 22px;
+    line-height: 50px;
+}
+
+#address-title span:last-child{
+    font-size: 16px;
+    color: #0286cd;
+    line-height: 50px;
+    margin-right: 10px;
+    float: right;
+}
+
+#address{
+    height: 88px;
+    float: bottom;
+    border-top: 1px dotted #c8cbcc;
+    border-bottom: 1px dotted #c8cbcc;
+    background: #f9f9f9;
+
+}
+#address-btn{
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+    text-align: center;
+    float: left;
+    /*border: 1px solid deepskyblue;*/
+}
+.icon-radio {
+    width: 26px;
+    height: 26px;
+    background-position: -258px -112px;
+    cursor: pointer;
+}
+
+#review-address{
+    display: inline-block;
+    margin-top: 10px;
+    width: 90%;
+    height: 70px;
+    float: right;
+    /*border: 1px solid greenyellow;*/
+}
+#address-name{
+    width: 25%;
+    float: left;
+    /*border: 1px solid lightblue;*/
+}
+#review-address .address-name-1{
+    line-height: 70px;
+}
+
+#address-all{
+    width: 74%;
+    float: right;
+    /*border: 1px solid greenyellow;*/
+}
+#address-detail{
+    width: 76%;
+    height: 70px;
+    float: left;
+    /*border: 1px solid salmon;*/
+
+}
+#address-detail li{
+    line-height: 23px;
+}
+
+#address-modify{
+    width: 23%;
+    height: 40px;
+    float: right;
+    /*border: 1px solid darkblue;*/
+}
+#address-modify span a{
+    font-size: 14px;
+    color: #0286cd;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+#address-modify span {
+    line-height: 30px;
+}
+/*****************中间-左边-配送方式*******************************/
+
+#middle-2{
+    height: 150px;
+    margin-top: 30px;
+    border-top: 1px solid darkgray;
+    /*border: 1px solid red;*/
+}
+
+#middle-2 span{
+    display: inline-block;
+    font-size: 22px;
+    line-height: 50px;
+
+}
+#deliver-box{
+    height: 88px;
+    float: bottom;
+    margin-top: 10px;
+    border-top: 1px dotted #c8cbcc;
+    border-bottom: 1px dotted #c8cbcc;
+    background: #f9f9f9;
+}
+
+#address-btn-1{
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+    text-align: center;
+    float: left;
+}
+
+#middle-2 span a{
+    font-size: 14px;
+    margin-left: 10px;
+    line-height: 85px;
+}
+#middle-2 .free{
+    text-decoration: none;
+    font-size: 18px;
+    float: right;
+    line-height: 85px;
+}
+/******************支付方式***********************/
+#middle-3{
+    height: 150px;
+    margin-top: 30px;
+    border-top: 1px solid darkgray;
+    /*border: 1px solid red;*/
+}
+
+#middle-3 span{
+    display: inline-block;
+    font-size: 22px;
+}
+#pay{
+    height: 88px;
+    float: bottom;
+    margin-top: 10px;
+    border-top: 1px dotted #c8cbcc;
+    border-bottom: 1px dotted #c8cbcc;
+
+}
+.icon-radio {
+    width: 26px;
+    height: 26px;
+    background-position: -223px -112px;
+    cursor: pointer;
+}
+
+#pay img{
+    height: 22px;
+    width: 60px;
+
+}
+
+#pay li{
+    display: inline-block;
+    float: left;
+    line-height: 85px;
+    padding-left: 50px;
+}
+/*#pay-btn-1{*/
+/*width: 30px;*/
+/*height: 30px;*/
+/*margin-top: 30px;*/
+/*margin-left: 10px;*/
+/*text-align: center;*/
+/*float: left;*/
+/*}*/
+
+/****************确认下单********************/
+#middle-4{
+    height: 45px;
+    margin-top: 30px;
+    /*background-color: #e9ecef;*/
+
+}
+#sure{
+    width: 300px;
+    height: 40px;
+
+    background-color: #0286cd;
+
+}
+#sure span{
+    display: inline-block;
+    margin-left: 130px;
+    font-size:16px;
+    line-height: 40px;
+    color: white;
+
+}
+
+/*****************************中间部分-右边（详情）**********************/
+#middle-right{
+    width: 30%;
+    height: 100%;
+    /*margin-top: 20px;*/
+    background-color: #e9ecef;
+    float: right;
+}
+
+
+
+
+#goods-title{
+    margin-top: 18px;
+    width: 100px;
+    height: 30px;
+    float: left;
+    /*border: 1px solid salmon;*/
+    text-align: center;
+
+}
+#goods-title span{
+    font-size: 18px;
+    display: inline-block;
+    line-height: 30px;
+}
+#goods-count{
+    margin-top: 18px;
+    width: 190px;
+    height: 30px;
+    /*border: 1px solid salmon;*/
+    float: right;
+}
+#goods-count span{
+    font-size: 14px;
+}
+#summary{
+    font-size: 18px;
+    color: #000;
+    line-height: 18px;
+    margin-bottom: 15px;
+}
+#middle-right span{
+    display: inline-block;
+}
+
+#goods-box{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+
+.goods-allDetail{
+    height: 135px;
+    border-bottom: 1px dotted #c8cbcc;
+}
+
+.goods-info{
+    display: inline-block;
+    margin-top: 12px;
+    width: 100%;
+    height: 62px;
+
+
+}
+.goods-info img{
+    margin-left: 10px;
+    width: 60px;
+    height:60px;
+}
+
+.goods-info-1{
+    width: 200px;
+    height: 60px;
+
+    float: right;
+}
+.goods-info-1 p{
+    font-size:12px;
+    color: #c8cbcc;
+    line-height: 20px;
+
+}
+.goods-price-sum{
+    width: 100%;
+    height: 50px;
+
+}
+.goods-price-sum p{
+    display: block;
+    float:right;
+}
+.p1{
+    height: 24px;
+    float: top;
+
+    /*border: 1px solid green;*/
+
+}
+.p1 p{
+    font-size: 14px;
+
+}
+.p2{
+    height: 22px;
+
+    float: bottom;
+    margin-right: 10px;
+    /*border: 1px solid green;*/
+
+}
+.p2 p{
+    font-size: 14px;
+    font-family: "AR ESSENCE";
+}
+.goods-pay{
+    height: 47px;
+    border-bottom: 1px dotted #c8cbcc;
+}
+
+.goods-pay span{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.goods-title{
+    float: right;
+    margin-right: 10px;
+
+}
+#goods-sub{
+    color: #c53622;
+}
+
+/***************************************底部***************************/
+
+.icon-sina{
+    width: 30px;
+    height: 24px;
+    background-position: -130px -154px;
+}
+.icon-wechat{
+    width: 30px;
+    height: 24px;
+    background-position: -270px -154px;
+}
+#footer-top{
+    width: 100%;
+    height: 80px;
+    background: black;
+}
+#footer-top-container{
+    width: 80%;
+    margin: 0 auto;
+
+}
+#footer-cont{
+    width:100%;
+    height: 300px;
+    background-color: white;
+}
+
+#footer-cont-bottom{
+    width: 100%;
+    height: 50px;
+    background: black;
+}
+
+#footer-top #footer-top-container ul li.contacted{
+    font-size: 16px;
+    line-height: 80px;
+    margin-right: 60px;
+    display: inline-block;
+    float:left;
+    color:white;
+}
+#footer-top #footer-top-container ul li  {
+    font-size: 14px;
+    /*line-height: 70px;*/
+    margin-right: 70px;
+    display: inline-block;
+    float:left;
+    color:white;
+}
+#footer-top #footer-top-container ul li p a{
+    line-height: 70px;
+    color:white;
+}
+#footer-top #footer-top-container ul li p {
+    font-family: Arial;
+    color:darkgray;
+    line-height: 1px;
+}
+
+#footer-cont .footer-cont-top{
+    width: 100%;
+    height: 300px;
+    text-align:left;
+    margin-left: 140px;
+    padding:0;
+    clear:both;
+
+
+
+
+}
+#footer-cont .footer-cont-top .footer-cont-top1,#footer-cont .footer-cont-top .footer-cont-top2
+,#footer-cont .footer-cont-top .footer-cont-top3,#footer-cont .footer-cont-top .footer-cont-top4
+,#footer-cont .footer-cont-top .footer-cont-top5{
+    margin:0;
+    padding:0;
+    display:inline-block;
+    padding-right: 120px;
+    vertical-align:middle;
+    _display:inline;
+    *display:inline;
+    zoom:1;
+}
+#footer-cont .footer-cont-top .footer-cont-top3{
+    padding-top: 30px;
+
+}
+#footer-cont .footer-cont-top .footer-cont-top5{
+    padding-top: 10px;
+}
+#footer-cont .footer-cont-top .footer-cont-top5 ul li.title1{
+    list-style: none;
+    display: inline-block;
+    border: none;
+    float: left;
+    margin-right: 10px;
+}
+
+#footer-cont .footer-cont-top li {
+    list-style: none;
+    border:none;
+}
+#footer-cont .footer-cont-top li a{
+    color:black;
+}
+#footer-cont .footer-cont-top li.title{
+    font-weight: bold;
+
+}
+#footer-cont .footer-cont-top li{
+    font-size: 14px;
+    line-height: 25px;
+
+
+}
+
+#footer-cont .footer-cont-top ul.footer-group-purchase li{
+    list-style: none;
+    border: none;
+    display: inline-block;
+    float:left;
+    margin-right: 20px;
+
+}
+#footer-cont .footer-cont-top ul.footer-Payment-method li{
+    list-style: none;
+    border: none;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    margin-right: 20px;
+}
+.icon-Payment-method{
+    height: 24px;
+    width: 388px;
+    width: 72px;
+    background-position: -614px -343px;
+
+}
+.icon-Payment-method-1 {
+    height: 24px;
+    width: 108px;
+    background-position: -695px -343px;
+}
+.icon-Payment-method-2 {
+    height: 24px;
+    width: 100px;
+    background-position: -809px -343px;
+}
+.icon-Payment-method-3 {
+    height: 24px;
+    width: 82px;
+    background-position: -917px -343px;
+}
+.footer-cont-bottom1 ,.footer-cont-bottom2{
+    margin:0;
+    padding:0;
+    display:inline-block;
+    padding-right: 120px;
+    vertical-align:middle;
+    _display:inline;
+    *display:inline;
+    zoom:1;
+}
+.footer-cont-bottom1 ul li,.footer-cont-bottom2 ul li{
+    font-size: 12px;
+    list-style: none;
+    display: inline-block;
+    color: white;
+    float: left;
+    padding-left:50px ;
+    margin-left:15px;
+    text-align: center;
+}
+.footer-cont-bottom1 ul li a,.footer-cont-bottom2 ul li a{
+    color: white;
+}
+.icon-contact-us-service {
+    width: 17px;
+    height: 17px;
+    background-position: -400px -83px;
+}
+.icon-contact-us-tel {
+    width: 16px;
+    height: 16px;
+    background-position: -74px -86px;
+}
+
+.icon-contact-us-email {
+    width: 16px;
+    height: 16px;
+    background-position: -96px -84px;
+}
+
+.icon-contact-us-time {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -112px;
+}
