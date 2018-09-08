@@ -13,7 +13,7 @@
 </head>
 <body>
     <%
-   List<Shoes> shoesList=(List<Shoes>) request.getAttribute("shoesList");
+   List<Shoes> shoesList=(List<Shoes>) request.getSession().getAttribute("shoesList");
    for(Shoes shoes:shoesList){%>
     <a href="shoes?type=1&id=<%=shoes.getShoesId()%>">鞋子id:<%=shoes.getShoesId()%></a>, <a href="shoes?type=1&id=<%=shoes.getShoesId()%>">鞋子名称:<%=shoes.getShoesName()%></a>,鞋子价格:<%=shoes.getShoesPriceSale()%>
     <br>

@@ -5,10 +5,7 @@ import com.mce.shop.service.ShoesService;
 import com.mce.shop.service.impl.ShoesServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -42,7 +39,8 @@ public class ShoesServlet extends HttpServlet {
     private void getAllShoes(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ShoesService shoesService=new ShoesServiceImpl();
         List<Shoes> shoesList=shoesService.getAllShoes();
-        req.setAttribute("shoesList",shoesList);
+        HttpSession session=req.getSession();
+        session.setAttribute("shoesList",shoesList);
         req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
     }
     private void getShoesById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
