@@ -47,6 +47,15 @@
         <servlet-name>shoes</servlet-name>
         <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
     </servlet>
+    <!-- 跳转首页测试 -->
+    <servlet>
+        <servlet-name>mainPageUiServlet</servlet-name>
+        <servlet-class>com.mce.shop.ui.mainPageUiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mainPageUiServlet</servlet-name>
+        <url-pattern>/mainPage</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>shoes</servlet-name>
         <url-pattern>/shoes</url-pattern>

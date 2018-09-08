@@ -269,6 +269,9 @@
     <iframe height="100%" width="100%" src="bottom.html" scrolling="no"></iframe>
 </div>
 
+    <div>
+        <jsp:include page="bottom.jsp"/>
+    </div>
 
 </body>
 </html>
