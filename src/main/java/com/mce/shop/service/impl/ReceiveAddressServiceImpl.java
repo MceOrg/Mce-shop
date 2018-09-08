@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ReceiveAddressServiceImpl implements ReceiveAddressService {
     @Override
-    public List<ReceiveAddress> queryAllUserAddress(Integer id) {
+    public List<ReceiveAddress> queryAll(Integer addressId) {
         SqlSession sqlSession = MybatisUtil.getSession();
         ReceiveAddressDAO dao = sqlSession.getMapper(ReceiveAddressDAO.class);
         List<ReceiveAddress> addressList = dao.queryAll(1);
