@@ -69,6 +69,15 @@ public class Shoes implements Serializable {
     private Integer categoryId;
      private ShoesDetail shoesDetail;
 
+    public Shoes(Integer shoesId, String shoesName, Float shoesPriceSale) {
+        this.shoesId = shoesId;
+        this.shoesName = shoesName;
+        this.shoesPriceSale = shoesPriceSale;
+    }
+
+    public Shoes() {
+    }
+
     private static final long serialVersionUID = 1L;
 
     public Integer getShoesId() {

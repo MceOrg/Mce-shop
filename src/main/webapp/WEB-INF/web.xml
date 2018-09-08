@@ -4,78 +4,51 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet>
-        <servlet-name>ServletTest</servlet-name>
-        <servlet-class>com.mce.shop.service.ServletTest</servlet-class>
-    </servlet>
+
     <servlet>
         <servlet-name>LoginUiServlet</servlet-name>
         <servlet-class>com.mce.shop.ui.LoginUiServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.mce.shop.controller.LoginServlet</servlet-class>
-    </servlet>
-    <!--查询所有收件地址-->
-    <servlet>
-        <servlet-name>ReceiveAddressServlet</servlet-name>
-        <servlet-class>com.mce.shop.controller.ReceiveAddressServlet</servlet-class>
-    </servlet>
-    <!-- 跳转到查询所有收件地址页面 -->
-    <servlet>
-        <servlet-name>ReceiveAddressUiServlet</servlet-name>
-        <servlet-class>com.mce.shop.ui.ReceiveAddressUiServlet</servlet-class>
-    </servlet>
-    <!-- 鞋子的服务 -->
-    <servlet>
-        <servlet-name>ShoesServlet</servlet-name>
-        <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
-    </servlet>
-    <!-- 跳转单个鞋子详情页面 -->
-    <servlet>
-        <servlet-name>QueryShoesByIdUiServlet</servlet-name>
-        <servlet-class>com.mce.shop.ui.QueryShoesByIdUiServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CookieTestServlet</servlet-name>
-        <servlet-class>com.mce.shop.controller.CookieTestServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>CookieTestServlet</servlet-name>
-        <url-pattern>/cookieTest</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>QueryShoesByIdUiServlet</servlet-name>
-        <url-pattern>/queryShoesByIdUiServlet</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>ShoesServlet</servlet-name>
-        <url-pattern>/shoes</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>ReceiveAddressUiServlet</servlet-name>
-        <url-pattern>/receiveAddressUi</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>ReceiveAddressServlet</servlet-name>
-        <url-pattern>/receiveAddress</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/userLogin</url-pattern>
-    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>LoginUiServlet</servlet-name>
-        <url-pattern>/login</url-pattern>
+        <url-pattern>/goLogin</url-pattern>
     </servlet-mapping>
+
+    
+
+    
+    <servlet>
+        <servlet-name>Customer</servlet-name>
+        <servlet-class>com.mce.shop.controller.CustomerServlet</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
-        <servlet-name>ServletTest</servlet-name>
-        <url-pattern>/test</url-pattern>
+        <servlet-name>Customer</servlet-name>
+        <url-pattern>/customer</url-pattern>
     </servlet-mapping>
+
+    <welcome-file-list>
+      <welcome-file>/WEB-INF/views/login.jsp</welcome-file>
+    </welcome-file-list>
+    
+    
+    
+    
+    <servlet>
+        <servlet-name>shoes</servlet-name>
+        <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>shoes</servlet-name>
+        <url-pattern>/shoes</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    
+    
+    
+
 </web-app>
