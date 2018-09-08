@@ -6,6 +6,10 @@
 a {
 	text-decoration: none;
 }
+html,body{
+	height: 100%;
+	min-height: 100%;
+}
 
 .clearfix:after {
 	content: "";
@@ -61,40 +65,36 @@ a {
 	}
 }
 #header-title{
-	position:absolute;
 	width:100%;
+	height: 15%;
 	text-align: center;
 	background: black;
+	line-height:100%;
 }
 
 #header-title a{
-	display: block;
-	font-size: 1.5em;
+	display: inline-block;
 	width: 100%;
-	color: rgba(106, 90, 205,0.8);
-	font-weight: bold;
-	line-height: 80px;
-	font-family:Iceland;
-	font-size:60px;
+	font-weight:bold;
+	font-size:70px;
 	margin: 0 auto;
 	color: #fff;
 	-webkit-animation: Glow 1.5s ease infinite alternate;
 	animation: Glow 1.5s ease infinite alternate;
+	line-height: 200%;
 }
 #foot-title{
-	position:absolute;
 	width:100%;
-	top: 659px;
-	bottom: 0;
+	height: 20%;
 	text-align: center;
 	background: black;
 	color: white;
 }
 #foot-title>span{
+	position:absolute;
+	bottom: 0;
 	display: block;
 	width: 100%;
-	position: absolute;
-	bottom: 8px;
 	line-height: 16px;
 	text-align: center;
 	font-size: 12px;
@@ -103,12 +103,12 @@ a {
 
 #foot-title .container {
 	width: 100%;
-	height: 80px;
+	height: 20%;
 }
 #foot-title .container p {
+	padding-top: 30px;
 	font-family: Liana;
 	text-align: center;
-	line-height: 150px;
 	color: white;
 	font-weight: bold;
 	font-size:46px;
@@ -122,26 +122,27 @@ a {
 
 }
 #bg-wrap{
-	position:absolute;
+	width:100%;
+	height:65%;
+	position: relative;
+}
+#bg-wrap>img{
 	width:100%;
 	height:100%;
-	z-index:-1;
-	left:0;
-	top:0;
-	background:url("../img/bg.jpg") no-repeat center 80px;
-
-
+	text-align: center;
 }
 
 #login_wrap{
 	width: 360px;
+	max-width: 360px;
+	max-height: 400px;
 	height: 400px;
-	position: fixed;
-	top: 200px;
-	right:200px;
-	font-family: "微软雅黑";
+	position: absolute;
+	top: 50px;
+	right:100px;
 	color:#3c3c3c ;
 	background: rgba(220,220,220,0.8);
+	z-index: 999;
 }
 #login_wrap #title{
 	height: 50px;
@@ -153,7 +154,7 @@ a {
 }
 #login_wrap #body{
 	margin: 0 auto;
-	width: 300px;	
+	width: 300px;
 }
 #login_wrap #body .tip {
 	font-size: 12px;
@@ -164,7 +165,6 @@ a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
-	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	margin-top: 2px;
 	margin-bottom: 5px;

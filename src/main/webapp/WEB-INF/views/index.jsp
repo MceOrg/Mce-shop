@@ -15,13 +15,15 @@
 
 
 <%
-  Customer customer= (Customer) request.getAttribute("customer");
+  Customer customer= (Customer) request.getSession().getAttribute("loginCustomer");
 %>
 
 客户id:<%=customer.getCustId()%><br>
 顾客姓名:<%=customer.getCustName()%><br>
 顾客年龄:<%=customer.getCustAge()%><br>
 顾客电话:<%=customer.getCustPhone()%>
+
+<a href="customer?type=5">退出</a>
 
 
 </body>
