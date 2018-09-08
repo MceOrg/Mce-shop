@@ -23,4 +23,13 @@ public class ShoesTest {
 
 
     }
+
+    @Test
+    public void testQueryById() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        Shoes shoes = dao.queryById(1);
+        sqlSession.close();
+        System.out.println(shoes);
+    }
 }
