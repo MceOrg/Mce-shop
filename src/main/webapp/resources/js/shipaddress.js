@@ -1,4 +1,4 @@
-/*************************** 省市三级联动 **********************************/
+/*************************** 省市区三级联动 **********************************/
 
 
 var provinceList = [
@@ -494,6 +494,7 @@ $('.address').on('mouseout',function(e){
 });
 /*************************************************************************************************/
 
+
 /*************************** 设为默认地址的ajax事件**********************************/
 $('.address>p').not('.defaultAddress').on('click',function () {
     $.ajax({
@@ -507,7 +508,6 @@ $('.address>p').not('.defaultAddress').on('click',function () {
         complete:function (data) {
             if(data.responseText=="true"){
                 window.location.reload();
-
             }else {
                 alert("修改地址失败");
             }
@@ -553,14 +553,14 @@ $('#toaddnew').on('click',function(){
 })
 
 /*********************************************************************************************/
-    // $('.delete_address').on('click',function () {
-    //     var msg="确定要删除此地址吗?";
-    //     if (confirm(msg)){
-    //         $(this).parent().remove();
-    //     }else{
-    //         return false;
-    //     }
-    // })
+    $('.delete_address').on('click',function () {
+        var msg="确定要删除此地址吗?";
+        if (confirm(msg)){
+            $(this).parent().remove();
+        }else{
+            return false;
+        }
+    })
 
 /*************************** 点击修改按钮,数据自动匹配到修改地址处 **********************************/
     $('.update_address').on('click',function(){

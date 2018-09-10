@@ -34,7 +34,6 @@ public class ReceiveAddressServlet extends HttpServlet {
         Customer customer =(Customer) request.getSession().getAttribute("loginCustomer");
         List<ReceiveAddress> addresses = service.queryAll(customer.getCustId());
         request.getSession().setAttribute("alladdress",addresses);
-        System.out.println("ss");
         request.getRequestDispatcher("/WEB-INF/views/writeAddress.jsp").forward(request,response);
     }
 
