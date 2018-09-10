@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" href="{pageContext.request.contextPath}/../../resources/css/register.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/../../resources/css/register.css" />
     <link rel="stylesheet" href="{pageContext.request.contextPath}/../../resources/css/buttons.css" />
 </head>
 <body>

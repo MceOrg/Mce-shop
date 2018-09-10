@@ -1,5 +1,6 @@
 package com.mce.shop.controller;
 
+import com.mce.shop.entity.Customer;
 import com.mce.shop.entity.ReceiveAddress;
 import com.mce.shop.service.ReceiveAddressService;
 import com.mce.shop.service.impl.ReceiveAddressServiceImpl;
@@ -13,13 +14,23 @@ import java.util.List;
 
 public class ReceiveAddressServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String type=request.getParameter("type");
+        if (type.equals("0")){
+            getAllAddresses(request,response);
+        }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        this.doPost(request,response);
+    }
+
+
+    private void getAllAddresses(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         ReceiveAddressService service = new ReceiveAddressServiceImpl();
-        List<ReceiveAddress> addresses = service.queryAllUserAddress(1);
-        addresses.forEach(System.out::println);
-        request.getRequestDispatcher("/receiveAddressUi").forward(request,response);
+        Customer customer =(Customer) request.getSession().getAttribute("loginCustomer");
+        List<ReceiveAddress> addresses = service.queryAll(customer.getCustId());
+        request.getSession().setAttribute("alladdress",addresses);
+        request.getRequestDispatcher("/WEB-INF/views/writeAddress.jsp").forward(request,response);
     }
 }

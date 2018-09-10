@@ -421,7 +421,18 @@ var provinceArray = new Array();
 var cityArray = new Array();
 var areaArray = new Array();
 
-
+window.onload=function () {
+    $('.defaultAddress').parent().css(
+        {
+            "background":"url('../../resources/img/address-bg-selected.png') no-repeat center center",
+            "backgground-position-x":"center",
+            "backgground-position-y":"center"
+        }
+    );
+    $('.defaultAddress').css({
+        "background":"black"
+    });
+}
 
 for(var i = 0; i < provinceList.length; i++) {　　　　 //provinceList.length为省数组的长度，下标从0开始，所以定义var i=0
     var province = provinceList[i];　　　　　　　　　　 //通过下标获取省列表（上面的列出列表）中的数据
@@ -432,7 +443,7 @@ for(var i = 0; i < provinceList.length; i++) {　　　　 //provinceList.length
 }
 
 function chooseProvince(th) {　　　　　　　　 //通过方法的调用来实现省 市之间的二级联动，th是我们设置的一个参数，方便下面进行使用，可以理解为province的一个元素（名字）
-    var index = th.selectedIndex;　　　　　　　　　 //此处selectedIndex的索引减1是因为我们在写<select><option>按钮时  “请选择省”  占了一个索引，所以需要减1才能对应
+    var index = th.selectedIndex;　　　　　　　　　
     var provinceName = provinceArray[index];　　　　 //通过数组下标获取数据（名字）
     for(var n = 0; n < provinceList.length; n++) {　　　　 //通过循环遍历列表数组
         var provice = provinceList[n];　　　　　　　　　　　 //通过列表下标获取数据
@@ -449,7 +460,9 @@ function chooseProvince(th) {　　　　　　　　 //通过方法的调用来
     }
 }
 
-
+$('#province').change(function () {
+    chooseProvince(this);
+});
 function chooseCity(ci) {
     var index = ci.selectedIndex;
     var cityName = cityArray[index];
@@ -465,6 +478,161 @@ function chooseCity(ci) {
         }
     }
 }
+$('#city').change(function () {
+    chooseCity(this);
+});
+
+
+$('.address').on('mousemove',function(e){
+    $(this).children("p").css({
+        "visibility": "visible"
+    })
+});
+
+$('.address').on('mouseout',function(e){
+    $(this).children("p").css({
+        "visibility": "hidden"
+    })
+});
+
+
+
+// $('.address>p').on('click', function(e) {
+//     $('.address>p').css({
+//         "background":"#696969",
+//     });
+//     $('.address>p').html("设为默认地址");
+//
+//     $('.address').css({
+//         "background":"url('../../resources/img/address-bg.png') no-repeat center center",
+//         "backgground-position-x":"center",
+//         "backgground-position-y":"center"
+//     });
+//     $('.address').children("a.delete_address").css({
+//         "visibility": "visible"
+//     });
+//     $(this).parent().css(
+//         {
+//             "background":"url('../../resources/img/address-bg-selected.png') no-repeat center center",
+//             "backgground-position-x":"center",
+//             "backgground-position-y":"center"
+//         }
+//     );
+//     $(this).css({
+//         "background":"black"
+//     });
+//     $(this).html("默认地址");
+//     $(this).parent().children("a.delete_address").css({
+//         "visibility": "hidden"
+//     });
+//
+// });
+window.onload=function(){
+    if ($('.address').length>5){
+        $("#toaddnew").css({
+            "background":"silver",
+            "border":"solid 1px silver"
+        })
+    }
+}
+
+$('#toaddnew').on('click',function(){
+    if ($('.address').length>5){
+        $("#toaddnew").css({
+            "background":"silver",
+            "border":"solid 1px silver"
+        });
+        var msg="最多可建10个收货地址";
+        if (confirm(msg)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }else {
+        $(this).attr('href','#writeAddress');
+        window.location.reload();
+        setTimeout(function() {
+            $('#custname').focus();
+        }, 10);
+
+
+    }
+})
+
+/*********************************************************************************************/
+    // $('.delete_address').on('click',function () {
+    //     var msg="确定要删除此地址吗?";
+    //     if (confirm(msg)){
+    //         $(this).parent().remove();
+    //     }else{
+    //         return false;
+    //     }
+    // })
+
+/*************************** 点击修改按钮,数据自动匹配到修改地址处 **********************************/
+    $('.update_address').on('click',function(){
+      var province=  $(this).parent().find(".show-province").html();
+      var city=$(this).parent().find(".show-city").html();
+      var area=$(this).parent().find(".show-area").html();
+      var street=$(this).parent().find(".show-street").html();
+      var location=$(this).parent().find(".show-location").html();
+      var custname=$(this).parent().find(".show-custname").html();
+      var custphone=$(this).parent().find(".show-phone").html();
+      var obj=document.getElementById("province").getElementsByTagName("option");
+      var obj2=document.getElementById("city").getElementsByTagName("option");
+      var obj3=document.getElementById("area").getElementsByTagName("option");
+      var obj4=document.getElementById("street");
+      var obj5=document.getElementById("location");
+      var obj6=document.getElementById("custname");
+      var obj7=document.getElementById("custphone");
+      obj6.value=custname;
+      obj7.value=custphone;
+      obj4.value=street;
+      obj5.value=location;
+
+      $('#province').focus();
+      for(var i=0;i<obj.length;i++){
+            if(obj[i].innerText==province){
+                obj[i].selected=true;  //相等则选中
+            }
+      }
+
+        $('#province').blur(function () {
+            chooseProvince(this);
+        });
+
+        $('#city').focus();
+        for(var i=0;i<obj2.length;i++){
+            if(obj2[i].innerText==city){
+                obj2[i].selected=true;  //相等则选中
+                break;
+            }
+        }
+        $('#city').blur(function () {
+            chooseCity(this);
+            for(var i=0;i<obj3.length;i++){
+                if(obj3[i].innerText==area){
+                    obj3[i].selected=true;  //相等则选中
+                }
+            }
+        });
+        $('#custname').focus();
+    })
+/**************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -215,15 +215,29 @@ select::-ms-expand { display: none; }
 #container{
     width: 62%;
     margin: 2% auto 0;
+    margin-bottom: 15%;
 }
 
 #container .sidebar{
     width: 15%;
     float: left;
     margin-right: 30px;
-    height: 300px;
-    background: rebeccapurple;
 }
+#container .sidebar .slide-nav li{
+    text-align: center;
+    padding: 6%;
+    background: black;
+    cursor: pointer;
+}
+#container .sidebar .slide-nav li:hover>a{
+    color: silver;
+}
+#container .sidebar .slide-nav li a{
+    color: white;
+    font-size: 14px;
+    font-family: 宋体;
+}
+
 #container .container-address{
     background: white;
 
@@ -285,15 +299,20 @@ select::-ms-expand { display: none; }
     width: 98%;
     margin: 0 auto;
 }
+
+
+
+.defaultaddress-wrap{
+    background:url('../img/address-bg-selected.png') no-repeat center center !important;
+}
 .address{
     position: relative;
     display: inline-block;
-    background: url("../img/address-bg.png") no-repeat;
-    width: 25%;
+    background: url("../img/address-bg.png") no-repeat center center;
+    width: 29%;
     height: 122px;
-    margin: 0 3% 10px 2%;
     padding: 2%;
-    padding-right: 5px;
+    padding-left: 1%;
     overflow: hidden;
 }
 .address .address-wrap{
@@ -334,7 +353,7 @@ select::-ms-expand { display: none; }
     float: right;
     bottom: 28px;
     font-size: 12px;
-    margin-left: 5%;
+    margin-right: 5%;
 }
 .address .delete_address{
     display: inline-block;
@@ -351,11 +370,13 @@ select::-ms-expand { display: none; }
     position: absolute;
     top: 0px;
     right: 18px;
-    background: #1e1f1f none repeat;
+    background: #696969 none repeat;
     border-radius: 0 0 5px 5px;
     color: #fff;
     padding: 0 10px;
     cursor: pointer;
+    visibility: hidden;
+
 }
 
 
@@ -376,6 +397,9 @@ select::-ms-expand { display: none; }
 #container .secend-container-address .body .address-phone,
 #container .secend-container-address .body .address-detail
 {
+    margin-bottom:3%;
+}
+#container .secend-container-address .body .address-phone{
     margin-bottom: 2%;
 }
 #container .secend-container-address .body .address-detail{
@@ -435,7 +459,7 @@ select::-ms-expand { display: none; }
     border: 1px solid #b2b2b2;
     border-radius: 3px;
     font-size: 14px;
-    margin: 2% 0 2% 8%;
+    margin: 2% 0 3% 8%;
     padding-left: 5px;
  }
 
@@ -443,7 +467,7 @@ select::-ms-expand { display: none; }
     font-size: 12px;
     color: #333;
     margin-left: 8%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 #container .secend-container-address .body #address-type label{
     margin-right: 5%;

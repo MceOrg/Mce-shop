@@ -91,12 +91,18 @@
     </div>
 </div>
     <div id="container" class="clearfix">
-        <div class="sidebar"></div>
+        <div class="sidebar">
+            <ul class="slide-nav">
+                <li><a href="">我的资料</a></li>
+                <li><a href="">收货地址</a></li>
+                <li><a href="">修改地址</a></li>
+            </ul>
+        </div>
         <div class="container-address">
             <div class="header">
                 <strong>已经保存的收货地址</strong>
-                <span>您已经创建 <em id="own-address-num">4</em>个收货地址，最多可创建 <em id="max-address-num">10</em> 个 </span>
-                <a href="javascript:;">新增收货地址</a>
+                <span>您已经创建 <em id="own-address-num">4</em>个收货地址，最多可创建 <em id="max-address-num">6</em> 个 </span>
+                <a  id="toaddnew" style="cursor: pointer">新增收货地址</a>
             </div>
             <div class="body">
                 <div>
@@ -104,13 +110,13 @@
                         <p>设为默认地址</p>
                         <ul class="address-wrap">
                             <li>
-                                <span>周科</span>
+                                <span class="show-custname">周科</span>
                             </li>
                             <li>
-                                <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                                <span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
                             </li>
                             <li>
-                                <span>188****0623</span>
+                                <span class="show-phone">188****0623</span>
 
                             </li>
                         </ul>
@@ -121,13 +127,13 @@
                         <p>设为默认地址</p>
                         <ul class="address-wrap">
                             <li>
-                                <span>周科</span>
+                                <span class="show-custname">周科</span>
                             </li>
                             <li>
-                                <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                                <span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
                             </li>
                             <li>
-                                <span>188****0623</span>
+                                <span class="show-phone">188****0623</span>
 
                             </li>
                         </ul>
@@ -138,13 +144,13 @@
                         <p>设为默认地址</p>
                         <ul class="address-wrap">
                             <li>
-                                <span>周科</span>
+                                <span class="show-custname">周科</span>
                             </li>
                             <li>
-                                <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                                <span>  <span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
                             </li>
                             <li>
-                                <span>188****0623</span>
+                                <span class="show-phone">188****0623</span>
 
                             </li>
                         </ul>
@@ -155,13 +161,13 @@
                         <p>设为默认地址</p>
                         <ul class="address-wrap">
                             <li>
-                                <span>周科</span>
+                                <span class="show-custname">周科</span>
                             </li>
                             <li>
-                                <span>浙江省 杭州市 下城区 长巷街 柳营社区64幢302室</span>
+                                <span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
                             </li>
                             <li>
-                                <span>188****0623</span>
+                                <span class="show-phone">188****0623</span>
 
                             </li>
                         </ul>
@@ -170,27 +176,26 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="container-address secend-container-address">
+        <div class="container-address secend-container-address" id="writeAddress">
             <div class="header">
                 <strong>新增收货地址</strong>
             </div>
-            <form action="">
+            <form action="" id="update-address">
                 <div class="body">
                     <div class="address-user">
                         <strong>*</strong>
                         <span>收货人:</span>
-                        <input type="text" placeholder="收货人姓名">
+                        <input type="text" placeholder="收货人姓名" name="custname" id="custname">
                     </div>
 
                     <div class="address-detail">
                         <strong>*</strong>
                         <span>地&nbsp;&nbsp;&nbsp;址:</span>
-                        <select id="province" onchange="chooseProvince(this)" >
+                        <select id="province">
                             <option value="0">省/直辖市</option>
                         </select>
-                        <select id="city" onchange="chooseCity(this)" onfocus="chooseCity(this)">
+                        <select id="city">
                             <option value="0">市</option>
                         </select>
                         <select id="area">
@@ -203,7 +208,7 @@
                         <div class="address-phone">
                             <strong>*</strong>
                             <span>手&nbsp;&nbsp;&nbsp;机:</span>
-                            <input type="text" placeholder="手机号">
+                            <input type="text" placeholder="手机号" id="custphone">
                         </div>
 
                         <div id="address-type">
@@ -215,7 +220,7 @@
 
                     </div>
                     <div id="submit-btn">
-                        <a href="javascript:;" id="submit">保存收货地址</a>
+                        <a href="javascript:;" id="submit" name="save-address">保存收货地址</a>
                     </div>
                 </div>
             </form>

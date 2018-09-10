@@ -41,7 +41,7 @@
            if (customer!=null){
                %>
 
-            <a href="customer?type=3" style="color: #0f0f0f"><%=customer.getCustName()%></a>
+            <a href="receiveaddress?type=0" style="color: #0f0f0f"><%=customer.getCustName()%></a>
             <a href="customer?type=5" style="color: #0f0f0f">退出</a>
 
         <%

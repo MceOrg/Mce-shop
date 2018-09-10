@@ -19,17 +19,7 @@
     address_post_code, address_recipient_name, address_recipient_telno, is_default_address, 
     cust_id
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from receive_address
-    where address_id = #{addressId,jdbcType=INTEGER}
-  </select>
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from receive_address
-    where address_id = #{addressId,jdbcType=INTEGER}
-  </delete>
   <insert id="insert" parameterType="com.mce.shop.entity.ReceiveAddress">
     insert into receive_address (address_id, address_province, address_city, 
       address_area, address_street, address_detail, 
@@ -42,129 +32,8 @@
       #{addressRecipientTelno,jdbcType=BIGINT}, #{isDefaultAddress,jdbcType=INTEGER}, 
       #{custId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.mce.shop.entity.ReceiveAddress">
-    insert into receive_address
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="addressId != null">
-        address_id,
-      </if>
-      <if test="addressProvince != null">
-        address_province,
-      </if>
-      <if test="addressCity != null">
-        address_city,
-      </if>
-      <if test="addressArea != null">
-        address_area,
-      </if>
-      <if test="addressStreet != null">
-        address_street,
-      </if>
-      <if test="addressDetail != null">
-        address_detail,
-      </if>
-      <if test="addressPostCode != null">
-        address_post_code,
-      </if>
-      <if test="addressRecipientName != null">
-        address_recipient_name,
-      </if>
-      <if test="addressRecipientTelno != null">
-        address_recipient_telno,
-      </if>
-      <if test="isDefaultAddress != null">
-        is_default_address,
-      </if>
-      <if test="custId != null">
-        cust_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="addressId != null">
-        #{addressId,jdbcType=INTEGER},
-      </if>
-      <if test="addressProvince != null">
-        #{addressProvince,jdbcType=VARCHAR},
-      </if>
-      <if test="addressCity != null">
-        #{addressCity,jdbcType=VARCHAR},
-      </if>
-      <if test="addressArea != null">
-        #{addressArea,jdbcType=VARCHAR},
-      </if>
-      <if test="addressStreet != null">
-        #{addressStreet,jdbcType=VARCHAR},
-      </if>
-      <if test="addressDetail != null">
-        #{addressDetail,jdbcType=VARCHAR},
-      </if>
-      <if test="addressPostCode != null">
-        #{addressPostCode,jdbcType=INTEGER},
-      </if>
-      <if test="addressRecipientName != null">
-        #{addressRecipientName,jdbcType=VARCHAR},
-      </if>
-      <if test="addressRecipientTelno != null">
-        #{addressRecipientTelno,jdbcType=BIGINT},
-      </if>
-      <if test="isDefaultAddress != null">
-        #{isDefaultAddress,jdbcType=INTEGER},
-      </if>
-      <if test="custId != null">
-        #{custId,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mce.shop.entity.ReceiveAddress">
-    update receive_address
-    <set>
-      <if test="addressProvince != null">
-        address_province = #{addressProvince,jdbcType=VARCHAR},
-      </if>
-      <if test="addressCity != null">
-        address_city = #{addressCity,jdbcType=VARCHAR},
-      </if>
-      <if test="addressArea != null">
-        address_area = #{addressArea,jdbcType=VARCHAR},
-      </if>
-      <if test="addressStreet != null">
-        address_street = #{addressStreet,jdbcType=VARCHAR},
-      </if>
-      <if test="addressDetail != null">
-        address_detail = #{addressDetail,jdbcType=VARCHAR},
-      </if>
-      <if test="addressPostCode != null">
-        address_post_code = #{addressPostCode,jdbcType=INTEGER},
-      </if>
-      <if test="addressRecipientName != null">
-        address_recipient_name = #{addressRecipientName,jdbcType=VARCHAR},
-      </if>
-      <if test="addressRecipientTelno != null">
-        address_recipient_telno = #{addressRecipientTelno,jdbcType=BIGINT},
-      </if>
-      <if test="isDefaultAddress != null">
-        is_default_address = #{isDefaultAddress,jdbcType=INTEGER},
-      </if>
-      <if test="custId != null">
-        cust_id = #{custId,jdbcType=INTEGER},
-      </if>
-    </set>
-    where address_id = #{addressId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.mce.shop.entity.ReceiveAddress">
-    update receive_address
-    set address_province = #{addressProvince,jdbcType=VARCHAR},
-      address_city = #{addressCity,jdbcType=VARCHAR},
-      address_area = #{addressArea,jdbcType=VARCHAR},
-      address_street = #{addressStreet,jdbcType=VARCHAR},
-      address_detail = #{addressDetail,jdbcType=VARCHAR},
-      address_post_code = #{addressPostCode,jdbcType=INTEGER},
-      address_recipient_name = #{addressRecipientName,jdbcType=VARCHAR},
-      address_recipient_telno = #{addressRecipientTelno,jdbcType=BIGINT},
-      is_default_address = #{isDefaultAddress,jdbcType=INTEGER},
-      cust_id = #{custId,jdbcType=INTEGER}
-    where address_id = #{addressId,jdbcType=INTEGER}
-  </update>
+
+
 
   <select id="queryAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
