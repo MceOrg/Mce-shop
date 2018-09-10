@@ -118,11 +118,15 @@
                             %>
                          <div class="address defaultaddress-wrap">
                              <p style="background: black" class="defaultAddress">默认地址</p>
+                             <input type="hidden" value="<%=receiveAddress.getIsDefaultAddress()%>" name="default-status">
+                             <input type="hidden" value="<%=receiveAddress.getAddressId()%>" name="addressid">
                     <%}
                         else {
                             %>
                         <div class="address">
                              <p>设为默认地址</p>
+                            <input type="hidden" value="<%=receiveAddress.getIsDefaultAddress()%>" name="default-status">
+                            <input type="hidden" value="<%=receiveAddress.getAddressId()%>" name="addressid">
                     <%
                         }
                     %>
@@ -132,7 +136,11 @@
                             <span class="show-custname"><%=receiveAddress.getAddressRecipientName()%></span>
                         </li>
                         <li>
-                            <span><span class="show-province"><%=receiveAddress.getAddressProvince()%></span> <span class="show-city"><%=receiveAddress.getAddressCity()%></span> <span class="show-area"><%=receiveAddress.getAddressArea()%></span> <span class="show-street"><%=receiveAddress.getAddressStreet()%></span><span class="show-location"><%=receiveAddress.getAddressDetail()%></span></span>
+                            <span><span class="show-province"><%=receiveAddress.getAddressProvince()%></span>
+                                <span class="show-city"><%=receiveAddress.getAddressCity()%></span>
+                                <span class="show-area"><%=receiveAddress.getAddressArea()%></span>
+                                <span class="show-street"><%=receiveAddress.getAddressStreet()%>
+                                </span><span class="show-location"><%=receiveAddress.getAddressDetail()%></span></span>
                         </li>
                         <li>
                             <span class="show-phone"><%=receiveAddress.getAddressRecipientTelno()%></span>

@@ -63,7 +63,8 @@
   <update id="updateDefaultAddress">
     update receive_address
     set
-    is_default_address = 0
+    is_default_address = #{statusCode}
     where address_id = #{addressId} and cust_id = #{custId}
   </update>
+
 </mapper>

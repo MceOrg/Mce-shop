@@ -1,3 +1,6 @@
+/*************************** 省市三级联动 **********************************/
+
+
 var provinceList = [
     {name:'北京', cityList:[
             {name:'市辖区', areaList:['东城区','西城区','崇文区','宣武区','朝阳区','丰台区','石景山区','海淀区','门头沟区','房山区','通州区','顺义区','昌平区','大兴区','怀柔区','平谷区']},
@@ -421,18 +424,7 @@ var provinceArray = new Array();
 var cityArray = new Array();
 var areaArray = new Array();
 
-window.onload=function () {
-    $('.defaultAddress').parent().css(
-        {
-            "background":"url('../../resources/img/address-bg-selected.png') no-repeat center center",
-            "backgground-position-x":"center",
-            "backgground-position-y":"center"
-        }
-    );
-    $('.defaultAddress').css({
-        "background":"black"
-    });
-}
+
 
 for(var i = 0; i < provinceList.length; i++) {　　　　 //provinceList.length为省数组的长度，下标从0开始，所以定义var i=0
     var province = provinceList[i];　　　　　　　　　　 //通过下标获取省列表（上面的列出列表）中的数据
@@ -482,6 +474,12 @@ $('#city').change(function () {
     chooseCity(this);
 });
 
+/*******************************************************************************************/
+
+
+
+
+/*************************** ()默认地址小标签的mouse事件**********************************/
 
 $('.address').on('mousemove',function(e){
     $(this).children("p").css({
@@ -494,39 +492,35 @@ $('.address').on('mouseout',function(e){
         "visibility": "hidden"
     })
 });
+/*************************************************************************************************/
+
+/*************************** 设为默认地址的ajax事件**********************************/
+$('.address>p').not('.defaultAddress').on('click',function () {
+    $.ajax({
+        url:"receiveaddress?type=1",
+        type:"post",
+        dataType:"text",
+        data:{
+            "addressid":$(this).siblings("[name='addressid']").val(),
+            "defaultaddressid":$(".defaultAddress").siblings("[name='addressid']").val()
+        },
+        complete:function (data) {
+            if(data.responseText=="true"){
+                window.location.reload();
+
+            }else {
+                alert("修改地址失败");
+            }
+        }
+    })
+
+})
+
+/*************************************************************************************************/
 
 
 
-// $('.address>p').on('click', function(e) {
-//     $('.address>p').css({
-//         "background":"#696969",
-//     });
-//     $('.address>p').html("设为默认地址");
-//
-//     $('.address').css({
-//         "background":"url('../../resources/img/address-bg.png') no-repeat center center",
-//         "backgground-position-x":"center",
-//         "backgground-position-y":"center"
-//     });
-//     $('.address').children("a.delete_address").css({
-//         "visibility": "visible"
-//     });
-//     $(this).parent().css(
-//         {
-//             "background":"url('../../resources/img/address-bg-selected.png') no-repeat center center",
-//             "backgground-position-x":"center",
-//             "backgground-position-y":"center"
-//         }
-//     );
-//     $(this).css({
-//         "background":"black"
-//     });
-//     $(this).html("默认地址");
-//     $(this).parent().children("a.delete_address").css({
-//         "visibility": "hidden"
-//     });
-//
-// });
+/*************************** 新增收货地址事件**********************************/
 window.onload=function(){
     if ($('.address').length>5){
         $("#toaddnew").css({
@@ -554,9 +548,7 @@ $('#toaddnew').on('click',function(){
         window.location.reload();
         setTimeout(function() {
             $('#custname').focus();
-        }, 10);
-
-
+        }, 100);
     }
 })
 

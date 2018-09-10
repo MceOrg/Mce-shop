@@ -36,7 +36,16 @@ public class ReceiveAddressServiceImpl implements ReceiveAddressService {
     }
 
     @Override
-    public int updateDefaultAddress(Integer addressId, Integer custId) {
-        return 0;
+    public int updateDefaultAddress(Integer addressId, Integer custId,Integer isDefaultAddress) {
+        SqlSession session=MybatisUtil.getSession();
+        try {
+            ReceiveAddressDAO receiveAddressDAO=session.getMapper(ReceiveAddressDAO.class);
+            int row=receiveAddressDAO.updateDefaultAddress(addressId,custId,isDefaultAddress);
+            session.commit();
+            return row;
+        }finally {
+            MybatisUtil.closeSession();
+        }
+
     }
 }

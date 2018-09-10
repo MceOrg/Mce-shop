@@ -38,5 +38,5 @@ public interface ReceiveAddressService {
      @param custId 当前用户ID
      @return 返回受影响行数
      */
-    public  int updateDefaultAddress(Integer addressId,Integer custId);
+    public  int updateDefaultAddress(Integer addressId,Integer custId,Integer isDefaultAddress);
 }

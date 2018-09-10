@@ -73,7 +73,7 @@ public class TestReceiveAddress {
     public void testUpdateDefaultAddress() {
         SqlSession sqlSession = MybatisUtil.getSession();
         ReceiveAddressDAO dao = sqlSession.getMapper(ReceiveAddressDAO.class);
-        int a = dao.updateDefaultAddress(1, 1);
+        int a = dao.updateDefaultAddress(1, 1,1);
         sqlSession.commit();
         MybatisUtil.closeSession();
     }
