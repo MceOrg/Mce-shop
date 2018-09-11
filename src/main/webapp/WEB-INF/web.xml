@@ -55,22 +55,39 @@
         <servlet-name>Customer</servlet-name>
         <url-pattern>/customer</url-pattern>
     </servlet-mapping>
-      <welcome-file>/WEB-INF/views/mainPage.jsp</welcome-file>
+
+    <welcome-file-list>
+        <welcome-file>/shoes.jsp</welcome-file>
     </welcome-file-list>
     
-    
-    
-    
+
     <servlet>
         <servlet-name>shoes</servlet-name>
         <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.mce.shop.controller.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>shoes</servlet-name>
         <url-pattern>/shoes</url-pattern>
     </servlet-mapping>
     
-    
+    <servlet>
+        <servlet-name>GetAllShoesByPage</servlet-name>
+        <servlet-class>com.mce.shop.controller.GetAllShoesByPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllShoesByPage</servlet-name>
+        <url-pattern>/shoes/getByPage</url-pattern>
+    </servlet-mapping>
 
     
     
