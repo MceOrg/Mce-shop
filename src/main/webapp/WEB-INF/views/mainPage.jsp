@@ -40,8 +40,18 @@
            Customer customer = (Customer) request.getSession().getAttribute("loginCustomer");
            if (customer!=null){
                %>
+                <%
+                    if (customer.getCustName()!=null){
+                        %>
+                    <a href="customer?type=6" style="color: #0f0f0f"><%=customer.getCustName()%></a>
+        <%
+                    }else {
+                        %>
+                    <a href="customer?type=6" style="color: #0f0f0f">匿名用户</a>
+        <%
+                    }
+                %>
 
-            <a href="receiveaddress?type=0" style="color: #0f0f0f"><%=customer.getCustName()%></a>
             <a href="customer?type=5" style="color: #0f0f0f">退出</a>
 
         <%
@@ -421,9 +431,5 @@
         </div>
     </div>
 </div>
-<div style="width: 100%;height: 800px;margin: 0 auto;">
-    <iframe height="100%" width="100%" src="bottom.html" scrolling="no"></iframe>
-</div>
-
 </body>
 </html>

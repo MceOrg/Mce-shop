@@ -34,6 +34,8 @@ public class CustomerServlet extends HttpServlet {
             this.register(req,resp);
         }else if(type.equals("5")){
             this.logout(req,resp);
+        }else if(type.equals("6")){
+            this.showInfo(req,resp);
         }
     }
 
@@ -132,6 +134,14 @@ public class CustomerServlet extends HttpServlet {
 //        req.getSession().setAttribute("token", token);  //在服务器使用session保存token(令牌)
         req.getSession().removeAttribute("loginCustomer");
         req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
+    }
+
+
+
+
+    private void showInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        req.getRequestDispatcher("/WEB-INF/views/show_myInfo.jsp").forward(req,resp);
+        System.out.println("sss");
     }
 
 

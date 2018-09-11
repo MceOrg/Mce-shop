@@ -20,6 +20,8 @@ public class ReceiveAddressServlet extends HttpServlet {
             getAllAddresses(request,response);
         }else if(type.equals("1")){
             updateDefauladdress(request,response);
+        }else if(type.equals("2")){
+            deleteAddress(request,response);
         }
 
     }
@@ -32,7 +34,7 @@ public class ReceiveAddressServlet extends HttpServlet {
     private void getAllAddresses(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         ReceiveAddressService service = new ReceiveAddressServiceImpl();
         Customer customer =(Customer) request.getSession().getAttribute("loginCustomer");
-        List<ReceiveAddress> addresses = service.queryAll(customer.getCustId());
+        List<ReceiveAddress> addresses = service.getAllAddresses(customer.getCustId());
         request.getSession().setAttribute("alladdress",addresses);
         request.getRequestDispatcher("/WEB-INF/views/writeAddress.jsp").forward(request,response);
     }
@@ -52,5 +54,21 @@ public class ReceiveAddressServlet extends HttpServlet {
             out.print(false);
         }
 
+    }
+
+    private void deleteAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        ReceiveAddressService receiveAddressService=new ReceiveAddressServiceImpl();
+        Customer customer =(Customer) request.getSession().getAttribute("loginCustomer");
+        System.out.println(request.getParameter("addressid"));
+        Integer row=receiveAddressService.deleteAddress(Integer.valueOf(request.getParameter("addressid")),customer.getCustId());
+        if(row==1){
+            PrintWriter out=response.getWriter();
+            out.print(true);
+            System.out.println("ss");
+        }else {
+            PrintWriter out=response.getWriter();
+            out.print(false);
+            System.out.println("bb");
+        }
     }
 }

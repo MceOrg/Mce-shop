@@ -11,24 +11,32 @@ import java.util.List;
 public class ReceiveAddressServiceImpl implements ReceiveAddressService {
 
     @Override
-    public int insert(ReceiveAddress newAddress) {
+    public int addNewAddress(ReceiveAddress newAddress) {
         SqlSession sqlSession = MybatisUtil.getSession();
         ReceiveAddressDAO dao = sqlSession.getMapper(ReceiveAddressDAO.class);
         return 0;
     }
 
     @Override
-    public int delete(Integer addressId, Integer custId) {
+    public int deleteAddress(Integer addressId, Integer custId) {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        try {
+            ReceiveAddressDAO dao = sqlSession.getMapper(ReceiveAddressDAO.class);
+            int row=dao.delete(addressId,custId);
+            sqlSession.commit();
+            return row;
+        }finally {
+            MybatisUtil.closeSession();
+        }
+    }
+
+    @Override
+    public int updateAddress(ReceiveAddress newAddress) {
         return 0;
     }
 
     @Override
-    public int update(ReceiveAddress newAddress) {
-        return 0;
-    }
-
-    @Override
-    public List<ReceiveAddress> queryAll(Integer custId) {
+    public List<ReceiveAddress> getAllAddresses(Integer custId) {
         SqlSession session=MybatisUtil.getSession();
         ReceiveAddressDAO receiveAddressDAO=session.getMapper(ReceiveAddressDAO.class);
         List<ReceiveAddress> receiveAddresses=receiveAddressDAO.queryAll(custId);

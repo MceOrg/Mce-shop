@@ -19,6 +19,7 @@ a{
     clear: both;
     display: block;
 }
+
 select {
     border: solid 1px #000;
     appearance:none;
@@ -202,16 +203,6 @@ select::-ms-expand { display: none; }
 
 
 
-
-
-
-
-
-
-
-
-
-
 #container{
     width: 62%;
     margin: 2% auto 0;
@@ -221,7 +212,6 @@ select::-ms-expand { display: none; }
 #container .sidebar{
     width: 15%;
     float: left;
-    margin-right: 30px;
 }
 #container .sidebar .slide-nav li{
     text-align: center;
@@ -238,288 +228,92 @@ select::-ms-expand { display: none; }
     font-family: 宋体;
 }
 
-#container .container-address{
-    background: white;
-
-}
-#container .container-address .header{
-    width: 100%;
-    height: 56px;
-    border-bottom: 1px dotted silver;
-    border-top: 1px solid  black;
-
-}
-#container .container-address{
-    width:80%;
+#container .info-wrap{
+    width: 80%;
     float: right;
 }
-#container .container-address .header>strong{
-    font-size: 14px;
-    color: #333;
-    line-height: 56px;
-    padding-left: 25px;
-}
-#container .container-address .header>span{
-    font-size: 12px;
-    color: grey;
-    margin-left: 10px;
-}
-#container .container-address .header>span #own-address-num,
-#container .container-address .header>span #max-address-num{
-    color: black;
-    font-size: 12px;
-    margin: 0 5px;
-    font-style: normal;
-}
-#container .container-address .header>a{
-    position: relative;
-    float: right;
-    top: 18px;
-    right: 20px;
-    font-size: 12px;
-    display: inline-block;
-    background-color: black;
-    border: 1px solid black;
-    color: white;
-    height: 25px;
-    line-height: 25px;
-    padding: 0 14px;
-    border-radius: 3px;
-    text-decoration: none;
-    text-align: center;
-}
-#container .container-address .body{
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-
-}
-#container .container-address .body>div{
-    width: 98%;
-    margin: 0 auto;
-}
-
-
-
-.defaultaddress-wrap{
-    background:url('../img/address-bg-selected.png') no-repeat center center !important;
-}
-.address{
-    position: relative;
-    display: inline-block;
-    background: url("../img/address-bg.png") no-repeat center center;
-    width: 29%;
-    height: 122px;
-    padding: 2%;
-    padding-left: 1%;
-    overflow: hidden;
-}
-.address .address-wrap{
-    width: 100%;
-    margin: 5px auto;
-    font-size: 12px;
-    color: #333;
-}
-.address .address-wrap>li:first-child{
-    height: 26px;
-    background:url("../img/i-addr-user.png") no-repeat 3px 6px;
-    border-bottom: 1px dotted #dcdcdc;
-    padding-left:20px;
-    line-height: 26px;
-    font-size: 14px;
-}
-.address .address-wrap>li:nth-child(2){
-    height: 64px;
-    padding-top: 5px;
-    background:url("../img/i-addr-home.png") no-repeat 2px 8px;
-    border-bottom: 1px dotted #dcdcdc;
-    padding-left:20px;
-    box-sizing: border-box;
-}
-.address .address-wrap>li:nth-child(3){
-    height: 27px;
-    background:url("../img/i-addr-phone.png") no-repeat 3px 6px;
-    border-bottom: 1px dotted #dcdcdc;
-    padding-left:20px;
-    line-height: 27px;
-}
-.address .update_address{
-    display: inline-block;
-    border: 1px solid #c2c2c2;
-    padding: 1px 2px;
-    border-radius: 3px;
-    position: relative;
-    float: right;
-    bottom: 28px;
-    font-size: 12px;
-    margin-right: 5%;
-}
-.address .delete_address{
-    display: inline-block;
-    border: 1px solid #c2c2c2;
-    padding: 1px 2px;
-    border-radius: 3px;
-    position: relative;
-    bottom: 28px;
-    float: right;
-    font-size: 12px;
-}
-.address>p{
-    font-size: 12px;
-    position: absolute;
-    top: 0px;
-    right: 18px;
-    background: #696969 none repeat;
-    border-radius: 0 0 5px 5px;
-    color: #fff;
-    padding: 0 10px;
-    cursor: pointer;
-    visibility: hidden;
-
-}
-
-
-#container .container-address{
-    margin-bottom: 25px;
-}
-#container .secend-container-address{
-    margin-bottom: 0;
-}
-#container .secend-container-address .body{
-    background: #fbfbfb url("../img/bg-addr-frm.png") repeat-x scroll bottom;
-    padding:2% 0 0 0 ;
-}
-#container .secend-container-address .body .address-user{
-    margin: 0 auto;
-}
-#container .secend-container-address .body .address-user,
-#container .secend-container-address .body .address-phone,
-#container .secend-container-address .body .address-detail
-{
-    margin-bottom:3%;
-}
-#container .secend-container-address .body .address-phone{
-    margin-bottom: 2%;
-}
-#container .secend-container-address .body .address-detail{
-    border-bottom: 1px solid silver;
-}
-#container .secend-container-address .body .address-user>span,
-#container .secend-container-address .body .address-phone>span,
-#container .secend-container-address .body .address-detail>span
-{
-    font-size: 12px;
-    color:#333;
-}
-#container .secend-container-address .body .address-user>strong,
-#container .secend-container-address .body .address-phone>strong,
-#container .secend-container-address .body .address-detail>strong
-{
-    color:#FF1177;
-    font-size: 12px;
-}
-#container .secend-container-address .body .address-user>input,
-#container .secend-container-address .body .address-phone>input,
-#container .secend-container-address .body .address-detail #province,
-#container .secend-container-address .body .address-detail #city,
-#container .secend-container-address .body .address-detail #area,
-#container .secend-container-address .body .address-detail #town,
-#container .secend-container-address .body .address-detail #street
-{
-    width: 25%;
-    height: 28px;
-    line-height: 28px;
-    border: 1px solid #b2b2b2;
-    border-radius: 3px;
-    font-size: 14px;
-    margin-left: 10px;
-    padding-left: 5px;
-}
-#container .secend-container-address .body .address-detail #street{
-    width: 18%;
-    height: 26px;
-    position: relative;
-    top: -1px;
-    line-height: 26px;
-}
-#container .secend-container-address .body .address-detail #province,
-#container .secend-container-address .body .address-detail #city,
-#container .secend-container-address .body .address-detail #area,
-#container .secend-container-address .body .address-detail #town
-{
-    width: 18%;
-    color: #333;
-}
-
-#container .secend-container-address .body  #location,
-#container .secend-container-address .body #postcode{
-    width: 25%;
-    height: 28px;
-    line-height: 28px;
-    border: 1px solid #b2b2b2;
-    border-radius: 3px;
-    font-size: 14px;
-    margin: 2% 0 3% 8%;
-    padding-left: 5px;
- }
-#container .secend-container-address .body #postcode{
-    margin-top: 1%;
-}
-
-#container .secend-container-address .body #address-type{
-    font-size: 12px;
-    color: #333;
-    margin-left: 8%;
-    margin-bottom: 2%;
-}
-#container .secend-container-address .body #address-type label{
-    margin-right: 5%;
-}
-#container .secend-container-address .body #address-type label input[name="add-type"]{
-    margin-right: 1%;
-}
-#container .secend-container-address .body #submit-btn{
-    width: 100%;
-}
-#container .secend-container-address .body #submit-btn a{
+#container .info-wrap>span{
     display: block;
     margin: 0 auto;
-    color: white;
-    font-size: 14px;
-    width: 12%;
-    height: 20px;
-    padding: 1%;
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 3px;
-    margin-bottom: 2%;
     text-align: center;
-    line-height:20px;
-
+    font-size: 26px;
+    font-weight: bold;
+}
+#container .info-wrap .custprofile{
+    margin: 1% auto 0 ;
+}
+#container .info-wrap .show_custprofile{
+    width: 60px;
+    margin: 10px auto;
+}
+#container .info-wrap .show_custprofile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-body,ul{
-    margin:0;
-    padding: 0;
+#container .info-wrap #imageSelect{
+    margin-top:3%;
+    font-size: 14px;
+    padding:3px 20px 3px 3px;
 }
-a{
-    text-decoration: none;
+#container .info-wrap em{
+    font-size: 14px;
+    margin-right: 5%;
+}
+
+#container .info-wrap .custprofile,
+#container .info-wrap .custname,
+#container .info-wrap .custphone,
+#container .info-wrap .custage,
+#container .info-wrap .custemail{
+    padding-left: 35%;
+    margin: 20px auto 20px;
+}
+
+#container .info-wrap .custprofile input,
+#container .info-wrap .custname input,
+#container .info-wrap .custphone input,
+#container .info-wrap .custage input,
+#container .info-wrap .custemail input{
+    padding: 3px 5px;
+    font-size: 14px;
+    line-height: 18px;
+}
+#container .info-wrap input[type="submit"]{
+    margin-left:48%;
+    font-size: 14px;
+    padding: 3px 5px;
+    background: white;
     color: black;
+    border-radius: 5px;
 }
 
 
-/*****************************底部************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #footer{
     width: 100%;

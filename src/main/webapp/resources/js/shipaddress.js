@@ -507,7 +507,7 @@ $('.address>p').not('.defaultAddress').on('click',function () {
         },
         complete:function (data) {
             if(data.responseText=="true"){
-                window.location.reload();
+                alert("ss");
             }else {
                 alert("修改地址失败");
             }
@@ -545,7 +545,6 @@ $('#toaddnew').on('click',function(){
 
     }else {
         $(this).attr('href','#writeAddress');
-        window.location.reload();
         setTimeout(function() {
             $('#custname').focus();
         }, 100);
@@ -553,14 +552,37 @@ $('#toaddnew').on('click',function(){
 })
 
 /*********************************************************************************************/
+
+
+
+/*************************** 删除收货地址 **********************************/
     $('.delete_address').on('click',function () {
         var msg="确定要删除此地址吗?";
         if (confirm(msg)){
-            $(this).parent().remove();
+            $.ajax({
+                url:"receiveaddress?type=2",
+                type:"post",
+                dataType:"text",
+                data:{
+                    "addressid":$(this).siblings("[name='addressid']").val()
+                },
+                complete:function (data) {
+                    if(data.responseText){
+                        alert("aa");
+                        window.location.reload();
+                    }else {
+                        alert("删除地址失败");
+                    }
+                }
+            })
         }else{
             return false;
         }
     })
+
+/*********************************************************************************************/
+
+
 
 /*************************** 点击修改按钮,数据自动匹配到修改地址处 **********************************/
     $('.update_address').on('click',function(){
@@ -571,6 +593,7 @@ $('#toaddnew').on('click',function(){
       var location=$(this).parent().find(".show-location").html();
       var custname=$(this).parent().find(".show-custname").html();
       var custphone=$(this).parent().find(".show-phone").html();
+      var postcode=$(this).parent().find("[name='postcode']").val();
       var obj=document.getElementById("province").getElementsByTagName("option");
       var obj2=document.getElementById("city").getElementsByTagName("option");
       var obj3=document.getElementById("area").getElementsByTagName("option");
@@ -578,10 +601,12 @@ $('#toaddnew').on('click',function(){
       var obj5=document.getElementById("location");
       var obj6=document.getElementById("custname");
       var obj7=document.getElementById("custphone");
+      var obj8=document.getElementById("postcode");
       obj6.value=custname;
       obj7.value=custphone;
       obj4.value=street;
       obj5.value=location;
+      obj8.value=postcode;
 
       $('#province').focus();
       for(var i=0;i<obj.length;i++){

@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.mce.shop.entity.ReceiveAddress" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,8 +109,10 @@
             <a  id="toaddnew" style="cursor: pointer">新增收货地址</a>
         </div>
         <div class="body">
+            <%--<c:forEach var="Address" items="${alladdress}">--%>
+                <%--<input type="text" value="${Address.getAddressRecipientName()}">--%>
+            <%--</c:forEach>--%>
             <div>
-
                 <%
                     List<ReceiveAddress> receiveAddresses=(List<ReceiveAddress>) request.getSession().getAttribute("alladdress");
                     if(receiveAddresses!=null){
@@ -136,11 +139,14 @@
                             <span class="show-custname"><%=receiveAddress.getAddressRecipientName()%></span>
                         </li>
                         <li>
-                            <span><span class="show-province"><%=receiveAddress.getAddressProvince()%></span>
+                            <span>
+                                <span class="show-province"><%=receiveAddress.getAddressProvince()%></span>
                                 <span class="show-city"><%=receiveAddress.getAddressCity()%></span>
                                 <span class="show-area"><%=receiveAddress.getAddressArea()%></span>
-                                <span class="show-street"><%=receiveAddress.getAddressStreet()%>
-                                </span><span class="show-location"><%=receiveAddress.getAddressDetail()%></span></span>
+                                <span class="show-street"><%=receiveAddress.getAddressStreet()%></span>
+                                <span class="show-location"><%=receiveAddress.getAddressDetail()%></span>
+                            </span>
+                            <input type="hidden" value="<%=receiveAddress.getAddressPostCode()%>" name="postcode">
                         </li>
                         <li>
                             <span class="show-phone"><%=receiveAddress.getAddressRecipientTelno()%></span>
@@ -149,81 +155,16 @@
                     </ul>
                     <%
                         if (receiveAddress.getIsDefaultAddress()==0){%>
-                    <a href="javascript:;" class="delete_address">删除</a>
+                    <a href="receiveaddress?type=2" class="delete_address">删除</a>
                     <%
                         }
                     %>
                     <a href="javascript:;" class="update_address" style="margin-right: 5%">修改</a>
                 </div>
-
-
-
                 <%
                         }
                     }
                 %>
-
-
-
-
-
-
-
-
-
-
-
-                <%--<div class="address">--%>
-                    <%--<p>设为默认地址</p>--%>
-                    <%--<ul class="address-wrap">--%>
-                        <%--<li>--%>
-                            <%--<span class="show-custname">周科</span>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<span class="show-phone">188****0623</span>--%>
-
-                        <%--</li>--%>
-                    <%--</ul>--%>
-                    <%--<a href="javascript:;" class="update_address">修改</a>--%>
-                    <%--<a href="javascript:;" class="delete_address">删除</a>--%>
-                <%--</div>--%>
-                <%--<div class="address">--%>
-                    <%--<p>设为默认地址</p>--%>
-                    <%--<ul class="address-wrap">--%>
-                        <%--<li>--%>
-                            <%--<span class="show-custname">周科</span>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<span>  <span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<span class="show-phone">188****0623</span>--%>
-
-                        <%--</li>--%>
-                    <%--</ul>--%>
-                    <%--<a href="javascript:;" class="update_address">修改</a>--%>
-                    <%--<a href="javascript:;" class="delete_address">删除</a>--%>
-                <%--</div>--%>
-                <%--<div class="address">--%>
-                    <%--<p>设为默认地址</p>--%>
-                    <%--<ul class="address-wrap">--%>
-                        <%--<li>--%>
-                            <%--<span class="show-custname">周科</span>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<span class="show-phone">188****0623</span>--%>
-
-                        <%--</li>--%>
-                    <%--</ul>--%>
-                    <%--<a href="javascript:;" class="update_address">修改</a>--%>
-                    <%--<a href="javascript:;" class="delete_address">删除</a>--%>
-                <%--</div>--%>
             </div>
         </div>
     </div>
@@ -259,6 +200,9 @@
                         <strong>*</strong>
                         <span>手&nbsp;&nbsp;&nbsp;机:</span>
                         <input type="text" placeholder="手机号" id="custphone">
+                    </div>
+                    <div>
+                        <input type="text" value="" placeholder="邮政编码(选填)" id="postcode">
                     </div>
 
                     <div id="address-type">

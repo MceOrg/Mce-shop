@@ -43,7 +43,7 @@
   </select>
   <delete id="delete">
     delete from receive_address
-    where address_id = #{addressId} or cust_id = #{custId}
+    where address_id = #{addressId} and cust_id = #{custId}
   </delete>
   <update id="update">
     update receive_address

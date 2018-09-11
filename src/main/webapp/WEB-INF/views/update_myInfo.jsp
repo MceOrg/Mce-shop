@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: myaccount
+  Date: 2018/9/11
+  Time: 下午7:23
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../../resources/css/normalize.css">
-    <link rel="stylesheet" href="../../resources/css/address.css">
-    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/../../resources/css/normalize.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/../../resources/css/update_myinfo.css">
 </head>
 <body>
 <div id="head">
@@ -90,146 +96,35 @@
         </div>
     </div>
 </div>
-    <div id="container" class="clearfix">
-        <div class="sidebar">
-            <ul class="slide-nav">
-                <li><a href="">我的资料</a></li>
-                <li><a href="">收货地址</a></li>
-                <li><a href="">修改地址</a></li>
-            </ul>
-        </div>
-        <div class="container-address">
-            <div class="header">
-                <strong>已经保存的收货地址</strong>
-                <span>您已经创建 <em id="own-address-num">4</em>个收货地址，最多可创建 <em id="max-address-num">6</em> 个 </span>
-                <a  id="toaddnew" style="cursor: pointer">新增收货地址</a>
-            </div>
-            <div class="body">
-                <div>
-                    <div class="address">
-                        <p>设为默认地址</p>
-                        <ul class="address-wrap">
-                            <li>
-                                <span class="show-custname">周科</span>
-                            </li>
-                            <li>
-                                <span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
-                            </li>
-                            <li>
-                                <span class="show-phone">188****0623</span>
-
-                            </li>
-                        </ul>
-                        <a href="javascript:;" class="update_address">修改</a>
-                        <a href="javascript:;" class="delete_address">删除</a>
-                    </div>
-                    <div class="address">
-                        <p>设为默认地址</p>
-                        <ul class="address-wrap">
-                            <li>
-                                <span class="show-custname">周科</span>
-                            </li>
-                            <li>
-                                <span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
-                            </li>
-                            <li>
-                                <span class="show-phone">188****0623</span>
-
-                            </li>
-                        </ul>
-                        <a href="javascript:;" class="update_address">修改</a>
-                        <a href="javascript:;" class="delete_address">删除</a>
-                    </div>
-                    <div class="address">
-                        <p>设为默认地址</p>
-                        <ul class="address-wrap">
-                            <li>
-                                <span class="show-custname">周科</span>
-                            </li>
-                            <li>
-                                <span>  <span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
-                            </li>
-                            <li>
-                                <span class="show-phone">188****0623</span>
-
-                            </li>
-                        </ul>
-                        <a href="javascript:;" class="update_address">修改</a>
-                        <a href="javascript:;" class="delete_address">删除</a>
-                    </div>
-                    <div class="address">
-                        <p>设为默认地址</p>
-                        <ul class="address-wrap">
-                            <li>
-                                <span class="show-custname">周科</span>
-                            </li>
-                            <li>
-                                <span><span class="show-province">浙江</span> <span class="show-city">杭州市</span> <span class="show-area">下城区</span> <span class="show-street">长巷街</span><span class="show-location">柳营社区64幢***室</span></span>
-                            </li>
-                            <li>
-                                <span class="show-phone">188****0623</span>
-
-                            </li>
-                        </ul>
-                        <a href="javascript:;" class="update_address">修改</a>
-                        <a href="javascript:;" class="delete_address">删除</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-address secend-container-address" id="writeAddress">
-            <div class="header">
-                <strong>新增收货地址</strong>
-            </div>
-            <form action="" id="update-address">
-                <div class="body">
-                    <div class="address-user">
-                        <strong>*</strong>
-                        <span>收货人:</span>
-                        <input type="text" placeholder="收货人姓名" name="custname" id="custname">
-                    </div>
-
-                    <div class="address-detail">
-                        <strong>*</strong>
-                        <span>地&nbsp;&nbsp;&nbsp;址:</span>
-                        <select id="province">
-                            <option value="0">省/直辖市</option>
-                        </select>
-                        <select id="city">
-                            <option value="0">市</option>
-                        </select>
-                        <select id="area">
-                            <option value="0" >区/县</option>
-                        </select>
-                        <input type="text" id="street" placeholder="街道">
-                        <br>
-                        <input type="text" id="location" placeholder="详细地址">
-
-                        <div class="address-phone">
-                            <strong>*</strong>
-                            <span>手&nbsp;&nbsp;&nbsp;机:</span>
-                            <input type="text" placeholder="手机号" id="custphone">
-                        </div>
-
-                        <div>
-                            <input type="text" value="" placeholder="邮政编码(选填)" id="postcode">
-                        </div>
-
-                        <div id="address-type">
-                            <label for="home"><input type="radio" name="add-type" value="家庭地址" id="home">家庭地址</label>
-                            <label for="work"><input type="radio" name="add-type" value="工作地址" id="work">工作地址</label>
-                            <label for="other"><input type="radio" name="add-type" value="其他地址" id="other">其他地址</label>
-                        </div>
-
-
-                    </div>
-                    <div id="submit-btn">
-                        <a href="javascript:;" id="submit" name="save-address">保存收货地址</a>
-                    </div>
-                </div>
+<div id="container" class="clearfix">
+    <div class="sidebar">
+        <ul class="slide-nav">
+            <li><a href="">我的资料</a></li>
+            <li><a href="">收货地址</a></li>
+            <li><a href="">修改地址</a></li>
+        </ul>
+    </div>
+    <div class="info-wrap clearfix">
+        <span>我的资料</span>
+        <div class="update-info">
+            <form action="">
+                <div class="show_custprofile"><img src="${pageContext.request.contextPath}/../../resources/img/head1.jpg" id="pic"></div>
+                <div class="custprofile"><em>更换头像：</em><select id="imageSelect" onchange="setImg(this)">
+                    <option value="../../resources/img/head1.jpg">头像一</option>
+                    <option value="../../resources/img/head2.jpeg" >头像二</option>
+                    <option value="../../resources/img/head3.jpeg" >头像三</option>
+                    <option value="../../resources/img/head4.jpg">头像四</option>
+                    <option value="../../resources/img/head5.jpg">头像五</option>
+                </select></div>
+                <div class="custname"><em>亲的姓名:</em><input type="text" name="custname" value="Ivalo"></div>
+                <div class="custphone"><em>亲的电话:</em><input type="text" name="custphone" value="18806710623"></div>
+                <div class="custage"><em>亲的年龄:</em><input type="text" name="custage" value="22"></div>
+                <div class="custemail"><em>亲的邮箱:</em><input type="text" name="custemail" value="823583560@qq.com"></div>
+                <input type="submit" value="确认修改">
             </form>
         </div>
     </div>
+</div>
 <div id="footer">
     <!-- 底部 top -->
     <div class="footer-top">
@@ -369,7 +264,6 @@
         </div>
     </div>
 </div>
-
 </body>
-<script type="text/javascript" src="../../resources/js/shipaddress.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/../../resources/js/update_myinfo.js"></script>
 </html>
