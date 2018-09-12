@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.mce.shop.entity.Customer" %><%--
   Created by IntelliJ IDEA.
   User: myaccount
   Date: 2018/9/11
@@ -99,27 +99,70 @@
 <div id="container" class="clearfix">
     <div class="sidebar">
         <ul class="slide-nav">
-            <li><a href="">我的资料</a></li>
-            <li><a href="">收货地址</a></li>
-            <li><a href="">修改地址</a></li>
+            <li><a href="/customer?type=6">我的资料</a></li>
+            <li><a href="/receiveaddress?type=0">收货地址</a></li>
+            <li><a href="">修改密码</a></li>
         </ul>
     </div>
     <div class="info-wrap clearfix">
         <span>我的资料</span>
         <div class="update-info">
-            <form action="">
-                <div class="show_custprofile"><img src="${pageContext.request.contextPath}/../../resources/img/head1.jpg" id="pic"></div>
+            <form action="customer?type=8" method="post">
+                <%
+                    Customer customer=(Customer)request.getSession().getAttribute("loginCustomer");
+                    if(customer.getCustProfile()==null){
+                        %>
+                <div class="show_custprofile"><img src="${pageContext.request.contextPath}/../../resources/img/head1.jpg" class="pic"></div>
+                <%
+                    }else {
+                        %>
+                <div class="show_custprofile"><img src="${pageContext.request.contextPath}/../../resources/img/<%=customer.getCustProfile()%>" class="pic"></div>
+                <%
+                    }
+                %>
+                <input type="hidden" name="custprofile" value="">
                 <div class="custprofile"><em>更换头像：</em><select id="imageSelect" onchange="setImg(this)">
                     <option value="../../resources/img/head1.jpg">头像一</option>
-                    <option value="../../resources/img/head2.jpeg" >头像二</option>
-                    <option value="../../resources/img/head3.jpeg" >头像三</option>
+                    <option value="../../resources/img/head2.jpg" >头像二</option>
+                    <option value="../../resources/img/head3.jpg" >头像三</option>
                     <option value="../../resources/img/head4.jpg">头像四</option>
                     <option value="../../resources/img/head5.jpg">头像五</option>
                 </select></div>
-                <div class="custname"><em>亲的姓名:</em><input type="text" name="custname" value="Ivalo"></div>
-                <div class="custphone"><em>亲的电话:</em><input type="text" name="custphone" value="18806710623"></div>
-                <div class="custage"><em>亲的年龄:</em><input type="text" name="custage" value="22"></div>
-                <div class="custemail"><em>亲的邮箱:</em><input type="text" name="custemail" value="823583560@qq.com"></div>
+                <%
+                    if (customer.getCustName()==null){
+                        %>
+                <div class="custname"><em>亲的姓名:</em><input type="text" name="custname" value="" placeholder="请填写亲的昵称"></div>
+                <%
+                    }else {
+                        %>
+                <div class="custname"><em>亲的姓名:</em><input type="text" name="custname" value="<%=customer.getCustName()%>"></div>
+                <%
+                    }
+                %>
+                <div class="custphone"><em>亲的电话:</em><input type="text" name="custphone" value="<%=customer.getCustPhone()%>" required></div>
+                <%
+                    if (customer.getCustAge()==null){
+                        %>
+                <div class="custage"><em>亲的年龄:</em><input type="text" name="custage" value="" placeholder="请填写亲的年龄"></div>
+                <%
+                    }else {
+                        %>
+                <div class="custage"><em>亲的年龄:</em><input type="text" name="custage" value="<%=customer.getCustAge()%>"></div>
+                <%
+                    }
+                %>
+               <%
+                    if (customer.getCustEmail()==null){
+                        %>
+                <div class="custemail"><em>亲的邮箱:</em><input type="text" name="custemail" value="" placeholder="请填写亲的邮箱"></div>
+                <%
+                    }else {
+                        %>
+                <div class="custemail"><em>亲的邮箱:</em><input type="text" name="custemail" value="<%=customer.getCustEmail()%>"></div>
+                <%
+                    }
+               %>
+
                 <input type="submit" value="确认修改">
             </form>
         </div>

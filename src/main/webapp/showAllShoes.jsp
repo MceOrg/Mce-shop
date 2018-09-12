@@ -20,8 +20,8 @@
    <%
    }
     %>
-
-
+    
+    
     <h3>浏览历史</h3>
     <%
     Cookie[] cookies=request.getCookies();

@@ -507,7 +507,7 @@ $('.address>p').not('.defaultAddress').on('click',function () {
         },
         complete:function (data) {
             if(data.responseText=="true"){
-                alert("ss");
+                window.location.href="receiveaddress?type=0";
             }else {
                 alert("修改地址失败");
             }
@@ -545,6 +545,7 @@ $('#toaddnew').on('click',function(){
 
     }else {
         $(this).attr('href','#writeAddress');
+        window.location.reload();
         setTimeout(function() {
             $('#custname').focus();
         }, 100);
@@ -558,26 +559,25 @@ $('#toaddnew').on('click',function(){
 /*************************** 删除收货地址 **********************************/
     $('.delete_address').on('click',function () {
         var msg="确定要删除此地址吗?";
-        if (confirm(msg)){
+        var value=$(this).siblings("[name='addressid']").val()+'';
             $.ajax({
-                url:"receiveaddress?type=2",
+                async : false,
+                url:"/receiveaddress?type=2",
                 type:"post",
                 dataType:"text",
                 data:{
-                    "addressid":$(this).siblings("[name='addressid']").val()
+                    addressid:value
                 },
-                complete:function (data) {
-                    if(data.responseText){
-                        alert("aa");
-                        window.location.reload();
+                success:function (data) {
+                    alert("data"+data);
+                    if (data=='true') {
+                        window.location.href="receiveaddress?type=0";
                     }else {
-                        alert("删除地址失败");
+                        alert(data);
                     }
+
                 }
-            })
-        }else{
-            return false;
-        }
+            });
     })
 
 /*********************************************************************************************/

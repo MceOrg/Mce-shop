@@ -42,6 +42,7 @@
     set cust_name=#{custName,jdbcType=VARCHAR}, cust_pwd=#{custPwd,jdbcType=VARCHAR},
       cust_age=#{custAge,jdbcType=INTEGER}, cust_phone=#{custPhone,jdbcType=VARCHAR}, cust_email=#{custEmail,jdbcType=VARCHAR},
       cust_create_time=#{custCreateTime,jdbcType=TIMESTAMP}, cust_update_time=#{custUpdateTime,jdbcType=TIMESTAMP}, cust_profile=#{custProfile,jdbcType=VARCHAR}
+      where cust_id=#{custId}
   </update>
 
   <insert id="regist" parameterType="com.mce.shop.entity.Customer">

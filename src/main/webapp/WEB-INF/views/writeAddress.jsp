@@ -97,9 +97,9 @@
 <div id="container" class="clearfix">
     <div class="sidebar">
         <ul class="slide-nav">
-            <li><a href="">我的资料</a></li>
-            <li><a href="">收货地址</a></li>
-            <li><a href="">修改地址</a></li>
+            <li><a href="customer?type=6">我的资料</a></li>
+            <li><a href="receiveaddress?type=0">收货地址</a></li>
+            <li><a href="">修改密码</a></li>
         </ul>
     </div>
     <div class="container-address">

@@ -60,15 +60,19 @@ public class ReceiveAddressServlet extends HttpServlet {
         ReceiveAddressService receiveAddressService=new ReceiveAddressServiceImpl();
         Customer customer =(Customer) request.getSession().getAttribute("loginCustomer");
         System.out.println(request.getParameter("addressid"));
-        Integer row=receiveAddressService.deleteAddress(Integer.valueOf(request.getParameter("addressid")),customer.getCustId());
-        if(row==1){
-            PrintWriter out=response.getWriter();
-            out.print(true);
-            System.out.println("ss");
+        if (request.getParameter("addressid")!=null){
+            Integer addressId=Integer.parseInt(request.getParameter("addressid"));
+            Integer row=receiveAddressService.deleteAddress(addressId,customer.getCustId());
+            if(row==1){
+                PrintWriter out=response.getWriter();
+                out.print(true);
+            }else {
+                PrintWriter out=response.getWriter();
+                out.print(false);
+            }
         }else {
-            PrintWriter out=response.getWriter();
-            out.print(false);
-            System.out.println("bb");
+            System.out.println("sssss");
+            return;
         }
     }
 }

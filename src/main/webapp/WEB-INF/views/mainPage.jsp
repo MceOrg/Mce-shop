@@ -39,21 +39,17 @@
         <%
            Customer customer = (Customer) request.getSession().getAttribute("loginCustomer");
            if (customer!=null){
-               %>
-                <%
-                    if (customer.getCustName()!=null){
+                    if (customer.getCustName()!=null&&customer.getCustName()!=""){
                         %>
                     <a href="customer?type=6" style="color: #0f0f0f"><%=customer.getCustName()%></a>
         <%
                     }else {
                         %>
-                    <a href="customer?type=6" style="color: #0f0f0f">匿名用户</a>
+                    <a href="customer?type=6" style="color: #0f0f0f"><%=customer.getCustPhone()%></a>
         <%
                     }
                 %>
-
             <a href="customer?type=5" style="color: #0f0f0f">退出</a>
-
         <%
            }else {
                %>
@@ -62,10 +58,6 @@
         <%
            }
         %>
-
-
-
-
     </div>
 </div>
 
