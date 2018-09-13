@@ -16,12 +16,17 @@ import java.util.List;
 public class ReceiveAddressServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type=request.getParameter("type");
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
         if (type.equals("0")){
             getAllAddresses(request,response);
         }else if(type.equals("1")){
             updateDefauladdress(request,response);
         }else if(type.equals("2")){
             deleteAddress(request,response);
+        }else if (type.equals("3")){
+            updateOneAddress(request,response);
         }
 
     }
@@ -72,6 +77,41 @@ public class ReceiveAddressServlet extends HttpServlet {
             }
         }else {
             System.out.println("sssss");
+            return;
+        }
+    }
+
+
+
+    private void updateOneAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        Integer addressid=Integer.parseInt(request.getParameter("update_addressid"));
+        System.out.println(addressid);
+        String custname=request.getParameter("custname");
+        System.out.println(custname);
+        Long custphone=Long.parseLong(request.getParameter("custphone"));
+        System.out.println(custphone);
+        String province=request.getParameter("province");
+        System.out.println(province);
+        String city=request.getParameter("city");
+        System.out.println(city);
+        String area=request.getParameter("area");
+        System.out.println(area);
+        String street=request.getParameter("street");
+        System.out.println(street);
+        String detailLocation=request.getParameter("detaillocation");
+        System.out.println(detailLocation);
+        Integer postcode=Integer.parseInt(request.getParameter("postcode"));
+        System.out.println(postcode);
+        Integer isdefault=Integer.parseInt(request.getParameter("update_isDefaultAddress"));
+        System.out.println(isdefault);
+        Customer customer=(Customer) request.getSession().getAttribute("loginCustomer");
+        ReceiveAddress address=new ReceiveAddress(addressid,province,city,area,street,detailLocation,postcode,custname,custphone,isdefault,customer.getCustId());
+        ReceiveAddressService receiveAddressService=new ReceiveAddressServiceImpl();
+        int row=receiveAddressService.updateAddress(address);
+        if (row==1){
+            getAllAddresses(request,response);
+        }else {
+            System.out.println("修改失败");
             return;
         }
     }

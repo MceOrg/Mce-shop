@@ -146,7 +146,7 @@
                                 <span class="show-street"><%=receiveAddress.getAddressStreet()%></span>
                                 <span class="show-location"><%=receiveAddress.getAddressDetail()%></span>
                             </span>
-                            <input type="hidden" value="<%=receiveAddress.getAddressPostCode()%>" name="postcode">
+                            <input type="hidden" value="<%=receiveAddress.getAddressPostCode()%>" name="show_postcode">
                         </li>
                         <li>
                             <span class="show-phone"><%=receiveAddress.getAddressRecipientTelno()%></span>
@@ -172,7 +172,9 @@
         <div class="header">
             <strong>新增收货地址</strong>
         </div>
-        <form action="" id="update-address">
+        <form action="/receiveaddress?type=3" id="update-address" method="post">
+            <input type="hidden" value="" name="update_addressid">
+            <input type="hidden" value="" name="update_isDefaultAddress">
             <div class="body">
                 <div class="address-user">
                     <strong>*</strong>
@@ -186,23 +188,27 @@
                     <select id="province">
                         <option value="0">省/直辖市</option>
                     </select>
-                    <select id="city">
+                    <input type="hidden" value="" name="province">
+
+                    <select id="city" name="city">
                         <option value="0">市</option>
                     </select>
-                    <select id="area">
+                    <input type="hidden" value="" name="city">
+                    <select id="area" name="area">
                         <option value="0" >区/县</option>
                     </select>
-                    <input type="text" id="street" placeholder="街道">
+                    <input type="hidden" value="" name="area">
+                    <input type="text" id="street" placeholder="街道" name="street">
                     <br>
-                    <input type="text" id="location" placeholder="详细地址">
+                    <input type="text" id="location" placeholder="详细地址" name="detaillocation">
 
                     <div class="address-phone">
                         <strong>*</strong>
                         <span>手&nbsp;&nbsp;&nbsp;机:</span>
-                        <input type="text" placeholder="手机号" id="custphone">
+                        <input type="text" placeholder="手机号" id="custphone" name="custphone">
                     </div>
                     <div>
-                        <input type="text" value="" placeholder="邮政编码(选填)" id="postcode">
+                        <input type="text" value="" placeholder="邮政编码(选填)" id="postcode" name="postcode">
                     </div>
 
                     <div id="address-type">
@@ -214,7 +220,7 @@
 
                 </div>
                 <div id="submit-btn">
-                    <a href="javascript:;" id="submit" name="save-address">保存收货地址</a>
+                    <button type="submit" id="submit" name="save-address">保存收货地址</button>
                 </div>
             </div>
         </form>

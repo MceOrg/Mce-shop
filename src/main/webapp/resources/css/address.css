@@ -482,20 +482,18 @@ select::-ms-expand { display: none; }
 #container .secend-container-address .body #submit-btn{
     width: 100%;
 }
-#container .secend-container-address .body #submit-btn a{
+#container .secend-container-address .body #submit-btn button{
     display: block;
     margin: 0 auto;
     color: white;
     font-size: 14px;
     width: 12%;
-    height: 20px;
-    padding: 1%;
     background-color: black;
     border: 1px solid black;
     border-radius: 3px;
     margin-bottom: 2%;
     text-align: center;
-    line-height:20px;
+    line-height:35px;
 
 }
 

@@ -32,7 +32,15 @@ public class ReceiveAddressServiceImpl implements ReceiveAddressService {
 
     @Override
     public int updateAddress(ReceiveAddress newAddress) {
-        return 0;
+        SqlSession session=MybatisUtil.getSession();
+        try {
+            ReceiveAddressDAO receiveAddressDAO=session.getMapper(ReceiveAddressDAO.class);
+            int row= receiveAddressDAO.update(newAddress);
+            session.commit();
+            return row;
+        }finally {
+            MybatisUtil.closeSession();
+        }
     }
 
     @Override

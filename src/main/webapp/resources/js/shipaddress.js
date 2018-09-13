@@ -593,7 +593,9 @@ $('#toaddnew').on('click',function(){
       var location=$(this).parent().find(".show-location").html();
       var custname=$(this).parent().find(".show-custname").html();
       var custphone=$(this).parent().find(".show-phone").html();
-      var postcode=$(this).parent().find("[name='postcode']").val();
+      var postcode=$(this).parent().find("[name='show_postcode']").val();
+      var addressid=$(this).parent().find("[name='addressid']").val();
+      var isdefault=$(this).parent().find("[name='default-status']").val();
       var obj=document.getElementById("province").getElementsByTagName("option");
       var obj2=document.getElementById("city").getElementsByTagName("option");
       var obj3=document.getElementById("area").getElementsByTagName("option");
@@ -602,12 +604,15 @@ $('#toaddnew').on('click',function(){
       var obj6=document.getElementById("custname");
       var obj7=document.getElementById("custphone");
       var obj8=document.getElementById("postcode");
+      var obj9=document.getElementsByName("update_addressid")[0];
+      var obj10=document.getElementsByName("update_isDefaultAddress")[0];
       obj6.value=custname;
       obj7.value=custphone;
       obj4.value=street;
       obj5.value=location;
       obj8.value=postcode;
-
+      obj9.value=addressid;
+      obj10.value=isdefault;
       $('#province').focus();
       for(var i=0;i<obj.length;i++){
             if(obj[i].innerText==province){
@@ -638,7 +643,28 @@ $('#toaddnew').on('click',function(){
     })
 /**************************************************************************************/
 
+$("#submit").on('click',function () {
+    var obj=document.getElementById("province").getElementsByTagName("option");
+    var obj2=document.getElementById("city").getElementsByTagName("option");
+    var obj3=document.getElementById("area").getElementsByTagName("option");
+    for(var i=0;i<obj.length;i++){
+        if (obj[i].selected){
+            $("[name='province']").val(obj[i].innerText);
+        }
 
+    }
+    for(var i=0;i<obj2.length;i++){
+        if(obj2[i].selected){
+            $("[name='city']").val(obj2[i].innerText);
+        }
+    }
+    for(var i=0;i<obj3.length;i++){
+        if(obj3[i].selected){
+            $("[name='city']").val(obj3[i].innerText);
+        }
+    }
+
+})
 
 
 
