@@ -177,6 +177,9 @@ html,body{
 	color: #f64a4a;
 	display: none;
 }
+#login_wrap #errorinfo{
+	display: block !important;
+}
 #login_wrap #body #username_tip #username ,
 #login_wrap #body #password_tip #password {
 	width: 248px;

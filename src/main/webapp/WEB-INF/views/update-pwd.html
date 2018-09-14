@@ -1,15 +1,11 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.mce.shop.entity.ReceiveAddress" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/../../resources/css/normalize.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/../../resources/css/address.css">
-    <script src="${pageContext.request.contextPath}/../../resources/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../../resources/css/normalize.css">
+    <link rel="stylesheet" href="../../resources/css/updatepwd.css">
+    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <div id="head">
@@ -94,148 +90,25 @@
         </div>
     </div>
 </div>
-<div id="container" class="clearfix">
-    <div class="sidebar">
-        <ul class="slide-nav">
-            <li><a href="/customer?type=6">我的资料</a></li>
-            <li><a href="/receiveaddress?type=0">收货地址</a></li>
-            <li><a href="/customer?type=10">修改密码</a></li>
-        </ul>
-    </div>
-    <div class="container-address">
-        <div class="header">
-            <strong>已经保存的收货地址</strong>
-            <span>您已经创建 <em id="own-address-num">4</em>个收货地址，最多可创建 <em id="max-address-num">6</em> 个 </span>
-            <a  id="toaddnew" style="cursor: pointer">新增收货地址</a>
+    <div id="container" class="clearfix">
+        <div class="sidebar">
+            <ul class="slide-nav">
+                <li><a href="">我的资料</a></li>
+                <li><a href="">收货地址</a></li>
+                <li><a href="">修改密码</a></li>
+            </ul>
         </div>
-        <div class="body">
-            <%--<c:forEach var="Address" items="${alladdress}">--%>
-                <%--<input type="text" value="${Address.getAddressRecipientName()}">--%>
-            <%--</c:forEach>--%>
-            <div>
-                <%
-                    List<ReceiveAddress> receiveAddresses=(List<ReceiveAddress>) request.getSession().getAttribute("alladdress");
-                    if(receiveAddresses!=null){
-                        for (ReceiveAddress receiveAddress:receiveAddresses){
-                            if (receiveAddress.getIsDefaultAddress()==1){
-                            %>
-                         <div class="address defaultaddress-wrap">
-                             <p style="background: black" class="defaultAddress">默认地址</p>
-                             <input type="hidden" value="<%=receiveAddress.getIsDefaultAddress()%>" name="default-status">
-                             <input type="hidden" value="<%=receiveAddress.getAddressId()%>" name="addressid">
-                    <%}
-                        else {
-                            %>
-                        <div class="address">
-                             <p>设为默认地址</p>
-                            <input type="hidden" value="<%=receiveAddress.getIsDefaultAddress()%>" name="default-status">
-                            <input type="hidden" value="<%=receiveAddress.getAddressId()%>" name="addressid">
-                    <%
-                        }
-                    %>
-
-                    <ul class="address-wrap">
-                        <li>
-                            <span class="show-custname"><%=receiveAddress.getAddressRecipientName()%></span>
-                        </li>
-                        <li>
-                            <span>
-                                <span class="show-province"><%=receiveAddress.getAddressProvince()%></span>
-                                <span class="show-city"><%=receiveAddress.getAddressCity()%></span>
-                                <span class="show-area"><%=receiveAddress.getAddressArea()%></span>
-                                <span class="show-street"><%=receiveAddress.getAddressStreet()%></span>
-                                <span class="show-location"><%=receiveAddress.getAddressDetail()%></span>
-                            </span>
-                            <input type="hidden" value="<%=receiveAddress.getAddressPostCode()%>" name="show_postcode">
-                        </li>
-                        <li>
-                            <span class="show-phone"><%=receiveAddress.getAddressRecipientTelno()%></span>
-
-                        </li>
-                    </ul>
-                    <%
-                        if (receiveAddress.getIsDefaultAddress()==0){%>
-                    <a href="/receiveaddress?type=2" class="delete_address">删除</a>
-                    <%
-                        }
-                    %>
-                    <a href="javascript:;" class="update_address" style="margin-right: 5%">修改</a>
-                </div>
-                <%
-                        }
-                    }
-                %>
-            </div>
+        <div class="update-area">
+            <span>修改密码</span>
+            <form action="customer?type=9" method="post">
+                <input type="password" name="oldpwd" placeholder="请输入原密码"><br>
+                <input type="password" name="newold" placeholder="请输入新密码"><br>
+                <input type="password" name="renewold" placeholder="请再次输入新密码"><br>
+                <input type="submit" value="确认修改">
+            </form>
+            <span id="update-info">xiuj</span>
         </div>
     </div>
-    <div class="container-address secend-container-address" id="writeAddress">
-        <div class="header">
-            <strong>新增收货地址</strong>
-        </div>
-        <form action="" id="update-address" method="post">
-            <input type="hidden" value="" name="update_addressid">
-            <input type="hidden" value="" name="update_isDefaultAddress">
-            <div class="body">
-                <div class="address-user">
-                    <strong>*</strong>
-                    <span>收货人:</span>
-                    <input type="text" placeholder="收货人姓名" name="custname" id="custname">
-                </div>
-
-                <div class="address-detail">
-                    <strong>*</strong>
-                    <span>地&nbsp;&nbsp;&nbsp;址:</span>
-                    <select id="province" name="province">
-                        <option value="0">省/直辖市</option>
-                    </select>
-
-                    <select id="city" name="city">
-                        <option value="0">市</option>
-                    </select>
-                    <select id="area" name="area">
-                        <option value="0" >区/县</option>
-                    </select>
-                    <input type="text" id="street" placeholder="街道" name="street">
-                    <br>
-                    <input type="text" id="location" placeholder="详细地址" name="detaillocation">
-
-                    <div class="address-phone">
-                        <strong>*</strong>
-                        <span>手&nbsp;&nbsp;&nbsp;机:</span>
-                        <input type="text" placeholder="手机号" id="custphone" name="custphone">
-                    </div>
-                    <div>
-                        <input type="text" value="" placeholder="邮政编码(选填)" id="postcode" name="postcode">
-                    </div>
-
-                    <div id="address-type">
-                        <label for="home"><input type="radio" name="add-type" value="家庭地址" id="home">家庭地址</label>
-                        <label for="work"><input type="radio" name="add-type" value="工作地址" id="work">工作地址</label>
-                        <label for="other"><input type="radio" name="add-type" value="其他地址" id="other">其他地址</label>
-                    </div>
-
-
-                </div>
-                <div id="submit-btn">
-                    <button type="submit" class="submit" name="save-address" id="submitbtn1">修改收货地址</button>
-                    <button type="submit" class="submit" name="save-address" id="submitbtn2">新增收货地址</button>
-                </div>
-                <span id="msginfo">
-                    <%
-                    if (request.getAttribute("msg")!=null){
-                        %>
-                    <%=request.getAttribute("msg")%>
-                    <%
-                    }else {
-                        %>
-                    <%
-                    }
-                    %>
-                </span>
-            </div>
-        </form>
-    </div>
-</div>
 <div id="footer">
     <!-- 底部 top -->
     <div class="footer-top">
@@ -377,5 +250,4 @@
 </div>
 
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/../../resources/js/shipaddress.js"></script>
 </html>

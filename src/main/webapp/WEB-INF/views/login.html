@@ -14,22 +14,15 @@
 				<div id="body">
 					<div id="username_tip" class="clearfix">
 						<div id="username_wrap">
-							<input type="text" name="username" id="username" <%
-							if(request.getCookies()!=null){
-							for(Cookie cookie:request.getCookies()){
-							if(cookie.getName().equals("accountname")){
-							%>
-							value="<%=cookie.getValue()%>"
-							<%
-							}
-							}
-							}
+							<input type="text" name="username" id="username"
 
-							%>" placeholder="手机号/用户名/邮箱" />
+
+							 placeholder="手机号/用户名/邮箱" />
 							<span id="username_logo"></span>
 						</div>
 						<div class="tip" >
 							<span class="text" id="tip2u">您的账号有误</span>
+
 						</div>
 					</div>
 					<div id="password_tip" class="clearfix">
@@ -44,18 +37,7 @@
 					<div id="remb">
 
 						<input name="rem" type="checkbox"
-						<%
-
-						if(request.getCookies()!=null){
-						for(Cookie cookie:request.getCookies()){
-						if(cookie.getName().equals("checkbox")){
-						%>
-						value="<%=cookie.getValue()%>"
-						<%
-						}
-						}
-						}
-						%> id="rememberpwd">
+						 id="rememberpwd">
 
 						<input name="rem" type="hidden" value="false">
 						<label for="rememberpwd">记住用户名</label>

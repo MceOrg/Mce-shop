@@ -13,8 +13,15 @@ public class ReceiveAddressServiceImpl implements ReceiveAddressService {
     @Override
     public int addNewAddress(ReceiveAddress newAddress) {
         SqlSession sqlSession = MybatisUtil.getSession();
-        ReceiveAddressDAO dao = sqlSession.getMapper(ReceiveAddressDAO.class);
-        return 0;
+        try {
+            ReceiveAddressDAO dao = sqlSession.getMapper(ReceiveAddressDAO.class);
+            int row=dao.insert(newAddress);
+            sqlSession.commit();
+            return row;
+        }finally {
+            MybatisUtil.closeSession();
+        }
+
     }
 
     @Override

@@ -431,7 +431,7 @@ for(var i = 0; i < provinceList.length; i++) {　　　　 //provinceList.length
     var provinceName = province.name;　　　　　　　　 //根据 province.name获取省的名字　　　　　　　　
     provinceArray[0]="请选择省";
     provinceArray[i+1] = provinceName;　　　　　　　　　　　 //将获得的省的名字注入到数组中去
-    provinceTag.add(new Option(provinceName, (i+1)));　　　　 //通过Option方法将省的名字与下标i对应，取出来。然后通过add()方法，将每一个名字放到provinceTag中
+    provinceTag.add(new Option(provinceName, provinceName));　　　　 //通过Option方法将省的名字与下标i对应，取出来。然后通过add()方法，将每一个名字放到provinceTag中
 }
 
 function chooseProvince(th) {　　　　　　　　 //通过方法的调用来实现省 市之间的二级联动，th是我们设置的一个参数，方便下面进行使用，可以理解为province的一个元素（名字）
@@ -446,7 +446,7 @@ function chooseProvince(th) {　　　　　　　　 //通过方法的调用来
                 var city = cityList[c];　　　　　　　　　　　　　　　 //根据数列下标获取城市数据
                 var cityName = city.name;　　　　　　　　　　　　 //获取城市的名字
                 cityArray[c] = cityName;　　　　　　　　　　　　　 //将城市名称存入数组中
-                cityTag.add(new Option(cityName, c));　　　　　　 //使用Option()方法获取每一个索引对应的数据，然后使用add()方法一一存入到数组中去，这样就可以成功创建省市连接
+                cityTag.add(new Option(cityName, cityName));　　　　　　 //使用Option()方法获取每一个索引对应的数据，然后使用add()方法一一存入到数组中去，这样就可以成功创建省市连接
             }
         }
     }
@@ -465,14 +465,17 @@ function chooseCity(ci) {
             areaTag.innerHTML = "";
             for(var k = 0; k < areaList.length; k++) {
                 var area = areaList[k];
-                areaTag.add(new Option(area, k));
+                areaTag.add(new Option(area, area));
             }
         }
     }
 }
-$('#city').change(function () {
+
+$('#city').focus(function () {
     chooseCity(this);
 });
+$('#city').focus();
+$('#area').focus();
 
 /*******************************************************************************************/
 
@@ -498,7 +501,7 @@ $('.address').on('mouseout',function(e){
 /*************************** 设为默认地址的ajax事件**********************************/
 $('.address>p').not('.defaultAddress').on('click',function () {
     $.ajax({
-        url:"receiveaddress?type=1",
+        url:"/receiveaddress?type=1",
         type:"post",
         dataType:"text",
         data:{
@@ -507,7 +510,7 @@ $('.address>p').not('.defaultAddress').on('click',function () {
         },
         complete:function (data) {
             if(data.responseText=="true"){
-                window.location.href="receiveaddress?type=0";
+                window.location.href="/receiveaddress?type=0";
             }else {
                 alert("修改地址失败");
             }
@@ -526,7 +529,8 @@ window.onload=function(){
         $("#toaddnew").css({
             "background":"silver",
             "border":"solid 1px silver"
-        })
+        });
+        $('#submit').attr("disabled",true);
     }
 }
 
@@ -571,7 +575,7 @@ $('#toaddnew').on('click',function(){
                 success:function (data) {
                     alert("data"+data);
                     if (data=='true') {
-                        window.location.href="receiveaddress?type=0";
+                        window.location.href="/receiveaddress?type=0";
                     }else {
                         alert(data);
                     }
@@ -635,7 +639,7 @@ $('#toaddnew').on('click',function(){
             chooseCity(this);
             for(var i=0;i<obj3.length;i++){
                 if(obj3[i].innerText==area){
-                    obj3[i].selected=true;  //相等则选中
+                    obj3[i].selected=true;  //相等则选
                 }
             }
         });
@@ -643,32 +647,60 @@ $('#toaddnew').on('click',function(){
     })
 /**************************************************************************************/
 
-$("#submit").on('click',function () {
-    var obj=document.getElementById("province").getElementsByTagName("option");
-    var obj2=document.getElementById("city").getElementsByTagName("option");
-    var obj3=document.getElementById("area").getElementsByTagName("option");
-    for(var i=0;i<obj.length;i++){
-        if (obj[i].selected){
-            $("[name='province']").val(obj[i].innerText);
-        }
+$("#submitbtn1").on('click',function () {
+    if (!$("input[name='custname']").val()){
+        alert("收件人不能为空");
+        return;
+    }
+    else if (!$("input[name='custphone']").val()) {
+        alert("联系电话不能为空");
+        return;
+    }
+    else if (!$("input[name='street']").val()) {
+        alert("街道/区域不能为空");
+        return;
+    }
+    else if (!$("input[name='detaillocation']").val()) {
+        alert("详细地址不能为空");
+        return;
+    }
+    else if (!$("input[name='postcode']").val()) {
+        $("input[name='postcode']").val("000000");
+        $("#update-address").attr('action','/receiveaddress?type=3');
+        $("#myform").submit();
+    }
+});
 
+
+
+
+$("#submitbtn2").on('click',function () {
+    console.log($("input[name='custname']").val());
+    console.log($("input[name='custphone']").val());
+    console.log($("input[name='postcode']").val());
+    if (!$("input[name='custname']").val()){
+       alert("收件人不能为空");
+       return;
     }
-    for(var i=0;i<obj2.length;i++){
-        if(obj2[i].selected){
-            $("[name='city']").val(obj2[i].innerText);
-        }
+    else if (!$("input[name='custphone']").val()) {
+        alert("联系电话不能为空");
+        return;
     }
-    for(var i=0;i<obj3.length;i++){
-        if(obj3[i].selected){
-            $("[name='city']").val(obj3[i].innerText);
-        }
+    else if (!$("input[name='street']").val()) {
+        alert("街道/区域不能为空");
+        return;
+    }
+    else if (!$("input[name='detaillocation']").val()) {
+        alert("详细地址不能为空");
+        return;
+    }
+    else if (!$("input[name='postcode']").val()) {
+        $("input[name='postcode']").val("0");
+        $("#update-address").attr('action','/receiveaddress?type=4');
+        $("#myform").submit();
     }
 
 })
-
-
-
-
 
 
 

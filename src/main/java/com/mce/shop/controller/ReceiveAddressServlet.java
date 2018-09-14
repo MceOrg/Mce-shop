@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.UUID;
 
 public class ReceiveAddressServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,6 +28,8 @@ public class ReceiveAddressServlet extends HttpServlet {
             deleteAddress(request,response);
         }else if (type.equals("3")){
             updateOneAddress(request,response);
+        }else if (type.equals("4")){
+            addNewAddress(request,response);
         }
 
     }
@@ -85,25 +88,15 @@ public class ReceiveAddressServlet extends HttpServlet {
 
     private void updateOneAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         Integer addressid=Integer.parseInt(request.getParameter("update_addressid"));
-        System.out.println(addressid);
         String custname=request.getParameter("custname");
-        System.out.println(custname);
         Long custphone=Long.parseLong(request.getParameter("custphone"));
-        System.out.println(custphone);
         String province=request.getParameter("province");
-        System.out.println(province);
         String city=request.getParameter("city");
-        System.out.println(city);
         String area=request.getParameter("area");
-        System.out.println(area);
         String street=request.getParameter("street");
-        System.out.println(street);
         String detailLocation=request.getParameter("detaillocation");
-        System.out.println(detailLocation);
         Integer postcode=Integer.parseInt(request.getParameter("postcode"));
-        System.out.println(postcode);
         Integer isdefault=Integer.parseInt(request.getParameter("update_isDefaultAddress"));
-        System.out.println(isdefault);
         Customer customer=(Customer) request.getSession().getAttribute("loginCustomer");
         ReceiveAddress address=new ReceiveAddress(addressid,province,city,area,street,detailLocation,postcode,custname,custphone,isdefault,customer.getCustId());
         ReceiveAddressService receiveAddressService=new ReceiveAddressServiceImpl();
@@ -114,5 +107,30 @@ public class ReceiveAddressServlet extends HttpServlet {
             System.out.println("修改失败");
             return;
         }
+    }
+
+    private void addNewAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        String custname=request.getParameter("custname");
+        Long custphone=Long.parseLong(request.getParameter("custphone"));
+        String province=request.getParameter("province");
+        String city=request.getParameter("city");
+        String area=request.getParameter("area");
+        String street=request.getParameter("street");
+        String detailLocation=request.getParameter("detaillocation");
+        String postcode=request.getParameter("postcode");
+        Integer isdefault=0;
+        Customer customer=(Customer) request.getSession().getAttribute("loginCustomer");
+        int id=(int) (Math.random()*999999+100);
+        ReceiveAddress address=new ReceiveAddress(id,province,city,area,street,detailLocation,Integer.parseInt(postcode),custname,custphone,isdefault,customer.getCustId());
+        ReceiveAddressService receiveAddressService=new ReceiveAddressServiceImpl();
+        int row=receiveAddressService.addNewAddress(address);
+        System.out.println(row);
+        if (row==1){
+            getAllAddresses(request,response);
+        }else {
+            request.setAttribute("msg","添加失败");
+            return;
+        }
+
     }
 }

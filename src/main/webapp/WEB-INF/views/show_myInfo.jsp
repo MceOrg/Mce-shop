@@ -99,9 +99,9 @@
 <div id="container" class="clearfix">
     <div class="sidebar">
         <ul class="slide-nav">
-            <li><a href="customer?type=6">我的资料</a></li>
-            <li><a href="receiveaddress?type=0">收货地址</a></li>
-            <li><a href="">修改密码</a></li>
+            <li><a href="/customer?type=6">我的资料</a></li>
+            <li><a href="/receiveaddress?type=0">收货地址</a></li>
+            <li><a href="/customer?type=10">修改密码</a></li>
         </ul>
     </div>
     <div class="info-wrap clearfix">
@@ -157,7 +157,7 @@
                 }
             %>
         </div>
-        <a href="customer?type=7" class="change-info-btn">修改我的资料</a>
+        <a href="/customer?type=7" class="change-info-btn">修改我的资料</a>
     </div>
 </div>
 <div id="footer">

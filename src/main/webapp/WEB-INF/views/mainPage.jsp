@@ -41,11 +41,11 @@
            if (customer!=null){
                     if (customer.getCustName()!=null&&customer.getCustName()!=""){
                         %>
-                    <a href="customer?type=6" style="color: #0f0f0f"><%=customer.getCustName()%></a>
+                    <a href="/customer?type=6" style="color: #0f0f0f"><%=customer.getCustName()%></a>
         <%
                     }else {
                         %>
-                    <a href="customer?type=6" style="color: #0f0f0f"><%=customer.getCustPhone()%></a>
+                    <a href="/customer?type=6" style="color: #0f0f0f"><%=customer.getCustPhone()%></a>
         <%
                     }
                 %>
@@ -53,8 +53,8 @@
         <%
            }else {
                %>
-        <a href="customer?type=3" style="color: #0f0f0f">登录</a>
-        <a href="customer?type=1" style="color: #0f0f0f">注册</a>
+        <a href="/customer?type=3" style="color: #0f0f0f">登录</a>
+        <a href="/customer?type=1" style="color: #0f0f0f">注册</a>
         <%
            }
         %>

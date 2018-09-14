@@ -137,7 +137,7 @@ var reg2pwd=/^[a-zA-Z]\w{5,19}$/;
     function isValTel() {
         $.ajax({
             async:false,
-            url:"customer?type=0",
+            url:"/customer?type=0",
             type:"post",
             dataType:"text",
             data:{

@@ -40,6 +40,10 @@ public class CustomerServlet extends HttpServlet {
             this.goUpdateInfo(req,resp);
         }else if(type.equals("8")){
             this.updateInfo(req,resp);
+        }else if (type.equals("9")){
+            this.updatePwd(req,resp);
+        }else if (type.equals("10")){
+            this.goUpdatePwd(req,resp);
         }
     }
 
@@ -58,6 +62,10 @@ public class CustomerServlet extends HttpServlet {
 //        String token = TokenProccessor.getInstance().makeToken();//创建令牌
 //        req.getSession().setAttribute("token", token);  //在服务器使用session保存token(令牌)
         req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
+    }
+
+    private void goUpdatePwd(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        req.getRequestDispatcher("/WEB-INF/views/update_pwd.jsp").forward(req,resp);
     }
     private void isValTel(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         String custPhone=req.getParameter("tel");
@@ -179,6 +187,40 @@ public class CustomerServlet extends HttpServlet {
         }
 
 
+    }
+
+    private void updatePwd(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        String oldpwd=req.getParameter("oldpwd");
+        System.out.println(oldpwd);
+        String newpwd=req.getParameter("newpwd");
+        System.out.println(newpwd);
+        String renewpwd=req.getParameter("renewpwd");
+        System.out.println(renewpwd);
+        Customer customer=(Customer) req.getSession().getAttribute("loginCustomer");
+        CustomerService customerService=new CustomerServiceImpl();
+        if ((oldpwd==null||oldpwd=="")||(newpwd==null||newpwd=="")||(renewpwd==null||renewpwd=="")){
+            req.setAttribute("msg","请正确填写信息");
+            goUpdatePwd(req,resp);
+            return;
+        }
+        if (!newpwd.equals(renewpwd)){
+            req.setAttribute("msg","两次密码输入不一致");
+            goUpdatePwd(req,resp);
+            return;
+        }
+        if (!oldpwd.equals(customer.getCustPwd())){
+            req.setAttribute("msg","原密码输入不正确");
+            goUpdatePwd(req,resp);
+            return;
+        }else {
+            Customer newcustomer=customer;
+            newcustomer.setCustPwd(newpwd);
+            int row=customerService.updatePwd(newcustomer);
+            if (row==1){
+                req.setAttribute("msg","修改成功");
+                goUpdatePwd(req,resp);
+            }
+        }
     }
 
 

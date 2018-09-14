@@ -14,7 +14,7 @@
         <div id="login_wrap">
         <div id="title">账户登录</div>
         <div id="body">
-            <form action="customer?type=2" method="post">
+            <form action="/customer?type=2" method="post">
                 <div id="username_tip" class="clearfix">
                     <div id="username_wrap">
                         <input type="text" name="username" id="username" <%
@@ -33,6 +33,18 @@
                     </div>
                     <div class="tip" >
                         <span class="text" id="tip2u">您的账号有误</span>
+                        <%
+                        if (request.getAttribute("errorMsg")!=null){
+                            %>
+                        <span id="errorinfo" class="text"><%=request.getAttribute("errorMsg")%></span>
+                        <%
+                        }else {
+                            %>
+                        <span id="errorinfo" class="text" style="display: none"></span>
+                        <%
+                        }
+                        %>
+
                     </div>
                 </div>
                 <div id="password_tip" class="clearfix">
@@ -68,7 +80,7 @@
                 <input type="hidden" name="token" value="<%=session.getAttribute("token") %>">
                 <button type="submit" id="login">登录</button>
             </form>
-            <a  id="register" href="customer?type=1">免费注册</a>
+            <a  id="register" href="/customer?type=1">免费注册</a>
         </div>
 
     </div>
