@@ -17,7 +17,7 @@
             <div>已注册可<a href="/customer?type=3">直接登录</a></div>
         </div>
         <div id="body">
-            <form action="" id="/registerform" method="post">
+            <form action="" id="registerform" method="post">
                 <div id="tel_tip" class="clearfix">
                     <div id="tel_wrap">
                         <input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" onblur="showTelTips()"/>

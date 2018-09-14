@@ -87,6 +87,7 @@ public class ReceiveAddressServlet extends HttpServlet {
 
 
     private void updateOneAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        System.out.println("ss");
         Integer addressid=Integer.parseInt(request.getParameter("update_addressid"));
         String custname=request.getParameter("custname");
         Long custphone=Long.parseLong(request.getParameter("custphone"));
@@ -110,6 +111,7 @@ public class ReceiveAddressServlet extends HttpServlet {
     }
 
     private void addNewAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        System.out.println("ssa");
         String custname=request.getParameter("custname");
         Long custphone=Long.parseLong(request.getParameter("custphone"));
         String province=request.getParameter("province");

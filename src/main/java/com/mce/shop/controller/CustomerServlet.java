@@ -147,6 +147,7 @@ public class CustomerServlet extends HttpServlet {
 
 
     private void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        System.out.println("ww");
         String tel=req.getParameter("tel");
         String pwd=req.getParameter("password");
         Customer customer=new Customer(null,pwd,tel);

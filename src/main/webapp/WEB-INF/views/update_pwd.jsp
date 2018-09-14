@@ -269,4 +269,5 @@
 </div>
 
 </body>
+<script type="text/javascript" src="{pageContext.request.contextPath}/../../resources/js/jquery-3.3.1.min.js"></script>
 </html>

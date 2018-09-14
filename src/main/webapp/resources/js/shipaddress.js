@@ -470,12 +470,14 @@ function chooseCity(ci) {
         }
     }
 }
-
 $('#city').focus(function () {
     chooseCity(this);
 });
 $('#city').focus();
-$('#area').focus();
+$('#city').change(function () {
+    chooseCity(this);
+});
+
 
 /*******************************************************************************************/
 
@@ -549,10 +551,10 @@ $('#toaddnew').on('click',function(){
 
     }else {
         $(this).attr('href','#writeAddress');
-        window.location.reload();
         setTimeout(function() {
+            window.location.reload();
             $('#custname').focus();
-        }, 100);
+        }, 1);
     }
 })
 
@@ -666,7 +668,10 @@ $("#submitbtn1").on('click',function () {
     }
     else if (!$("input[name='postcode']").val()) {
         $("input[name='postcode']").val("000000");
-        $("#update-address").attr('action','/receiveaddress?type=3');
+        $("#update-address").attr('action','receiveaddress?type=3');
+        $("#myform").submit();
+    }else {
+        $("#update-address").attr('action','receiveaddress?type=3');
         $("#myform").submit();
     }
 });
@@ -675,9 +680,6 @@ $("#submitbtn1").on('click',function () {
 
 
 $("#submitbtn2").on('click',function () {
-    console.log($("input[name='custname']").val());
-    console.log($("input[name='custphone']").val());
-    console.log($("input[name='postcode']").val());
     if (!$("input[name='custname']").val()){
        alert("收件人不能为空");
        return;
@@ -696,7 +698,10 @@ $("#submitbtn2").on('click',function () {
     }
     else if (!$("input[name='postcode']").val()) {
         $("input[name='postcode']").val("0");
-        $("#update-address").attr('action','/receiveaddress?type=4');
+        $("#update-address").attr('action','receiveaddress?type=4');
+        $("#myform").submit();
+    }else {
+        $("#update-address").attr('action','receiveaddress?type=4');
         $("#myform").submit();
     }
 

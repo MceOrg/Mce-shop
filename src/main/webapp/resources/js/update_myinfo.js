@@ -17,3 +17,4 @@ function setImg(obj) {
     selectedimg.src = imageSrc;
     custprofile.value=selectedimg.src.split("/")[selectedimg.src.split("/").length-1];
 }
+
