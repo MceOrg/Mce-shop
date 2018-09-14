@@ -237,4 +237,17 @@
       category_id = #{categoryId,jdbcType=INTEGER}
     where shoes_id = #{shoesId,jdbcType=INTEGER}
   </update>
+
+  <!-- 分页查询 -->
+  <select id="queryAllByPage" parameterType="com.mce.shop.util.PageModel" resultMap="BaseResultMap">
+    select shoes_id, shoes_name, shoes_price_sale, shoes_desc, shoes_sale_count, shoes_gender, shoes_status
+    from shoes
+    limit #{startRecord} ,#{pageSize}
+  </select>
+
+  <!-- 获得总记录数 -->
+  <select id="getCount" resultType="Integer">
+    select count(shoes_id)
+    from shoes
+  </select>
 </mapper>

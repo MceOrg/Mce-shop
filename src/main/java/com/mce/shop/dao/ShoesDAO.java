@@ -2,6 +2,7 @@ package com.mce.shop.dao;
 
 import com.mce.shop.entity.Category;
 import com.mce.shop.entity.Shoes;
+import com.mce.shop.util.PageModel;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -54,4 +55,14 @@ public interface ShoesDAO extends MyBatisBaseDao<Shoes, Integer> {
      * @return 鞋子对象
      */
     public Shoes queryById(Integer id);
+
+    /**
+     * 分页查询
+     * @param page 传入的页码信息
+     * @return
+     */
+    public List<Shoes> queryAllByPage(PageModel page);
+
+    //获得总记录数
+    public Integer getCount();
 }

@@ -4,6 +4,7 @@ import com.mce.shop.dao.ShoesDAO;
 import com.mce.shop.entity.Shoes;
 import com.mce.shop.service.ShoesService;
 import com.mce.shop.util.MybatisUtil;
+import com.mce.shop.util.PageModel;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.ArrayList;
@@ -56,5 +57,24 @@ public class ShoesServiceImpl implements ShoesService {
         shoesList = dao.queryByGender(gender);
         MybatisUtil.closeSession();
         return shoesList;
+    }
+
+    @Override
+    public PageModel<Shoes> getAllByPage(PageModel page) {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        shoesList = dao.queryAllByPage(page);
+        page.setModelList(shoesList);
+        MybatisUtil.closeSession();
+        return page;
+    }
+
+    @Override
+    public Integer getCount() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        ShoesDAO dao = sqlSession.getMapper(ShoesDAO.class);
+        Integer count = dao.getCount();
+        MybatisUtil.closeSession();
+        return count;
     }
 }

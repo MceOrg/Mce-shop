@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<a href="shoes?type=0">全部商品</a>
+<a href="/shoes/getByPage">全部商品</a>
 </body>
 </html>
