@@ -14,6 +14,7 @@ public class ShoesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type=req.getParameter("type");
         if (type.equals("0")) {
+
             getAllShoes(req,resp);
         }if (type.equals("1")) {
             getShoesById(req,resp);
@@ -27,6 +28,8 @@ public class ShoesServlet extends HttpServlet {
         else if(type.equals("4")){
             getShoesByGender(req,resp);
         }
+        HttpSession session=req.getSession();
+        session.setAttribute("type",type);
     }
 
     @Override
@@ -56,26 +59,27 @@ public class ShoesServlet extends HttpServlet {
         ShoesService shoesService=new ShoesServiceImpl();
         String name = req.getParameter("shoesname");
         List<Shoes> shoesList=shoesService.getByName(name);
-        req.setAttribute("shoesList",shoesList);
+        HttpSession session=req.getSession();
+        session.setAttribute("shoesList",shoesList);
         req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
     }
 
     private void getShoesByPrice(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ShoesService shoesService=new ShoesServiceImpl();
-        Float minPrice = Float.parseFloat(req.getParameter("minprice"));
-        Float maxPrice = Float.parseFloat(req.getParameter("maxprice"));
+        Float minPrice = Float.parseFloat(req.getParameter("minPrice"));
+        Float maxPrice = Float.parseFloat(req.getParameter("maxPrice"));
         List<Shoes> shoesList=shoesService.getByPrice(minPrice,maxPrice);
-        req.setAttribute("shoesList",shoesList);
+        HttpSession session=req.getSession();
+        session.setAttribute("shoesList",shoesList);
         req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
     }
     private void getShoesByGender(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ShoesService shoesService=new ShoesServiceImpl();
         Byte gender =Byte.parseByte(req.getParameter("gender"));
         List<Shoes> shoesList=shoesService.getByGender(gender);
-        req.setAttribute("shoesList",shoesList);
+        HttpSession session=req.getSession();
+        session.setAttribute("shoesList",shoesList);
         req.getRequestDispatcher("/showAllShoes.jsp").forward(req,resp);
     }
-
-
 
 }

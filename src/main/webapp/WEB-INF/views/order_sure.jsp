@@ -24,11 +24,11 @@
         <div id="middle-address">
             <div id="address-title">
                 <span>配送地址：</span>
-                <a href=""><span>新增地址+</span></a>
+                <a href=""><span>更改地址</span></a>
             </div>
             <div id="address">
                 <div id="address-btn">
-                    <input type="radio" style="width: 22px;height: 22px">
+                    <input type="radio" checked="checked" style="width: 22px;height: 22px">
                 </div>
                 <div id="review-address">
                     <div id="address-name">
@@ -43,11 +43,10 @@
                                 <li>电话：<span>18860484144</span></li>
                             </ul>
                         </div>
-                        <div id="address-modify">
-                            <span><a href="">编辑</a></span>
-                            <span>|</span>
-                            <span><a href="">删除</a></span>
-                        </div>
+                        <%--<div id="address-modify">--%>
+                            <%--<span><a href="">更改地址</a></span>--%>
+
+                        <%--</div>--%>
                     </div>
 
                 </div>
@@ -63,7 +62,7 @@
                     <span>配送方式</span>
                     <div id="deliver-box">
                         <div id="address-btn-1">
-                            <input type="radio" style="width: 22px;height: 22px">
+                            <input type="radio" checked="checked" style="width: 22px;height: 22px">
                         </div>
                         <span><a>普通达： 3-5个工作日到达</a></span>
                         <span class="free">免运费</span>
@@ -75,7 +74,7 @@
                 <div id="pay">
                     <ul>
                         <li>
-                            <input name="select-1" type="radio" style="width: 22px;height: 22px">
+                            <input name="select-1" checked="checked" type="radio" style="width: 22px;height: 22px">
                             <img src="../../resources/img/icon_alipay@2x.png">
                         </li>
                         <li>

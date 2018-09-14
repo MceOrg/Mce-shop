@@ -55,7 +55,9 @@
         <servlet-name>Customer</servlet-name>
         <url-pattern>/customer</url-pattern>
     </servlet-mapping>
-      <welcome-file>/WEB-INF/views/mainPage.jsp</welcome-file>
+
+    <welcome-file-list>
+      <welcome-file>/shoes.jsp</welcome-file>
     </welcome-file-list>
     
     
@@ -69,10 +71,15 @@
         <servlet-name>shoes</servlet-name>
         <url-pattern>/shoes</url-pattern>
     </servlet-mapping>
-    
-    
 
-    
-    
+    <servlet>
+        <servlet-name>shoesname</servlet-name>
+        <servlet-class>com.mce.shop.controller.ShoesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>shoesname</servlet-name>
+        <url-pattern>/shoes_name</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

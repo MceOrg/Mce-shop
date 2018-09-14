@@ -11,7 +11,7 @@ li{
 }
 .icon {
     display: inline-block;
-    background: url(../img/icon1.png);
+    background: url(../../resources/img/icon1.png);
 }
 /**********************************head部分*******************/
 #head{
@@ -124,7 +124,7 @@ li{
     /*border: 1px solid greenyellow;*/
 }
 #address-detail{
-    width: 76%;
+    width: 100%;
     height: 70px;
     float: left;
     /*border: 1px solid salmon;*/
@@ -134,12 +134,12 @@ li{
     line-height: 23px;
 }
 
-#address-modify{
-    width: 23%;
-    height: 40px;
-    float: right;
-    /*border: 1px solid darkblue;*/
-}
+/*#address-modify{*/
+/*width: 23%;*/
+/*height: 40px;*/
+/*float: right;*/
+/*border: 1px solid darkblue;*/
+/*}*/
 #address-modify span a{
     font-size: 14px;
     color: #0286cd;
@@ -330,6 +330,7 @@ li{
     margin-top: 12px;
     width: 100%;
     height: 62px;
+    /*border: 1px solid lightcoral;*/
 
 
 }
@@ -340,8 +341,9 @@ li{
 }
 
 .goods-info-1{
-    width: 200px;
+    width: 180px;
     height: 60px;
+    /*border: 1px solid red;*/
 
     float: right;
 }
@@ -399,205 +401,4 @@ li{
 }
 #goods-sub{
     color: #c53622;
-}
-
-/***************************************底部***************************/
-
-.icon-sina{
-    width: 30px;
-    height: 24px;
-    background-position: -130px -154px;
-}
-.icon-wechat{
-    width: 30px;
-    height: 24px;
-    background-position: -270px -154px;
-}
-#footer-top{
-    width: 100%;
-    height: 80px;
-    background: black;
-}
-#footer-top-container{
-    width: 80%;
-    margin: 0 auto;
-
-}
-#footer-cont{
-    width:100%;
-    height: 300px;
-    background-color: white;
-}
-
-#footer-cont-bottom{
-    width: 100%;
-    height: 50px;
-    background: black;
-}
-
-#footer-top #footer-top-container ul li.contacted{
-    font-size: 16px;
-    line-height: 80px;
-    margin-right: 60px;
-    display: inline-block;
-    float:left;
-    color:white;
-}
-#footer-top #footer-top-container ul li  {
-    font-size: 14px;
-    /*line-height: 70px;*/
-    margin-right: 70px;
-    display: inline-block;
-    float:left;
-    color:white;
-}
-#footer-top #footer-top-container ul li p a{
-    line-height: 70px;
-    color:white;
-}
-#footer-top #footer-top-container ul li p {
-    font-family: Arial;
-    color:darkgray;
-    line-height: 1px;
-}
-
-#footer-cont .footer-cont-top{
-    width: 100%;
-    height: 300px;
-    text-align:left;
-    margin-left: 140px;
-    padding:0;
-    clear:both;
-
-
-
-
-}
-#footer-cont .footer-cont-top .footer-cont-top1,#footer-cont .footer-cont-top .footer-cont-top2
-,#footer-cont .footer-cont-top .footer-cont-top3,#footer-cont .footer-cont-top .footer-cont-top4
-,#footer-cont .footer-cont-top .footer-cont-top5{
-    margin:0;
-    padding:0;
-    display:inline-block;
-    padding-right: 120px;
-    vertical-align:middle;
-    _display:inline;
-    *display:inline;
-    zoom:1;
-}
-#footer-cont .footer-cont-top .footer-cont-top3{
-    padding-top: 30px;
-
-}
-#footer-cont .footer-cont-top .footer-cont-top5{
-    padding-top: 10px;
-}
-#footer-cont .footer-cont-top .footer-cont-top5 ul li.title1{
-    list-style: none;
-    display: inline-block;
-    border: none;
-    float: left;
-    margin-right: 10px;
-}
-
-#footer-cont .footer-cont-top li {
-    list-style: none;
-    border:none;
-}
-#footer-cont .footer-cont-top li a{
-    color:black;
-}
-#footer-cont .footer-cont-top li.title{
-    font-weight: bold;
-
-}
-#footer-cont .footer-cont-top li{
-    font-size: 14px;
-    line-height: 25px;
-
-
-}
-
-#footer-cont .footer-cont-top ul.footer-group-purchase li{
-    list-style: none;
-    border: none;
-    display: inline-block;
-    float:left;
-    margin-right: 20px;
-
-}
-#footer-cont .footer-cont-top ul.footer-Payment-method li{
-    list-style: none;
-    border: none;
-    display: inline-block;
-    padding-top: 15px;
-    padding-bottom: 5px;
-    margin-right: 20px;
-}
-.icon-Payment-method{
-    height: 24px;
-    width: 388px;
-    width: 72px;
-    background-position: -614px -343px;
-
-}
-.icon-Payment-method-1 {
-    height: 24px;
-    width: 108px;
-    background-position: -695px -343px;
-}
-.icon-Payment-method-2 {
-    height: 24px;
-    width: 100px;
-    background-position: -809px -343px;
-}
-.icon-Payment-method-3 {
-    height: 24px;
-    width: 82px;
-    background-position: -917px -343px;
-}
-.footer-cont-bottom1 ,.footer-cont-bottom2{
-    margin:0;
-    padding:0;
-    display:inline-block;
-    padding-right: 120px;
-    vertical-align:middle;
-    _display:inline;
-    *display:inline;
-    zoom:1;
-}
-.footer-cont-bottom1 ul li,.footer-cont-bottom2 ul li{
-    font-size: 12px;
-    list-style: none;
-    display: inline-block;
-    color: white;
-    float: left;
-    padding-left:50px ;
-    margin-left:15px;
-    text-align: center;
-}
-.footer-cont-bottom1 ul li a,.footer-cont-bottom2 ul li a{
-    color: white;
-}
-.icon-contact-us-service {
-    width: 17px;
-    height: 17px;
-    background-position: -400px -83px;
-}
-.icon-contact-us-tel {
-    width: 16px;
-    height: 16px;
-    background-position: -74px -86px;
-}
-
-.icon-contact-us-email {
-    width: 16px;
-    height: 16px;
-    background-position: -96px -84px;
-}
-
-.icon-contact-us-time {
-    width: 16px;
-    height: 16px;
-    background-position: 0 -112px;
 }
