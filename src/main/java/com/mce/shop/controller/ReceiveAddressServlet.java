@@ -72,11 +72,10 @@ public class ReceiveAddressServlet extends HttpServlet {
             Integer addressId=Integer.parseInt(request.getParameter("addressid"));
             Integer row=receiveAddressService.deleteAddress(addressId,customer.getCustId());
             if(row==1){
-                PrintWriter out=response.getWriter();
-                out.print(true);
+                getAllAddresses(request,response);
             }else {
-                PrintWriter out=response.getWriter();
-                out.print(false);
+                System.out.println("修改失败");
+                return;
             }
         }else {
             System.out.println("sssss");

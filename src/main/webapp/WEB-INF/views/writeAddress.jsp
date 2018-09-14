@@ -113,6 +113,7 @@
                 <%--<input type="text" value="${Address.getAddressRecipientName()}">--%>
             <%--</c:forEach>--%>
             <div>
+                <input type="hidden" value="0" id="current_addressid" name="curaddressid">
                 <%
                     List<ReceiveAddress> receiveAddresses=(List<ReceiveAddress>) request.getSession().getAttribute("alladdress");
                     if(receiveAddresses!=null){
@@ -155,7 +156,7 @@
                     </ul>
                     <%
                         if (receiveAddress.getIsDefaultAddress()==0){%>
-                    <a href="/receiveaddress?type=2" class="delete_address">删除</a>
+                    <a href="" class="delete_address">删除</a>
                     <%
                         }
                     %>

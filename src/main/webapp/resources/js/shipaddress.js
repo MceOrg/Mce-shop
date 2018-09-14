@@ -565,25 +565,13 @@ $('#toaddnew').on('click',function(){
 /*************************** 删除收货地址 **********************************/
     $('.delete_address').on('click',function () {
         var msg="确定要删除此地址吗?";
-        var value=$(this).siblings("[name='addressid']").val()+'';
-            $.ajax({
-                async : false,
-                url:"/receiveaddress?type=2",
-                type:"post",
-                dataType:"text",
-                data:{
-                    addressid:value
-                },
-                success:function (data) {
-                    alert("data"+data);
-                    if (data=='true') {
-                        window.location.href="/receiveaddress?type=0";
-                    }else {
-                        alert(data);
-                    }
+        if (confirm(msg)){
+            alert($(this).siblings("[name='addressid']").val());
+            $(this).attr("href","/receiveaddress?type=2&addressid="+$(this).siblings("[name='addressid']").val());
+        } else {
+            return;
+        }
 
-                }
-            });
     })
 
 /*********************************************************************************************/
